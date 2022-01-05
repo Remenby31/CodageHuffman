@@ -17,98 +17,62 @@ package body codagehuffman is
 
 
 
-   procedure Tri_rapide(Tableau : in out T_Tableau) is
 
-
-      function Tri(Tableau : in out T_Tableau; premier : in Integer; dernier : in Integer) return Integer is
-         Index : Integer;
-         Pivot : Integer;
-      begin
-         Index := premier-1;
-         Pivot := Tableau(dernier).Donnee;
-         for i in premier..dernier loop
-            if Tableau(i).Donnee <= Pivot then
-               Index := Index +1;
-               Tableau(Index).Donnee := Tableau(i).Donnee;
-               Tableau(i).Donnee := Tableau(Index).Donnee;
-            else
-               null;
-            end if;
-
-         end loop;
-         Tableau(Index+1).Donnee := Tableau(dernier).Donnee;
-         Tableau(dernier).Donnee := Tableau(Index+1).Donnee;
-         return Index +1 ;
-      end Tri;
-
-      procedure Tri_rapide_borne(Tableau : in out T_Tableau ; premier : in Integer; dernier : in Integer) is
-         variable : Integer;
-
-      begin
-         if premier < dernier then
-            variable := Tri(Tableau, premier, dernier);
-            Tri_rapide_borne(Tableau, premier, variable-1);
-            Tri_rapide_borne(Tableau, variable+1, dernier);
-         else
-            null;
-         end if;
-      end Tri_rapide_borne;
-
-      procedure Enlever_trou(Tableau : in out T_Tableau) is
-         Tableau_non_vide : T_Tableau;
-         indice_fin : Integer := 1;
-      begin
-         for i in 1..256 loop
-            if Tableau(i).All.Donnee /= 0 then
-               Tableau_non_vide(indice_fin) := Tableau(i);
-               indice_fin := indice_fin + 1;
-            end if;
-         end loop;
-         Tableau := Tableau_non_vide;
-      end Enlever_trou;
-
-   begin
-      Enlever_trou(Tableau);
-      Tri_rapide_borne(Tableau,1,Tableau'Length);
-   end tri_rapide;
-
-   function recupere_fichier return String is
-
-      file_txt : Ada.Text_IO.file_type;			-- pour l'accès par caractère
-      file_byte, file_hff : Byte_file.file_type;	-- pour l'accès par byte
-      taille_fichier : integer;
-      un_char : Character;
-
-      package Byte_file is new Ada.Sequential_IO(T_byte) ;
-      use Byte_file ;
-
-   begin
-      open (file_txt, In_File, Argument(1)); 	-- Ouverture du fichier en lecture
-      taille_fichier := 0; 					-- Nb de caracteres dans le fichier
-      while not end_of_file(file_txt) loop
-         Get_immediate (file_txt, un_char);
-         taille_fichier := taille_fichier + 1;
-      end loop;
-      close (file_txt);
-
-
-   end recupere_fichier;
-
-
-   procedure Construire_Arbre(Tableau : in out T_Tableau) is
-      Cellule : T_Cellule;
-   begin
-      Initialiser(Cellule);
-   end Construire_Arbre;
 
    procedure Afficher_Arbre(Cellule : in T_Cellule) is
    begin
       Null;
    end Afficher_Arbre;
 
-   function Compresser_ficher(texte : in String) return String is
+   function Compresser_ficher return String is
+
+      file_txt : Ada.Text_IO.file_type;			-- pour l'accès par caractère
+      file_byte, file_hff : Byte_file.file_type;	-- pour l'accès par byte
+      un_char : Character;
+      texte : String := "";
+      package Byte_file is new Ada.Sequential_IO(T_byte);
+      use Byte_file ;
+
+      procedure Tri_selection(Tableau : in out T_Tableau) is
+         minimum : Integer;
+         Tampon : T_Cellule;
+      begin
+         for I in 1..256 loop
+            minimum := I;
+            for J in 1..256 loop
+               if Tableau(I).all.Donnee > Tableau(J).all.Donnee then
+                  minimum := J;
+               else
+                  null;
+               end if;
+            end loop;
+            Tampon := Tableau(I);
+            Tableau(I) := Tableau(minimum);
+            Tableau(minimum) := Tampon;
+         end loop;
+      end Tri_selection;
+
+      function Construire_Arbre(Tableau: in out) return T_Cellule is
+         Cellule : T_Cellule;
+      begin
+         for i in 1..(Tableau'Length-1) loop
+            end loop
+         return Cellule;
+      end Construire_Arbre;
+
+      Tableau : T_Tableau;
+
    begin
-      return "Null";
+      open(file_txt, In_File, Argument(1)); 	-- Ouverture du fichier en lecture
+      while not end_of_file(file_txt) loop
+         Get_immediate (file_txt, un_char);
+         Enregistrer(Tableau(Character'Pos(un_char)), Tableau(Character'Pos(un_char)).All.Cle, Tableau(Character'Pos(un_char)).All.Donnee + 1);
+      end loop;
+      close (file_txt);
+
+      Tri_selection(Tableau);
+
+      return texte;
    end Compresser_ficher;
 
    function Decompresser_fichier(texte : in String) return String is

@@ -16,15 +16,11 @@ package codageHuffman is
    function Calcul_Frequence(texte : in String) return T_Tableau;
 
    --Trier par ordre croissant le tableau de fr�quence
-   procedure Tri_rapide(Tableau : in out T_Tableau);
-
-   function recupere_fichier return String;
 
    -- Construire l'arbre de Huffman gr�ce aux fr�quences des caract�res
-   procedure Construire_Arbre(Tableau : in out T_Tableau);
 
    -- Compresser le fichier
-   function Compresser_ficher(texte : in String) return String;
+   function Compresser_ficher return String;
 
    -- D�compresser le fichier
    function Decompresser_fichier(texte : in String) return String;

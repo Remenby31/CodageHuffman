@@ -5,34 +5,70 @@ A -march=x86-64
 P SS ZX
 
 RN
-RV NO_RECURSION
+RV NO_EXCEPTIONS
+RV NO_IO
 RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ATTRIBUTES
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 
-U codagehuffman%b	codagehuffman.adb	53952e2b OO PK IL
-Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
-Z cellule%s		cellule.adb		cellule.ali  ED
-Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
-
-U codagehuffman%s	codagehuffman.ads	b4a21f19 BN EE NE OO PK
+U codagehuffman%b	codagehuffman.adb	54c88723 OO PK IL
 W ada%s			ada.ads			ada.ali
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.unchecked_conversion%s
+Z cellule%s		cellule.adb		cellule.ali  ED
+W interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+Z system.byte_swapping%s  s-bytswa.ads		s-bytswa.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.sequential_io%s  s-sequio.adb		s-sequio.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+U codagehuffman%s	codagehuffman.ads	fb543c81 BN EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.sequential_io%s
 W ada.strings%s		a-string.ads		a-string.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_conversion%s
 Z ada.unchecked_deallocation%s
 W cellule%s		cellule.adb		cellule.ali
 Z cellule_exceptions%s	cellule_exceptions.ads	cellule_exceptions.ali
+W interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+Z system.byte_swapping%s  s-bytswa.ads		s-bytswa.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.sequential_io%s  s-sequio.adb		s-sequio.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
 D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
+D a-comlin.ads		20210520051128 4aa66568 ada.command_line%s
 D a-except.ads		20210520051128 946f3014 ada.exceptions%s
 D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-inteio.ads		20210520051128 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-sequio.ads		20210520051130 3573d8ce ada.sequential_io%s
+D a-sequio.adb		20210520051130 3a82bda9 ada.sequential_io%b
 D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
 D a-string.ads		20210520051130 90ac6797 ada.strings%s
 D a-strmap.ads		20210520051130 5a88892a ada.strings.maps%s
@@ -40,21 +76,29 @@ D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
 D a-strunb.ads		20210520051130 03325227 ada.strings.unbounded%s
 D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
 D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
 D cellule.ads		20220103151026 1edd913d cellule%s
 D cellule.adb		20211215153426 625d592a cellule%b
 D cellule_exceptions.ads  20211215153426 8b9dd603 cellule_exceptions%s
-D codagehuffman.ads	20220105150536 a94ddc03 codagehuffman%s
-D codagehuffman.adb	20220105152432 fad8f228 codagehuffman%b
+D codagehuffman.ads	20220105162320 c1d11ef4 codagehuffman%s
+D codagehuffman.adb	20220105162318 951999d7 codagehuffman%b
 D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
+D s-bytswa.ads		20210520051132 1d5476e8 system.byte_swapping%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-fileio.ads		20210520051132 45ce2f0f system.file_io%s
 D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
 D s-parame.ads		20210520051134 4752c4cb system.parameters%s
 D s-putima.ads		20210520051134 4e095881 system.put_images%s
 D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-sequio.ads		20210520051134 fc7560a7 system.sequential_io%s
 D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
 D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
 D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
@@ -63,89 +107,111 @@ D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
 D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
-G c s s s [s codagehuffman 4 1 none]
-G c Z s b [calcul_frequence codagehuffman 8 13 none]
-G c Z s b [tri_rapide codagehuffman 11 14 none]
-G c Z s b [construire_arbre codagehuffman 14 14 none]
-G c Z s b [compresser_ficher codagehuffman 17 13 none]
-G c Z s b [decompresser_fichier codagehuffman 20 13 none]
-G c Z s s [initialiser codagehuffman__cellule_codagehuffman 22 14 28_4]
-G c Z s s [vider codagehuffman__cellule_codagehuffman 24 14 28_4]
-G c Z s s [est_vide codagehuffman__cellule_codagehuffman 28 13 28_4]
-G c Z s s [taille codagehuffman__cellule_codagehuffman 31 13 28_4]
-G c Z s s [est_feuille codagehuffman__cellule_codagehuffman 36 13 28_4]
-G c Z s s [cle_presente codagehuffman__cellule_codagehuffman 39 13 28_4]
-G c Z s s [la_donnee codagehuffman__cellule_codagehuffman 41 13 28_4]
-G c Z s s [enregistrer codagehuffman__cellule_codagehuffman 45 14 28_4]
-G c Z s s [supprimer codagehuffman__cellule_codagehuffman 49 14 28_4]
-G c Z s s [t_elementIP codagehuffman__cellule_codagehuffman 11 9 28_4]
-G c Z s s [free codagehuffman__cellule_codagehuffman 6 14 28_4]
-G c Z s s [Tt_tableauBIP codagehuffman 32 4 none]
-G c Z b b [afficher_arbre codagehuffman 82 14 none]
-G r i none [s codagehuffman 4 1 none] [cellule standard 5 9 none]
+G c s s s [s codagehuffman 8 1 none]
+G c Z s s [create codagehuffman__byte_file 70 14 12_4]
+G c Z s s [open codagehuffman__byte_file 76 14 12_4]
+G c Z s s [close codagehuffman__byte_file 82 14 12_4]
+G c Z s s [delete codagehuffman__byte_file 83 14 12_4]
+G c Z s s [reset codagehuffman__byte_file 84 14 12_4]
+G c Z s s [reset codagehuffman__byte_file 85 14 12_4]
+G c Z s s [mode codagehuffman__byte_file 87 13 12_4]
+G c Z s s [name codagehuffman__byte_file 88 13 12_4]
+G c Z s s [form codagehuffman__byte_file 89 13 12_4]
+G c Z s s [is_open codagehuffman__byte_file 91 13 12_4]
+G c Z s s [flush codagehuffman__byte_file 93 14 12_4]
+G c Z s s [read codagehuffman__byte_file 99 14 12_4]
+G c Z s s [write codagehuffman__byte_file 100 14 12_4]
+G c Z s s [end_of_file codagehuffman__byte_file 102 13 12_4]
+G c Z s s [to_fcb codagehuffman__byte_file 60 13 12_4]
+G c Z s s [to_sio codagehuffman__byte_file 61 13 12_4]
+G c Z s s [byte_swap codagehuffman__byte_file 66 14 12_4]
+G c Z s b [calcul_frequence codagehuffman 16 13 none]
+G c Z s b [compresser_ficher codagehuffman 23 13 none]
+G c Z s b [decompresser_fichier codagehuffman 26 13 none]
+G c Z s s [initialiser codagehuffman__cellule_codagehuffman 22 14 34_4]
+G c Z s s [vider codagehuffman__cellule_codagehuffman 24 14 34_4]
+G c Z s s [est_vide codagehuffman__cellule_codagehuffman 28 13 34_4]
+G c Z s s [taille codagehuffman__cellule_codagehuffman 31 13 34_4]
+G c Z s s [est_feuille codagehuffman__cellule_codagehuffman 36 13 34_4]
+G c Z s s [cle_presente codagehuffman__cellule_codagehuffman 39 13 34_4]
+G c Z s s [la_donnee codagehuffman__cellule_codagehuffman 41 13 34_4]
+G c Z s s [enregistrer codagehuffman__cellule_codagehuffman 45 14 34_4]
+G c Z s s [supprimer codagehuffman__cellule_codagehuffman 49 14 34_4]
+G c Z s s [t_elementIP codagehuffman__cellule_codagehuffman 11 9 34_4]
+G c Z s s [free codagehuffman__cellule_codagehuffman 6 14 34_4]
+G c Z s s [Tt_tableauBIP codagehuffman 38 4 none]
+G c Z b b [afficher_arbre codagehuffman 22 14 none]
+G r i none [s codagehuffman 8 1 none] [cellule standard 5 9 none]
 X 1 ada.ads
-16K9*Ada 20e8 18|1r6 1r33
-X 7 a-string.ads
-16K13*Strings 35e16 18|1r10 1r37
-X 10 a-strunb.ads
-83K21*Unbounded 765e26 18|1w18 1r45
-X 15 cellule.ads
-2+9 T_Cle 18|29r18
-3+9 T_Donnee 18|29r38
-5k9*Cellule 60e12 18|2w6 29r10
+16K9*Ada 20e8 25|1r6 1r23 2r6 2r31 3r6 3r28 4r6 5r6 5r33 12r29 26|29r18 33r32
+X 4 a-comlin.ads
+36K13*Command_Line 144e21 25|3w10 3r32
+52V13*Argument{string} 26|58s31
+X 7 a-inteio.ads
+18K13*Integer_Text_IO[19|46] 25|2w10 2r35
+X 9 a-sequio.ads
+43k13*Sequential_IO 160e22 25|4w10 12r33 26|33r36
+53P9*File_Type<40|63P9> 26|30r39[25|12]
+X 12 a-string.ads
+16K13*Strings 35e16 25|5r10 5r37
+X 15 a-strunb.ads
+83K21*Unbounded 765e26 25|5w18 5r45
+X 18 a-textio.ads
+58K13*Text_IO 725e16 25|1w10 1r27 26|29r22
+65P9*File_Type 26|29r30
+67n23*In_File{67E9} 26|58r22
+112U14*Open 26|58s7
+127U14*Close 26|63s7
+310V13*End_Of_File{boolean} 26|59s17
+413U14*Get_Immediate 26|60s10
+X 22 cellule.ads
+2+9 T_Cle 25|35r18
+3+9 T_Donnee 25|35r38
+5k9*Cellule 60e12 25|6w6 35r10
 7R9*T_Element
-9P9*T_Cellule(7R9[18|28]) 18|32r39[28] 19|77r17[18|28] 82r42[18|28]
-13e10*Cle{character} 19|12r93[18|28]
-14i10*Donnee{integer} 19|12r135[18|28] 28r36[18|28] 30r27[18|28] 32m31[18|28]
-. 32r52[18|28] 33m27[18|28] 33r52[18|28] 39m27[18|28] 39r54[18|28] 40m27[18|28]
-. 40r54[18|28] 62r31[18|28]
-22U14*Initialiser 19|7s10[18|28] 79s7[18|28]
-45U14*Enregistrer 19|8s10[18|28] 12s10[18|28]
-X 18 codagehuffman.ads
-4K9*codageHuffman 28E12 34l5 34e18 19|1b14 106l5 106t18
-5A9*T_Tableau(15|9P9[28]) 8r56 11r42 14r48 24r43 32c9 19|3r56 4r17 20r42
-. 23r37 44r51 57r47 58r29 76r48 97r43
-8V13*Calcul_Frequence{5A9} 8>30 19|3b13 16l8 16t24
-8a30 texte{string} 19|3b30 11r16 12r44 12r78 12r120
-11U14*Tri_rapide 11=25 19|20b14 73l8 73t18
-11a25 Tableau{5A9} 19|20b25 71m20 72m24 72r34
-14U14*Construire_Arbre 14=31 19|76b14 80l8 80t24
-14a31 Tableau{5A9} 19|76b31
-17V13*Compresser_ficher{string} 17>31 19|87b13 90l8 90t25
-17a31 texte{string} 19|87b31
-20V13*Decompresser_fichier{string} 20>34 19|92b13 95l8 95t28
-20a34 texte{string} 19|92b34
-23U22 Traiter 23>30 23>54
-23i30 Frequence{integer}
-23e54 Caractere{character}
-24u14*Parcours_infixe 24>30 19|97b14 100l8 100t23
-24a30 Tableau{5A9} 19|97b30
-28K12 Cellule_codageHuffman[15|5] 30r8
-X 19 codagehuffman.adb
-4a7 Tableau{18|5A9} 7m22 7r22 8m22 8r22 12m22 12r22 12r56 12r98 15r14
+9P9*T_Cellule(7R9[25|34]) 25|38r39[34] 26|22r42[25|34] 38r19[25|34]
+13e10*Cle{character} 26|12r93[25|34] 61r91[25|34]
+14i10*Donnee{integer} 26|12r135[25|34] 43r34[25|34] 43r58[25|34] 61r132[25|34]
+22U14*Initialiser 26|7s10[25|34]
+45U14*Enregistrer 26|8s10[25|34] 12s10[25|34] 61s10[25|34]
+X 25 codagehuffman.ads
+8K9*codageHuffman 34E12 40l5 40e18 26|1b14 84l5 84t18
+9A9*T_Tableau(22|9P9[34]) 16r56 30r43 38c9 26|3r56 4r17 36r48 55r17 75r43
+11M9*T_byte 12r47 26|33r50
+12K12*Byte_file[9|43] 13r8 26|30r29
+16V13*Calcul_Frequence{9A9} 16>30 26|3b13 16l8 16t24
+16a30 texte{string} 26|3b30 11r16 12r44 12r78 12r120
+23V13*Compresser_ficher{string} 26|27b13 68l8 68t25
+26V13*Decompresser_fichier{string} 26>34 26|70b13 73l8 73t28
+26a34 texte{string} 26|70b34
+29U22 Traiter 29>30 29>54
+29i30 Frequence{integer}
+29e54 Caractere{character}
+30u14*Parcours_infixe 30>30 26|75b14 78l8 78t23
+30a30 Tableau{9A9} 26|75b30
+34K12 Cellule_codageHuffman[22|5] 36r8
+X 26 codagehuffman.adb
+4a7 Tableau{25|9A9} 7m22 7r22 8m22 8r22 12m22 12r22 12r56 12r98 15r14
 6i11 i{integer} 7r30 8r30 8r47
 11i11 i{integer} 12r50 12r84 12r126
-23V16 Tri{integer} 23b16 23=20 23>48 23>70 42l11 42t14 49s25
-23a20 Tableau{18|5A9} 28r19 30r16 32r16 32r41 33r16 33r37 39r10 39r37 40r10
-. 40r37
-23i48 premier{integer} 27r19 29r19
-23i70 dernier{integer} 28r27 29r28 39r45 40r18
-24i10 Index{integer} 27m10 31m16 31r25 32r24 33r45 39r18 40r45 41r17
-25i10 Pivot{integer} 28m10 30r37
-29i14 i{integer} 30r24 32r49 33r24
-44U17 Tri_rapide_borne 44b17 44=34 44>63 44>85 50s13 51s13 55l11 55t27 72s7
-44a34 Tableau{18|5A9} 49m29 49r29 50m30 51m30
-44i63 premier{integer} 48r13 49r38 50r39
-44i85 dernier{integer} 48r23 49r47 51r51
-45i10 variable{integer} 49m13 50r48 51r39
-57U17 Enlever_trou 57b17 57=30 68l11 68t23 71s7
-57a30 Tableau{18|5A9} 62r16 63r48 67m10
-58a10 Tableau_non_vide{18|5A9} 63m16 67r21
-59i10 indice_fin{integer} 63r33 64m16 64r30
-61i14 i{integer} 62r24 63r56
-77p7 Cellule{15|9P9[18|28]} 79m19 79r19
-82U14 Afficher_Arbre 82b14 82>29 85l8 85t22
-82p29 Cellule{15|9P9[18|28]}
+22U14 Afficher_Arbre 22b14 22>29 25l8 25t22
+22p29 Cellule{22|9P9[25|34]}
+29p7 file_txt{18|65P9} 58m12 58r12 59r29 60r25 63m14 63r14
+30p7 file_byte{9|53P9[25|12]}
+30p18 file_hff{9|53P9[25|12]}
+31e7 un_char{character} 60m35 61r44 61r77 61r118
+32a7 texte{string} 67r14
+33K15 Byte_file[9|43] 34r11
+36U17 Tri_selection 36b17 36=31 53l11 53t24 65s7
+36a31 Tableau{25|9A9} 43r19 43r43 49r23 50m13 50r27 51m13
+37i10 minimum{integer} 41m13 44m19 50r35 51r21
+38p10 Tampon{22|9P9[25|34]} 49m13 51r33
+40i14 I{integer} 41r24 43r27 49r31 50r21
+42i17 J{integer} 43r51 44r30
+55a7 Tableau{25|9A9} 61m22 61r22 61r55 61r96 65m21 65r21
+X 40 s-sequio.ads
+63P9*File_Type(43R9)
 

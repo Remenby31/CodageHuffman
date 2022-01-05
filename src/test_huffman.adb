@@ -52,7 +52,7 @@ procedure Test_Huffman is
    begin
       Tableau := Calcul_Frequence(texte);
       Put_Line("Calcul Frequence terminé !");
-      Tri_rapide(Tableau);
+      Tri_selection(Tableau);
       Put_Line("Ok");
 
    end Test_Calcul_Frequence;
