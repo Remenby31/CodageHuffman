@@ -16,6 +16,8 @@ package Cellule is
          Fils_droit : T_Cellule;
       end record;
 
+
+
    -- Initialiser la cellule
    procedure Initialiser(Cellule : out T_Cellule);
 

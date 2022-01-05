@@ -79,6 +79,7 @@ package body codagehuffman is
       taille_fichier : integer;
       un_char : Character;
 
+
       package Byte_file is new Ada.Sequential_IO(T_byte) ;
       use Byte_file ;
 

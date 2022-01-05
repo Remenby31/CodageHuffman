@@ -1,105 +1,96 @@
-V "GNAT Lib v9"
+V "GNAT Lib v2021"
 A -gnatA
-A -gnatc
-A -gnatwa
-A -gnaty3
-A -gnatya
-A -gnatyb
-A -gnatyc
-A -gnatye
-A -gnatyf
-A -gnatyh
-A -gnatyi
-A -gnatyk
-A -gnatyl
-A -gnatym
-A -gnatyn
-A -gnatyp
-A -gnatyr
-A -gnatys
-A -gnatyt
 A -mtune=generic
 A -march=x86-64
-P NO FX
+P ZX
 
 RN
+RV NO_ALLOCATORS
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_EXCEPTIONS
+RV NO_LOCAL_ALLOCATORS
 RV NO_RECURSION
 RV NO_STANDARD_STORAGE_POOLS
 RV NO_UNCHECKED_DEALLOCATION
 RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
-RV NO_ELABORATION_CODE
-RV SPARK_05
 
-U cellule%b		cellule.adb		0cac3d46 OO PK GE
+U cellule%b		cellule.adb		34b5b271 NE OO PK GE
 W ada%s			ada.ads			ada.ali
 W ada.unchecked_deallocation%s
 W cellule_exceptions%s	cellule_exceptions.ads	cellule_exceptions.ali
 
-U cellule%s		cellule.ads		8f9da19b EE OO PK GE
+U cellule%s		cellule.ads		1edd913d BN EE NE OO PK GE
 
-D ada.ads		20200312110721 76789da1 ada%s
-D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
-D cellule.ads		20211215132830 8f9da19b cellule%s
-D cellule.adb		20211215132830 cb1b2a21 cellule%b
-D cellule_exceptions.ads  20211215132830 a7d9d5de cellule_exceptions%s
+D ada.ads		20210520051132 76789da1 ada%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
+D cellule.ads		20220103151026 1edd913d cellule%s
+D cellule.adb		20211215153426 625d592a cellule%b
+D cellule_exceptions.ads  20211215153426 8b9dd603 cellule_exceptions%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [cellule standard 5 9 none]
 X 1 ada.ads
-16K9*Ada 20e8 4|2r6 7r10
-X 2 a-uncdea.ads
-17+9 Object 4|7r38
-18P9 Name(17+9) 4|7r59
-20u15*Unchecked_Deallocation 4|2w10 7r14
-X 3 cellule.ads
-2+9 T_Cle 26r60 28r57 32r64 36r62 42r46 55r16 4|51r60 62r58 76r64 85r62
-3+9 T_Donnee 28r71 32r84 42r68 54r19 4|62r72 76r84
-5k9*Cellule 2z9 3z9 48E9 59l5 59e12 4|4b14 110l5 110t12
-6P9*T_Cellule 9r40 11r37 15r35 18r34 23r38 26r39 28r36 32r43 36r41 43r49
-. 50c9 56r24 57r23 4|7r67 9r39 14r36 23r34 32r37 43r38 51r39 62r37 76r43
-. 77r15 85r41 97r47
-9U14*Initialiser 9<26 4|9b14 12l8 12t19 79s7
-9p26 Cellule{6P9} 4|9b26 11m7
-11U14*Vider 11=20 4|32b14 37s10 38s10 41l8 41t13
-11p20 Cellule{6P9} 12r24 4|32b20 34r19 37r16 38r16 39m15
-15V13*Est_Vide{boolean} 12s14 15>22 20s32 4|14b13 20t7 25s10 34s10 45s10
-. 45s47 53s10 64s10 87s10 99s14 105s14
-15p22 Cellule{6P9} 4|14b23 16r10
-18V13*Taille{integer} 18>21 19r14 20r11 37s15 37s34 4|23b13 28s21 28s54 30l8
+16K9*Ada 20e8 5|2r6 7r10
+X 3 a-uncdea.ads
+17+9 Object 5|7r38
+18P9 Name(17+9) 5|7r59
+20u15*Unchecked_Deallocation 5|2w10 7r14
+X 4 cellule.ads
+2+9 T_Cle 13r16 39r60 41r57 45r64 49r62 55r44 5|51r60 62r58 76r64 88r62
+3+9 T_Donnee 14r19 41r71 45r84 55r66 5|62r72 76r84
+5k9*Cellule 2z9 3z9 60l5 60e12 5|4b14 128l5 128t12
+7R9*T_Element 9r29 11c9 17e17 5|7r48 80r26
+9P9*T_Cellule(7R9) 15r24 16r23 22r40 24r37 28r35 31r34 36r38 39r39 41r36
+. 45r43 49r41 56r47 5|7r67 9r39 14r36 23r34 32r37 43r38 51r39 62r37 76r43
+. 88r41 89r22 115r47
+13*10 Cle{2+9} 5|55r25 66r25 81r29 93r26 121m31
+14*10 Donnee{3+9} 5|67r29 82m27 121m48
+15p10 Fils_gauche{9P9} 5|28r73 38m28 45r68 58r86 68r38 69r39 94r82 99r43
+. 105r39 106m34 118r39 119m43
+16p10 Fils_droit{9P9} 5|28r40 37m28 45r31 58r42 71r39 84m39 94r40 98r40 101r43
+. 107r39 108m34 122r39 123m43
+22U14*Initialiser 22<26 5|9b14 12l8 12t19
+22p26 Cellule{9P9} 5|9b26 11m7
+24U14*Vider 24=20 5|32b14 37s10 38s10 41l8 41t13
+24p20 Cellule{9P9} 25r24 5|32b20 34r19 37r16 38r16 39m15
+28V13*Est_Vide{boolean} 25s14 28>22 33s32 5|14b13 20t7 25s10 34s10 45s10
+. 45s47 53s10 64s10 91s11 94s19 94s61 98s19 117s14 118s18 122s18
+28p22 Cellule{9P9} 5|14b23 16r10
+31V13*Taille{integer} 31>21 32r14 33r11 50s15 50s34 5|23b13 28s21 28s54 30l8
 . 30t14
-18p21 Cellule{6P9} 20r42 4|23b21 25r19 28r28 28r61
-23V13*Est_Feuille{boolean} 23>25 4|43b13 49l8 49t19 102s10
-23p25 Cellule{6P9} 4|43b25 45r19 45r56
-26V13*Cle_Presente{boolean} 26>26 26>51 38s14 4|51b13 58s17 58s61 60l8 60t20
-. 68s13
-26p26 Cellule{6P9} 4|51b26 53r19 55r13 58r30 58r74
-26*51 Cle{2+9} 4|51b51 55r31 58r53 58r98
-28V13*La_Donnee{3+9} 28>23 28>48 4|62b13 69s17 71s17 73l8 73t17
-28p23 Cellule{6P9} 4|62b24 64r19 66r13 67r17 68r26 69r27 71r27
-28*48 Cle{2+9} 4|62b49 66r31 68r51 69r52 71r51
-32U14*Enregistrer 32=26 32>55 32>72 4|76b14 83l8 83t19
-32p26 Cellule{6P9} 4|76b26 82r7
-32*55 Cle{2+9} 4|76b55 80r24
-32*72 Donnee{3+9} 4|76b72 81r27
-36U14*Supprimer 36=24 36>53 4|85b14 90s10 91s10 95l8 95t17
-36p24 Cellule{6P9} 37r23 37r42 38r28 4|85b24 87r19 89r13 90r20 91r20 93m15
-36*53 Cle{2+9} 38r37 4|85b53 89r32 90r44 91r43
-42U24 Traiter 42=33 42=53 4|103s10
-42*33 Cle{2+9}
-42*53 Donnee{3+9}
-43u16*Parcours_Infixe 43=32 4|97b14 100s10 106s10 108l8 108t23
-43p32 Cellule{6P9} 4|97b30 99r23 100r26 102r22 103r18 103r35 105r23 106r26
-48R9 T_Element 50r29 52c9 58e17 4|7r48
-54*10 Donnee{3+9} 4|67r29 81m17 103m47
-55*10 Cle{2+9} 4|55r25 66r25 80m17 89r25 103m30
-56p10 Fils_gauche{6P9} 4|28r73 38m28 45r68 58r86 68r38 69r39 90m32 99r35
-. 100m38
-57p10 Fils_droit{6P9} 4|28r40 37m28 45r31 58r42 71r39 82m19 91m32 105r35
-. 106m38
-X 4 cellule.adb
-6U14 Free[2|20] 39s10 93s10
-77p7 C_new{3|6P9} 79m19 79r19 80r7 81r7 82r33
-X 5 cellule_exceptions.ads
-2K9*Cellule_Exceptions 4|1w6 1r38 5|6e23
-4X9*Cle_Absente_Exception 4|65r16 88r16
+31p21 Cellule{9P9} 33r42 5|23b21 25r19 28r28 28r61
+36V13*Est_Feuille{boolean} 36>25 5|43b13 49l8 49t19
+36p25 Cellule{9P9} 5|43b25 45r19 45r56
+39V13*Cle_Presente{boolean} 39>26 39>51 51s14 5|51b13 58s17 58s61 60l8 60t20
+. 68s13 105s14 107s14
+39p26 Cellule{9P9} 5|51b26 53r19 55r13 58r30 58r74
+39*51 Cle{2+9} 5|51b51 55r31 58r53 58r98
+41V13*La_Donnee{3+9} 41>23 41>48 5|62b13 69s17 71s17 73l8 73t17
+41p23 Cellule{9P9} 5|62b24 64r19 66r13 67r17 68r26 69r27 71r27
+41*48 Cle{2+9} 5|62b49 66r31 68r51 69r52 71r51
+45U14*Enregistrer 45=26 45>55 45>72 5|76b14 84s15 86l8 86t19
+45p26 Cellule{9P9} 5|76b26 79r10 80m11 81r17 82r15 84r27
+45*55 Cle{2+9} 5|76b55 80r37 81r35 84r51
+45*72 Donnee{3+9} 5|76b72 80r41 82r37 84r56
+49U14*Supprimer 49=24 49>53 5|88b14 106s12 108s12 113l8 113t17
+49p24 Cellule{9P9} 50r23 50r42 51r28 5|88b24 91r20 93r14 94r28 94r70 97r31
+. 98r28 99m20 99r31 101m20 101r31 105r27 106r22 107r27 108r22
+49*53 Cle{2+9} 51r37 5|88b53 93r32 105r51 106r46 107r50 108r45
+55U22 Traiter 55=31 55=51 5|121s11
+55*31 Cle{2+9}
+55*51 Donnee{3+9}
+56u14*Parcours_Infixe 56=30 5|115b14 119s15 123s15 126l8 126t23
+56p30 Cellule{9P9} 5|115b30 117r23 118r27 119r31 121r19 121r36 122r27 123r31
+X 5 cellule.adb
+6U14 Free[3|20] 39s10 104s12
+89p8 A_Supprimer{4|9P9} 97m16 104m17 104r17
+X 6 cellule_exceptions.ads
+2K9*Cellule_Exceptions 5|1w6 1r38 6|6e23
+4X9*Cle_Absente_Exception 5|65r16 92r18 110r18
+5X9*Suppression_impossible_Exception 5|95r22
 

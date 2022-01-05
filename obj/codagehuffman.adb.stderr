@@ -1,2 +1,1 @@
-codagehuffman.adb:52:07: error: no "loop" for this "end loop"
-codagehuffman.adb:56:04: error: "end Tri_rapide;" expected
+codagehuffman.adb:75:04: error: missing "return" statement in function body

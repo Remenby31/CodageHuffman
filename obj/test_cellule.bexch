@@ -1,0 +1,21 @@
+[GENERATED OBJECT FILE]
+b__test_cellule.o
+[PROJECT FILES]
+C:\Users\cruve\github\CodageHuffman\codagehuffman.gpr
+20211230200922 f7a6cb1ce58089775ba10883e41f4f30
+[BOUND OBJECT FILES]
+C:\Users\cruve\github\CodageHuffman\obj\cellule_exceptions.o
+C:\Users\cruve\github\CodageHuffman\obj\cellule.o
+C:\Users\cruve\github\CodageHuffman\obj\test_cellule.o
+[GENERATED SOURCE FILES]
+b__test_cellule.ads
+b__test_cellule.adb
+b__test_cellule.ali
+[RESULTING OPTIONS]
+-LC:\Users\cruve\github\CodageHuffman\obj\
+-LC:\Users\cruve\github\CodageHuffman\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
