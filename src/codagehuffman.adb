@@ -52,11 +52,37 @@ package body codagehuffman is
          end loop;
       end Tri_selection;
 
-      function Construire_Arbre(Tableau: in out) return T_Cellule is
+      function Construire_Arbre(Tableau: in out T_Tableau) return T_Cellule is
+
+         function dernierIndice(Tableau : in T_Tableau) return Integer is
+            indice_dernier : Integer :=1;
+         begin
+            while indice_dernier < Tableau'Length or Est_Vide(Tableau(indice_dernier)) loop
+               indice_dernier := indice_dernier + 1;
+            end loop;
+            return indice_dernier;
+         end dernierIndice;
+
          Cellule : T_Cellule;
+         indice_cellule : Integer;
+
       begin
-         for i in 1..(Tableau'Length-1) loop
-            end loop
+         while dernierIndice(Tableau) > 1 loop
+            indice_cellule := 1;
+            indice_fin := dernierIndice(Tableau);
+            i := 1;
+            while i+1 <= indice_fin loop
+               Initialiser(Cellule);
+               Cellule.all.Fils_gauche := Tableau(i);
+               Cellule.all.Fils_droit := Tableau(i+1);
+               Cellule.all.Donnee := Tableau(i).all.donnee + Tableau(i+1).all.donnee;
+               Initialiser(Tableau(i));
+               Initialiser(Tableau(i+1));
+               Tableau(indice_cellule) := Cellule;
+               indice_cellule := indice_cellule + 1;
+               i = i + 2;
+            end loop;
+         end loop;
          return Cellule;
       end Construire_Arbre;
 
