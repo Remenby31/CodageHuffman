@@ -67,9 +67,9 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
-D cellule.ads		20220103151026 1edd913d cellule%s
-D cellule.adb		20211215153426 625d592a cellule%b
-D cellule_exceptions.ads  20211215153426 8b9dd603 cellule_exceptions%s
+D cellule.ads		20220110152434 1edd913d cellule%s
+D cellule.adb		20220110152434 625d592a cellule%b
+D cellule_exceptions.ads  20220110152408 8b9dd603 cellule_exceptions%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -101,7 +101,7 @@ D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
-D test_cellule.adb	20211215153426 80fa72e3 test_cellule%b
+D test_cellule.adb	20220110152434 80fa72e3 test_cellule%b
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [test_cellule standard 7 11 none]

@@ -18,12 +18,12 @@ RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV NO_OBSOLESCENT_FEATURES
 
-U ada_main%b		b__test_huffman.adb	7f701c98 OO PK IL
+U ada_main%b		b__test_huffman.adb	3239d650 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 Z system%s		system.ads		system.ali
 
-U ada_main%s		b__test_huffman.ads	642f6045 EE NE OO PK IL
+U ada_main%s		b__test_huffman.ads	4a0c999d EE NE OO PK IL
 W system%s		system.ads		system.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
@@ -31,8 +31,8 @@ W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 D ada.ads		20210520051132 76789da1 ada%s
 D a-except.ads		20210520051128 946f3014 ada.exceptions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D b__test_huffman.ads	20220105152742 97bd4cd1 ada_main%s
-D b__test_huffman.adb	20220105152742 7ca2605d ada_main%b
+D b__test_huffman.ads	20220110172336 b99eb509 ada_main%s
+D b__test_huffman.adb	20220110172336 1fc8534d ada_main%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-parame.ads		20210520051134 4752c4cb system.parameters%s
 D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
@@ -43,28 +43,28 @@ G a e
 G c Z s b [adainit ada_main 29 14 none]
 G c Z s b [adafinal ada_main 32 14 none]
 G c Z s b [main ada_main 35 13 none]
-G c Z b b [Tsec_default_sized_stacksBIP ada_main 39 4 none]
-G c Z b b [finalize_library ada_main 46 14 none]
-G c Z b b [ada_main_program ada_main 232 14 none]
+G c Z b b [Tsec_default_sized_stacksBIP ada_main 40 4 none]
+G c Z b b [finalize_library ada_main 47 14 none]
+G c Z b b [ada_main_program ada_main 243 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 5|6r6
 X 2 a-except.ads
 44K13*Exceptions 289e19 5|6w10
 X 4 b__test_huffman.ads
-6K9*ada_main 539l5 539e13 5|8b14 279l5 279t13
-8i4*gnat_argc{integer} 12m22 12r22 5|252r10 253m10
-9m4*gnat_argv{6|67M9} 13m22 13r22 5|254m10
-10m4*gnat_envp{6|67M9} 14m22 14r22 5|256m7
-16i4*gnat_exit_status{integer} 17m22 17r22 5|263r15
+6K9*ada_main 542l5 542e13 5|8b14 290l5 290t13
+8i4*gnat_argc{integer} 12m22 12r22 5|263r10 264m10
+9m4*gnat_argv{6|67M9} 13m22 13r22 5|265m10
+10m4*gnat_envp{6|67M9} 14m22 14r22 5|267m7
+16i4*gnat_exit_status{integer} 17m22 17r22 5|274r15
 19a4*GNAT_Version{string} 21r22 23r54
 23m4*GNAT_Version_Address{6|67M9} 24r22
-26a4*Ada_Main_Program_Name{string} 27r22 5|248r52
-29U14*adainit 30i<c,adainit>22 5|96b14 230l8 230t15 259s7
-32U14*adafinal 33i<c,adafinal>22 5|77b14 91l8 91t16 261s7
-35V13*main{integer} 36>7 37>7 38>7 40i<c,main>22 5|235b13 264t7
-36i7 argc{integer} 5|236b7 253r23
-37m7 argv{6|67M9} 5|237b7 254r23
-38m7 envp{6|67M9} 5|238b7 256r20
+26a4*Ada_Main_Program_Name{string} 27r22 5|259r52
+29U14*adainit 30i<c,adainit>22 5|104b14 241l8 241t15 270s7
+32U14*adafinal 33i<c,adafinal>22 5|85b14 99l8 99t16 272s7
+35V13*main{integer} 36>7 37>7 38>7 40i<c,main>22 5|246b13 275t7
+36i7 argc{integer} 5|247b7 264r23
+37m7 argv{6|67M9} 5|248b7 265r23
+38m7 envp{6|67M9} 5|249b7 267r20
 42M9*Version_32 43r22 45r22 47r22 49r22 51r22 53r22 55r22 57r22 59r22 61r22
 . 63r22 65r22 67r22 69r22 71r22 73r22 75r22 77r22 79r22 81r22 83r22 85r22
 . 87r22 89r22 91r22 93r22 95r22 97r22 99r22 101r22 103r22 105r22 107r22 109r22
@@ -79,7 +79,7 @@ X 4 b__test_huffman.ads
 . 287r22 289r22 291r22 293r22 295r22 297r22 299r22 301r22 303r22 305r22 307r22
 . 309r22 311r22 313r22 315r22 317r22 319r22 321r22 323r22 325r22 327r22 329r22
 . 331r22 333r22 335r22 337r22 339r22 341r22 343r22 345r22 347r22 349r22 351r22
-. 353r22 355r22 357r22 359r22 361r22 363r22 365r22 367r22 369r22
+. 353r22 355r22 357r22 359r22 361r22 363r22 365r22 367r22 369r22 371r22
 43m4*u00001{42M9} 44r22
 45m4*u00002{42M9} 46r22
 47m4*u00003{42M9} 48r22
@@ -244,85 +244,88 @@ X 4 b__test_huffman.ads
 365m4*u00162{42M9} 366r22
 367m4*u00163{42M9} 368r22
 369m4*u00164{42M9} 370r22
+371m4*u00165{42M9} 372r22
 X 5 b__test_huffman.adb
-10i4 E067{short_integer} 10m46 10r46 193m7 193r15
-11i4 E006{short_integer} 11m46 11r46 199m7 199r15
-12i4 E011{short_integer} 12m46 12r46 196m7 196r15
-13i4 E023{short_integer} 13m46 13r46 173m7 173r15
-14i4 E036{short_integer} 14m46 14r46 175m7 175r15
-15i4 E063{short_integer} 15m46 15r46 177m7 177r15
-16i4 E048{short_integer} 16m46 16r46 179m7 179r15
-17i4 E050{short_integer} 17m46 17r46 181m7 181r15
-18i4 E054{short_integer} 18m46 18r46 183m7 183r15
-19i4 E073{short_integer} 19m46 19r46 185m7 185r15
-20i4 E024{short_integer} 20m46 20r46 187m7 187r15
-21i4 E075{short_integer} 21m46 21r46 189m7 189r15
-22i4 E043{short_integer} 22m46 22r46 191m7 191r15
-23i4 E019{short_integer} 23m46 23r46 195m7 195r15
-24i4 E035{short_integer} 24m46 24r46 198m7 198r15
-25i4 E100{short_integer} 25m46 25r46 201m7 201r15
-26i4 E106{short_integer} 26m46 26r46 204m7 204r15
-27i4 E098{short_integer} 27m46 27r46 207m7 207r15
-28i4 E096{short_integer} 28m46 28r46 209m7 209r15
-29i4 E122{short_integer} 29m46 29r46 211m7 211r15
-30i4 E121{short_integer} 30m46 30r46 214m7 214r15
-31i4 E119{short_integer} 31m46 31r46 216m7 216r15
-32i4 E118{short_integer} 32m46 32r46 66m10 66r18 218m7 218r15
-33i4 E138{short_integer} 33m46 33r46 55m7 55r15 221m7 221r15
-34i4 E094{short_integer} 34m46 34r46 48m7 48r15 224m7 224r15
-35i4 E156{short_integer} 35m46 35r46 226m7 226r15
-36i4 E155{short_integer} 36m46 36r46 227m7 227r15
-37i4 E158{short_integer} 37m46 37r46 229m7 229r15
-39a4 Sec_Default_Sized_Stacks(8|45R9) 164m32 164r32
-41a4 Local_Priority_Specific_Dispatching{string} 152r9
-42a4 Local_Interrupt_States{string} 155r27
-44b4 Is_Elaborated{boolean} 85r14 88m7 141r10 144m7
-46U14 finalize_library 46b14 75l8 75t24 168r35
-50U20*F1 51b<ada,ada__text_io__finalize_spec>30 53s10
-57U20*F2 58b<ada,ada__strings__unbounded__finalize_spec>30 60s10
-63U20*F3 64b<ada,system__file_io__finalize_body>30 67s10
-70U20*Reraise_Library_Exception_If_Any 71b<ada,__gnat_reraise_library_exception_if_any>33
-. 73s10
-78U17*s_stalib_adafinal 79b<ada,system__standard_library__adafinal>27 90s7
-81U17*Runtime_Finalize 82b<c,__gnat_runtime_finalize>25 89s7
-93P9 No_Param_Proc 94r28 133r34
-97i7*Main_Priority{integer} 98m25 98r25 145m7
-99i7*Time_Slice_Value{integer} 100m25 100r25 146m7
-101e7*WC_Encoding{character} 102m25 102r25 147m7
-103e7*Locking_Policy{character} 104m25 104r25 148m7
-105e7*Queuing_Policy{character} 106m25 106r25 149m7
-107e7*Task_Dispatching_Policy{character} 108m25 108r25 150m7
-109m7*Priority_Specific_Dispatching{6|67M9} 110m25 110r25 151m7
-111i7*Num_Specific_Dispatching{integer} 112m25 112r25 153m7
-113i7*Main_CPU{integer} 114m25 114r25 154m7
-115m7*Interrupt_States{6|67M9} 116m25 116r25 155m7
-117i7*Num_Interrupt_States{integer} 118m25 118r25 156m7
-119i7*Unreserve_All_Interrupts{integer} 120m25 120r25 157m7
-121i7*Detect_Blocking{integer} 122m25 122r25 158m7
-123i7*Default_Stack_Size{integer} 124m25 124r25 159m7
-125i7*Default_Secondary_Stack_Size{7|58I9} 126m25 126r25 162m7
-127m7*Bind_Env_Addr{6|67M9} 128m25 128r25
-130U17*Runtime_Initialize 130>37 131b<c,__gnat_runtime_initialize>25 166s7
-130i37 Install_Handler{integer}
-133p7*Finalize_Library_Objects{93P9} 134m25 134r25 168m7
-135i7*Binder_Sec_Stacks_Count{natural} 136m27 136r27 163m7
-137m7*Default_Sized_SS_Pool{6|67M9} 138m27 138r27 164m7
-232U14 Ada_Main_Program 233b<ada,_ada_test_huffman>24 260s7
-241U17*Initialize 241>29 242b<c,__gnat_initialize>25 258s7
-241m29 Addr{6|67M9}
-244U17*Finalize 245b<c,__gnat_finalize>25 262s7
-246a7 SEH(integer) 258m19 258r19
-248m7 Ensure_Reference{6|67M9} 249r24
+10i4 E067{short_integer} 10m46 10r46 201m7 201r15
+11i4 E006{short_integer} 11m46 11r46 207m7 207r15
+12i4 E011{short_integer} 12m46 12r46 204m7 204r15
+13i4 E023{short_integer} 13m46 13r46 181m7 181r15
+14i4 E036{short_integer} 14m46 14r46 183m7 183r15
+15i4 E063{short_integer} 15m46 15r46 185m7 185r15
+16i4 E048{short_integer} 16m46 16r46 187m7 187r15
+17i4 E050{short_integer} 17m46 17r46 189m7 189r15
+18i4 E054{short_integer} 18m46 18r46 191m7 191r15
+19i4 E073{short_integer} 19m46 19r46 193m7 193r15
+20i4 E024{short_integer} 20m46 20r46 195m7 195r15
+21i4 E075{short_integer} 21m46 21r46 197m7 197r15
+22i4 E043{short_integer} 22m46 22r46 199m7 199r15
+23i4 E019{short_integer} 23m46 23r46 203m7 203r15
+24i4 E035{short_integer} 24m46 24r46 206m7 206r15
+25i4 E100{short_integer} 25m46 25r46 209m7 209r15
+26i4 E106{short_integer} 26m46 26r46 212m7 212r15
+27i4 E098{short_integer} 27m46 27r46 215m7 215r15
+28i4 E096{short_integer} 28m46 28r46 217m7 217r15
+29i4 E122{short_integer} 29m46 29r46 219m7 219r15
+30i4 E121{short_integer} 30m46 30r46 222m7 222r15
+31i4 E119{short_integer} 31m46 31r46 224m7 224r15
+32i4 E118{short_integer} 32m46 32r46 74m10 74r18 226m7 226r15
+33i4 E138{short_integer} 33m46 33r46 63m7 63r15 229m7 229r15
+34i4 E094{short_integer} 34m46 34r46 56m7 56r15 232m7 232r15
+35i4 E161{short_integer} 35m46 35r46 49m7 49r15 235m7 235r15
+36i4 E156{short_integer} 36m46 36r46 237m7 237r15
+37i4 E155{short_integer} 37m46 37r46 238m7 238r15
+38i4 E158{short_integer} 38m46 38r46 240m7 240r15
+40a4 Sec_Default_Sized_Stacks(8|45R9) 172m32 172r32
+42a4 Local_Priority_Specific_Dispatching{string} 160r9
+43a4 Local_Interrupt_States{string} 163r27
+45b4 Is_Elaborated{boolean} 93r14 96m7 149r10 152m7
+47U14 finalize_library 47b14 83l8 83t24 176r35
+51U20*F1 52b<ada,system__sequential_io__finalize_spec>30 54s10
+58U20*F2 59b<ada,ada__text_io__finalize_spec>30 61s10
+65U20*F3 66b<ada,ada__strings__unbounded__finalize_spec>30 68s10
+71U20*F4 72b<ada,system__file_io__finalize_body>30 75s10
+78U20*Reraise_Library_Exception_If_Any 79b<ada,__gnat_reraise_library_exception_if_any>33
+. 81s10
+86U17*s_stalib_adafinal 87b<ada,system__standard_library__adafinal>27 98s7
+89U17*Runtime_Finalize 90b<c,__gnat_runtime_finalize>25 97s7
+101P9 No_Param_Proc 102r28 141r34
+105i7*Main_Priority{integer} 106m25 106r25 153m7
+107i7*Time_Slice_Value{integer} 108m25 108r25 154m7
+109e7*WC_Encoding{character} 110m25 110r25 155m7
+111e7*Locking_Policy{character} 112m25 112r25 156m7
+113e7*Queuing_Policy{character} 114m25 114r25 157m7
+115e7*Task_Dispatching_Policy{character} 116m25 116r25 158m7
+117m7*Priority_Specific_Dispatching{6|67M9} 118m25 118r25 159m7
+119i7*Num_Specific_Dispatching{integer} 120m25 120r25 161m7
+121i7*Main_CPU{integer} 122m25 122r25 162m7
+123m7*Interrupt_States{6|67M9} 124m25 124r25 163m7
+125i7*Num_Interrupt_States{integer} 126m25 126r25 164m7
+127i7*Unreserve_All_Interrupts{integer} 128m25 128r25 165m7
+129i7*Detect_Blocking{integer} 130m25 130r25 166m7
+131i7*Default_Stack_Size{integer} 132m25 132r25 167m7
+133i7*Default_Secondary_Stack_Size{7|58I9} 134m25 134r25 170m7
+135m7*Bind_Env_Addr{6|67M9} 136m25 136r25
+138U17*Runtime_Initialize 138>37 139b<c,__gnat_runtime_initialize>25 174s7
+138i37 Install_Handler{integer}
+141p7*Finalize_Library_Objects{101P9} 142m25 142r25 176m7
+143i7*Binder_Sec_Stacks_Count{natural} 144m27 144r27 171m7
+145m7*Default_Sized_SS_Pool{6|67M9} 146m27 146r27 172m7
+243U14 Ada_Main_Program 244b<ada,_ada_test_huffman>24 271s7
+252U17*Initialize 252>29 253b<c,__gnat_initialize>25 269s7
+252m29 Addr{6|67M9}
+255U17*Finalize 256b<c,__gnat_finalize>25 273s7
+257a7 SEH(integer) 269m19 269r19
+259m7 Ensure_Reference{6|67M9} 260r24
 X 6 system.ads
-37K9*System 4|3w6 4r6 5r6 9r16 10r16 23r36 37r14 38r14 5|39r57 39r90 109r39
-. 115r26 125r38 127r23 137r31 162r39 237r14 238r14 241r36 248r34 6|193e11
-67M9*Address 4|9r23 10r23 23r43 37r21 38r21 5|109r46 115r33 127r30 137r38
-. 237r21 238r21 241r43 248r41
+37K9*System 4|3w6 4r6 5r6 9r16 10r16 23r36 37r14 38r14 5|40r57 40r90 117r39
+. 123r26 133r38 135r23 145r31 170r39 248r14 249r14 252r36 259r34 6|193e11
+67M9*Address 4|9r23 10r23 23r43 37r21 38r21 5|117r46 123r33 135r30 145r38
+. 248r21 249r21 252r43 259r41
 X 7 s-parame.ads
-51K16*Parameters 4|4w13 5|39r97 125r45 162r46 7|185e22
-58I9*Size_Type<long_long_integer> 5|125r56
-95i4*Runtime_Default_Sec_Stack_Size{58I9} 5|39r108 162r57
+51K16*Parameters 4|4w13 5|40r97 133r45 170r46 7|185e22
+58I9*Size_Type<long_long_integer> 5|133r56
+95i4*Runtime_Default_Sec_Stack_Size{58I9} 5|40r108 170r57
 X 8 s-secsta.ads
-37K16*Secondary_Stack 4|5w13 5|39r64 8|443e27
-45R9*SS_Stack 5|39r80 8|343e14
+37K16*Secondary_Stack 4|5w13 5|40r64 8|443e27
+45R9*SS_Stack 5|40r80 8|343e14
 

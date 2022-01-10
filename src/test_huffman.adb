@@ -10,21 +10,10 @@ procedure Test_Huffman is
      new Cellule(T_Cle => Character, T_Donnee => Integer);
    use Cellule_codageHuffman;
 
+   type T_TabDonnee is array (1..10) of Integer;
+   type T_TabCle is array (1..10) of Unbounded_String;
 
-   function Avec_Guillemets (S: Unbounded_String) return String is
-   begin
-      return '"' & To_String (S) & '"';
-   end;
 
-   function "&" (Left: String; Right: Unbounded_String) return String is
-   begin
-      return Left & Avec_Guillemets (Right);
-   end;
-
-   function "+" (Item : in String) return Unbounded_String
-                 renames To_Unbounded_String;
-
-   -- Afficher une Unbounded_String et un entier.
    procedure Afficher (Frequence : in Integer; Caractere : in Character) is
    begin
       Put (Frequence,1);
@@ -33,43 +22,20 @@ procedure Test_Huffman is
       New_Line;
    end Afficher;
 
-   type T_TabDonnee is array (1..10) of Integer;
-   type T_TabCle is array (1..10) of Unbounded_String;
-
-   Donnees : T_TabDonnee := (2, 5, 1, 1, 15, 2, 4, 3, 5,4);
-   Cles :  T_TabCle := (+"\n", +" ", +":", +"d", +"e", +"l", +"m", +"p", +"t", +"x");
-   Cles3 : String := "hfketyuiop";
-
    procedure Afficher is
      new codageHuffman.Parcours_Infixe(Afficher);
 
-
-   procedure Test_Calcul_Frequence is
-
-      texte : String := "exemple de texte :";
-      Tableau : T_Tableau;
-
+   procedure AfficherTableau(Tableau : in T_Tableau) is
    begin
-      Tableau := Calcul_Frequence(texte);
-      Put_Line("Calcul Frequence terminé !");
-      Tri_selection(Tableau);
-      Put_Line("Ok");
-
-   end Test_Calcul_Frequence;
-
-   procedure Test_Construire_Arbre is
-
-      texte : string := "exemple de texte :" ;
-      Tableau : T_Tableau;
-   begin
-      Construire_Arbre(Tableau);
-   end Test_Construire_Arbre;
-
+      for i in 1..Tableau'Range loop
+         if
+         end loop;
 
    procedure Test_Compresser_ficher is
       texte : String := "exemple de texte";
    begin
-      pragma Assert(Compresser_ficher(texte) = "11.001.11.000.1011.0101.11.011.10101.11.011.100.11.001.100.11.011.10100.0100.11.001.11.000.1011.100.11.011.100.11.000.1011.11.100.11.011.0101.11.001.11.000.11.0100") ;
+      Put_Line(Compresser_ficher);
+      pragma Assert(Compresser_ficher = "11.001.11.000.1011.0101.11.011.10101.11.011.100.11.001.100.11.011.10100.0100.11.001.11.000.1011.100.11.011.100.11.000.1011.11.100.11.011.0101.11.001.11.000.11.0100") ;
    end Test_Compresser_ficher;
 
    procedure Test_Decompresser_fichier is
@@ -80,10 +46,10 @@ procedure Test_Huffman is
 
 
 begin
-   Put_Line("Ok");
-   Test_Calcul_Frequence;
-   Put_Line("ok");
-   Test_Construire_Arbre;
+   Put_Line("Début du test de Compression...");
    Test_Compresser_ficher;
+   Put_Line(" - Ok"); New_Line;
+   Put_Line("Début du test de Décompression...");
    Test_Decompresser_fichier;
+   Put_Line(" - Ok"); New_Line;
 end Test_Huffman;

@@ -15,7 +15,7 @@ Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D cellule_exceptions.ads  20211215153426 8b9dd603 cellule_exceptions%s
+D cellule_exceptions.ads  20220110152408 8b9dd603 cellule_exceptions%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
 D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s

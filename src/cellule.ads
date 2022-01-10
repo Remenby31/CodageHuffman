@@ -4,6 +4,7 @@ generic
 
 package Cellule is
 
+
    type T_Element;
 
    type T_Cellule is access T_Element;

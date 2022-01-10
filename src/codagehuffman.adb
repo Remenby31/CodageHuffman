@@ -15,10 +15,6 @@ package body codagehuffman is
       return Tableau;
    end Calcul_Frequence;
 
-
-
-
-
    procedure Afficher_Arbre(Cellule : in T_Cellule) is
    begin
       Null;
@@ -28,8 +24,10 @@ package body codagehuffman is
 
       file_txt : Ada.Text_IO.file_type;			-- pour l'accÃ¨s par caractÃ¨re
       file_byte, file_hff : Byte_file.file_type;	-- pour l'accÃ¨s par byte
+      taille_fichier : integer;
       un_char : Character;
-      texte : String := "";
+      texte : constant String := "fichier.txt";
+
       package Byte_file is new Ada.Sequential_IO(T_byte);
       use Byte_file ;
 
@@ -65,13 +63,12 @@ package body codagehuffman is
 
          Cellule : T_Cellule;
          indice_cellule : Integer;
-
+         i : Integer;
       begin
          while dernierIndice(Tableau) > 1 loop
             indice_cellule := 1;
-            indice_fin := dernierIndice(Tableau);
             i := 1;
-            while i+1 <= indice_fin loop
+            while i+1 <= dernierIndice(Tableau) loop
                Initialiser(Cellule);
                Cellule.all.Fils_gauche := Tableau(i);
                Cellule.all.Fils_droit := Tableau(i+1);
@@ -80,23 +77,45 @@ package body codagehuffman is
                Initialiser(Tableau(i+1));
                Tableau(indice_cellule) := Cellule;
                indice_cellule := indice_cellule + 1;
-               i = i + 2;
+               i := i + 2;
             end loop;
          end loop;
          return Cellule;
       end Construire_Arbre;
 
+      procedure InitialiserTableau(Tableau : out T_Tableau) is
+         compteur : Integer := 0;
+      begin
+         for i in 1..256 loop
+            Initialiser(Tableau(i));
+            Enregistrer(Tableau(i),Character'Val(i - 1) , 0);
+         end loop;
+      end InitialiserTableau;
+
       Tableau : T_Tableau;
 
    begin
-      open(file_txt, In_File, Argument(1)); 	-- Ouverture du fichier en lecture
+      Put_Line("Entrée dans le programme");
+      open(file_txt, In_File, texte); 	-- Ouverture du fichier en lecture
+      taille_fichier := 0; 					-- Nb de caracteres dans le fichier
+
+      Put_Line("Fichier récupéré");
+      Put("Message enregistré : ");
+      InitialiserTableau(Tableau);
+
       while not end_of_file(file_txt) loop
          Get_immediate (file_txt, un_char);
-         Enregistrer(Tableau(Character'Pos(un_char)), Tableau(Character'Pos(un_char)).All.Cle, Tableau(Character'Pos(un_char)).All.Donnee + 1);
+         Enregistrer(Tableau(Character'Pos(un_char) + 1), un_char, La_Donnee(Tableau(Character'Pos(un_char) + 1),un_char) + 1);
+         Put(un_char); Put("|");
       end loop;
       close (file_txt);
+      New_Line;
+      Put_Line("Contenu du fichier récupéré");
+      Put("La donnée de o : ");Put(La_Donnee(Tableau(Character'Pos('o') + 1),'o'),1);New_Line;
 
+      Put("Début du Tri...");
       Tri_selection(Tableau);
+      Put_Line(" Ok");
 
       return texte;
    end Compresser_ficher;

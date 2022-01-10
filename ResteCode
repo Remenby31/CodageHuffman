@@ -1,0 +1,36 @@
+-- Fonction pour unbounded String
+function Avec_Guillemets (S: Unbounded_String) return String is
+begin
+   return '"' & To_String (S) & '"';
+end;
+
+function "&" (Left: String; Right: Unbounded_String) return String is
+begin
+   return Left & Avec_Guillemets (Right);
+end;
+
+function "+" (Item : in String) return Unbounded_String
+              renames To_Unbounded_String;
+
+--Fonctions Test
+
+procedure Test_Calcul_Frequence is
+
+   texte : String := "exemple de texte :";
+   Tableau : T_Tableau;
+
+begin
+   Tableau := Calcul_Frequence(texte);
+   Put_Line("Calcul Frequence terminé !");
+   Tri_selection(Tableau);
+   Put_Line("Ok");
+
+end Test_Calcul_Frequence;
+
+procedure Test_Construire_Arbre is
+
+   texte : string := "exemple de texte :" ;
+   Tableau : T_Tableau;
+begin
+   Construire_Arbre(Tableau);
+end Test_Construire_Arbre;

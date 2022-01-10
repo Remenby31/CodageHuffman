@@ -32,6 +32,7 @@ package body ada_main is
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "ada__strings__unbounded_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
+   E161 : Short_Integer; pragma Import (Ada, E161, "system__sequential_io_E");
    E156 : Short_Integer; pragma Import (Ada, E156, "cellule_exceptions_E");
    E155 : Short_Integer; pragma Import (Ada, E155, "cellule_E");
    E158 : Short_Integer; pragma Import (Ada, E158, "codagehuffman_E");
@@ -45,26 +46,33 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E094 := E094 - 1;
+      E161 := E161 - 1;
       declare
          procedure F1;
-         pragma Import (Ada, F1, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F1, "system__sequential_io__finalize_spec");
       begin
          F1;
       end;
-      E138 := E138 - 1;
+      E094 := E094 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "ada__strings__unbounded__finalize_spec");
+         pragma Import (Ada, F2, "ada__text_io__finalize_spec");
       begin
          F2;
       end;
+      E138 := E138 - 1;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "system__file_io__finalize_body");
+         pragma Import (Ada, F3, "ada__strings__unbounded__finalize_spec");
+      begin
+         F3;
+      end;
+      declare
+         procedure F4;
+         pragma Import (Ada, F4, "system__file_io__finalize_body");
       begin
          E118 := E118 - 1;
-         F3;
+         F4;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -222,6 +230,9 @@ package body ada_main is
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E094 := E094 + 1;
+      System.Sequential_Io'Elab_Spec;
+      System.Sequential_Io'Elab_Body;
+      E161 := E161 + 1;
       Cellule_Exceptions'Elab_Spec;
       E156 := E156 + 1;
       E155 := E155 + 1;
@@ -264,12 +275,12 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\cruve\github\CodageHuffman\obj\cellule_exceptions.o
-   --   C:\Users\cruve\github\CodageHuffman\obj\cellule.o
-   --   C:\Users\cruve\github\CodageHuffman\obj\codagehuffman.o
-   --   C:\Users\cruve\github\CodageHuffman\obj\test_huffman.o
-   --   -LC:\Users\cruve\github\CodageHuffman\obj\
-   --   -LC:\Users\cruve\github\CodageHuffman\obj\
+   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\cellule_exceptions.o
+   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\cellule.o
+   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\codagehuffman.o
+   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\test_huffman.o
+   --   -LC:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\
+   --   -LC:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\
    --   -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
    --   -static
    --   -lgnat

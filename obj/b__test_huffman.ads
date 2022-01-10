@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#46509622#;
+   u00001 : constant Version_32 := 16#6eec3849#;
    pragma Export (C, u00001, "test_huffmanB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -352,22 +352,24 @@ package ada_main is
    pragma Export (C, u00155, "celluleS");
    u00156 : constant Version_32 := 16#8b9dd603#;
    pragma Export (C, u00156, "cellule_exceptionsS");
-   u00157 : constant Version_32 := 16#53952e2b#;
+   u00157 : constant Version_32 := 16#63a93018#;
    pragma Export (C, u00157, "codagehuffmanB");
-   u00158 : constant Version_32 := 16#b4a21f19#;
+   u00158 : constant Version_32 := 16#fb543c81#;
    pragma Export (C, u00158, "codagehuffmanS");
-   u00159 : constant Version_32 := 16#fd83e873#;
-   pragma Export (C, u00159, "system__concat_2B");
-   u00160 : constant Version_32 := 16#2d5a86c4#;
-   pragma Export (C, u00160, "system__concat_2S");
-   u00161 : constant Version_32 := 16#2b70b149#;
-   pragma Export (C, u00161, "system__concat_3B");
-   u00162 : constant Version_32 := 16#248a0db1#;
-   pragma Export (C, u00162, "system__concat_3S");
-   u00163 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00163, "system__memoryB");
-   u00164 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00164, "system__memoryS");
+   u00159 : constant Version_32 := 16#df420fa3#;
+   pragma Export (C, u00159, "system__byte_swappingS");
+   u00160 : constant Version_32 := 16#4b99adb9#;
+   pragma Export (C, u00160, "system__sequential_ioB");
+   u00161 : constant Version_32 := 16#c596fbe4#;
+   pragma Export (C, u00161, "system__sequential_ioS");
+   u00162 : constant Version_32 := 16#26060166#;
+   pragma Export (C, u00162, "ada__command_lineB");
+   u00163 : constant Version_32 := 16#3cdef8c9#;
+   pragma Export (C, u00163, "ada__command_lineS");
+   u00164 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00164, "system__memoryB");
+   u00165 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00165, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -379,6 +381,7 @@ package ada_main is
    --  system.address_operations%b
    --  system.atomic_counters%s
    --  system.atomic_counters%b
+   --  system.byte_swapping%s
    --  system.img_int%s
    --  system.img_lli%s
    --  system.img_llli%s
@@ -417,10 +420,6 @@ package ada_main is
    --  system.wch_cnv%b
    --  system.compare_array_unsigned_8%s
    --  system.compare_array_unsigned_8%b
-   --  system.concat_2%s
-   --  system.concat_2%b
-   --  system.concat_3%s
-   --  system.concat_3%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.characters.handling%s
@@ -485,6 +484,8 @@ package ada_main is
    --  system.traceback.symbolic%s
    --  system.traceback.symbolic%b
    --  ada.exceptions%b
+   --  ada.command_line%s
+   --  ada.command_line%b
    --  ada.strings.search%s
    --  ada.strings.search%b
    --  ada.strings.utf_encoding%s
@@ -528,6 +529,8 @@ package ada_main is
    --  ada.text_io.generic_aux%b
    --  ada.integer_text_io%s
    --  ada.integer_text_io%b
+   --  system.sequential_io%s
+   --  system.sequential_io%b
    --  cellule_exceptions%s
    --  cellule%s
    --  cellule%b
