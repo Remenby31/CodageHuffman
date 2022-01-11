@@ -8,21 +8,22 @@ RN
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 
-U cellule_exceptions%s	cellule_exceptions.ads	6550df26 EE OO PK
+U cellule_exceptions%s	cellule_exceptions.ads	67ee4aae EE OO PK
 Z system%s		system.ads		system.ali
 Z system.exception_table%s  s-exctab.adb	s-exctab.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D cellule_exceptions.ads  20220111145906 6550df26 cellule_exceptions%s
+D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
 D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
 G a e
 X 3 cellule_exceptions.ads
-2K9*Cellule_Exceptions 7l5 7e23
+2K9*Cellule_Exceptions 8l5 8e23
 4X9*Cle_Absente_Exception
 5X4*Suppression_impossible_Exception
-6X4*Besoin_Cle_Pour_Fils
+6X4*Cle_Necessaire_Pour_Fils_Exception
+7X4*Cellule_Vide_Exception
 

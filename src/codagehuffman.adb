@@ -15,6 +15,30 @@ package body codagehuffman is
       return Tableau;
    end Calcul_Frequence;
 
+   procedure Afficher_Tableau(Tableau : in T_Tableau) is
+   begin
+      New_Line;
+      Put("Cle");Put("     |     ");Put("Donnee");New_Line;
+      for i in 1..256 loop
+         if Est_Vide(Tableau(i)) then
+            Put_Line("----- Vide -----");
+         else
+            Put(La_Cle_Direct(Tableau(i)));Put("  |     ");Put(La_Donnee_Direct(Tableau(i)),1);New_Line;
+         end if;
+      end loop;
+   end Afficher_Tableau;
+
+   procedure Afficher_Cellule(Cellule : in T_Cellule) is
+   begin
+      New_Line;
+      Put("Cle");Put("     |     ");Put("Donnee");New_Line;
+      if Est_Vide(Cellule) then
+         Put_Line("----- Vide -----");
+      else
+         Put(La_Cle_Direct(Cellule));Put("       |     ");Put(La_Donnee_Direct(Cellule),1);New_Line;
+      end if;
+   end Afficher_Cellule;
+
    function Compresser_ficher return String is
 
       file_txt : Ada.Text_IO.file_type;			-- pour l'accÃ¨s par caractÃ¨re
@@ -29,18 +53,18 @@ package body codagehuffman is
          minimum : Integer;
          Tampon : T_Cellule;
       begin
-         for I in 1..256 loop
+         for I in 1..254 loop
             minimum := I;
-            for J in 1..256 loop
+            for J in 2..255 loop
                if Tableau(I).all.Donnee > Tableau(J).all.Donnee then
                   minimum := J;
-               else
-                  null;
                end if;
             end loop;
-            Tampon := Tableau(I);
-            Tableau(I) := Tableau(minimum);
-            Tableau(minimum) := Tampon;
+            if minimum /= i then
+               Tampon := Tableau(I);
+               Tableau(I) := Tableau(minimum);
+               Tableau(minimum) := Tampon;
+            end if;
          end loop;
       end Tri_selection;
 
@@ -49,30 +73,37 @@ package body codagehuffman is
          function dernierIndice(Tableau : in T_Tableau) return Integer is
             indice_dernier : Integer :=1;
          begin
-            while indice_dernier < Tableau'Length or Est_Vide(Tableau(indice_dernier)) loop
+
+            while indice_dernier < Tableau'Length or La_Donnee_Direct(Tableau(indice_dernier)) = 0 loop
                indice_dernier := indice_dernier + 1;
             end loop;
             return indice_dernier;
          end dernierIndice;
 
          Cellule : T_Cellule;
-         indice_cellule : Integer;
+         indice_fin : Integer;
+         indice_newcellule : Integer;
          i : Integer;
       begin
-         while dernierIndice(Tableau) > 1 loop
-            indice_cellule := 1;
+         indice_fin := dernierIndice(Tableau);
+         while indice_fin > 1 loop
+            indice_newcellule := 1;
             i := 1;
             while i+1 <= dernierIndice(Tableau) loop
                Initialiser(Cellule);
+               Enregistrer(Cellule, Character'Val(0),Tableau(i).all.donnee + Tableau(i+1).all.donnee);
                Enregistrer_FilsGauche(Cellule,Tableau(i));
                Enregistrer_FilsDroit(Cellule,Tableau(i+1));
-               Cellule.all.Donnee := Tableau(i).all.donnee + Tableau(i+1).all.donnee;
+
                Initialiser(Tableau(i));
                Initialiser(Tableau(i+1));
-               Tableau(indice_cellule) := Cellule;
-               indice_cellule := indice_cellule + 1;
+               Tableau(indice_newcellule) := Cellule;
+               indice_newcellule := indice_newcellule + 1;
                i := i + 2;
+               indice_fin := indice_fin - 1;
             end loop;
+            Tri_selection(Tableau);
+
          end loop;
          return Cellule;
       end Construire_Arbre;
@@ -110,6 +141,8 @@ package body codagehuffman is
       Put("Début du Tri...");
       Tri_selection(Tableau);
       Put_Line(" Ok");
+      --Afficher_Tableau(Tableau);
+
 
       Put("Début de la construction de l'arbre...");
       Arbre := Construire_Arbre(Tableau);

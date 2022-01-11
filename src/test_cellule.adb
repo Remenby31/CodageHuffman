@@ -274,7 +274,10 @@ procedure Test_Cellule is
       Cellule2 : T_Cellule;
       Cellule_Mere : T_Cellule;
    begin
+      Put_Line ("=== Tester_Enregistrement_Fils..."); New_Line;
+
       Initialiser(Cellule_Mere);
+      Enregistrer(Cellule_Mere,+"a",1);
       Initialiser(Cellule1);
       Initialiser(Cellule2);
       Enregistrer_FilsDroit(Cellule_Mere,Cellule1);

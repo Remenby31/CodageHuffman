@@ -41,6 +41,8 @@ package Cellule is
 
    function La_Donnee(Cellule : in T_Cellule ; Cle : in T_Cle) return T_Donnee;
 
+   function La_Donnee_Direct(Cellule : in T_Cellule) return T_Donnee;
+   function La_Cle_Direct(Cellule : in T_Cellule) return T_Cle;
 
    -- Enregistrer une cellule d'une fiche avec ses fils droit et gauche, sa frequence et le caractere
    procedure Enregistrer(Cellule : in out T_Cellule ; Cle : in T_Cle ; Donnee : in T_Donnee);

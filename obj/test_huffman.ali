@@ -24,7 +24,7 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 
-U test_huffman%b	test_huffman.adb	bd01868c NE OO SU
+U test_huffman%b	test_huffman.adb	d0f0abd9 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -61,9 +61,9 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
-D cellule.ads		20220111144402 22f0c8bb cellule%s
-D cellule.adb		20220111144330 adc80659 cellule%b
-D cellule_exceptions.ads  20220110152408 8b9dd603 cellule_exceptions%s
+D cellule.ads		20220111213836 4f01e5ee cellule%s
+D cellule.adb		20220111214012 bbf59efa cellule%b
+D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
 D codagehuffman.ads	20220111142554 4550dfa8 codagehuffman%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
@@ -110,7 +110,7 @@ X 17 a-textio.ads
 X 21 cellule.ads
 2+9 T_Cle 48|10r18
 3+9 T_Donnee 48|10r38
-5k9*Cellule 65e12 48|5w6 10r10
+5k9*Cellule 67e12 48|5w6 10r10
 X 24 codagehuffman.ads
 8K9*codageHuffman 37e18 48|4w6 4r25
 23V13*Compresser_ficher{string} 48|20s16 21s21

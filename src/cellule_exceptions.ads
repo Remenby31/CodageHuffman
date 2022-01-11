@@ -3,5 +3,6 @@ package Cellule_Exceptions is
 
 	Cle_Absente_Exception  : Exception;	-- un caractere est absente d'une cellule
    Suppression_impossible_Exception : Exception; -- On ne peux pas supprimer une branche liÃ©e Ã  deux Fils
-   Besoin_Cle_Pour_Fils   : Exception; --Il faut d'abord Enregistrer une clef avant d'jouter un Fils.
+   Cle_Necessaire_Pour_Fils_Exception   : Exception; --Il faut d'abord Enregistrer une clé avant d'ajouter un Fils.
+   Cellule_Vide_Exception : Exception; -- La cellule est vide, donc il n'y a pas de donnée
 end Cellule_Exceptions;

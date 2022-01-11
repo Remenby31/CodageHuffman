@@ -59,7 +59,7 @@ package body Cellule is
       end if;
    end Cle_Presente;
 
-   function La_Donnee (Cellule : in T_Cellule ; Cle : in T_Cle) return T_Donnee is
+   function La_Donnee(Cellule : in T_Cellule ; Cle : in T_Cle) return T_Donnee is
    begin
       if Est_Vide(Cellule) then
          raise Cle_Absente_Exception;
@@ -71,6 +71,24 @@ package body Cellule is
          return La_Donnee(Cellule.All.Fils_droit, Cle);
       end if;
    end La_Donnee;
+
+   function La_Donnee_Direct(Cellule : in T_Cellule) return T_Donnee is
+   begin
+      if Est_Vide(Cellule) then
+         raise Cellule_Vide_Exception;
+      else
+         return Cellule.All.Donnee;
+      end if;
+   end La_Donnee_Direct;
+
+   function La_Cle_Direct(Cellule : in T_Cellule) return T_Cle is
+   begin
+      if Est_Vide(Cellule) then
+         raise Cellule_Vide_Exception;
+      else
+         return Cellule.All.Cle;
+      end if;
+   end La_Cle_Direct;
 
 
    procedure Enregistrer(Cellule : in out T_Cellule ; Cle : in T_Cle ; Donnee : in T_Donnee) is
@@ -88,14 +106,17 @@ package body Cellule is
    procedure Enregistrer_FilsDroit(Cellule_parent : in out T_Cellule; Cellule_fils : in T_Cellule) is
    begin
       if Est_Vide(Cellule_parent) then
-         raise
+         raise Cle_Necessaire_Pour_Fils_Exception;
+      else
          Cellule_parent.All.Fils_droit := Cellule_fils;
       end if;
    end Enregistrer_FilsDroit;
 
    procedure Enregistrer_FilsGauche(Cellule_parent : in out T_Cellule; Cellule_fils : in T_Cellule) is
    begin
-      if not(Est_Vide(Cellule_parent)) then
+      if Est_Vide(Cellule_parent) then
+         raise Cle_Necessaire_Pour_Fils_Exception;
+      else
          Cellule_parent.All.Fils_gauche := Cellule_fils;
       end if;
    end Enregistrer_FilsGauche;
