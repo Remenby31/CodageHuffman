@@ -1,1 +1,2 @@
-cannot generate code for file codagehuffman.ads (package spec)
+codagehuffman.ads:31:10: error: "Parcours_Infixe" is not visible
+codagehuffman.ads:31:10: error: non-visible declaration at cellule.ads:57

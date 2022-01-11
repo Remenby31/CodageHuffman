@@ -24,7 +24,7 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 
-U test_huffman%b	test_huffman.adb	6eec3849 NE OO SU
+U test_huffman%b	test_huffman.adb	bd01868c NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -61,11 +61,10 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
-D cellule.ads		20220110163252 1edd913d cellule%s
-D cellule.adb		20220110152434 625d592a cellule%b
+D cellule.ads		20220111144402 22f0c8bb cellule%s
+D cellule.adb		20220111144330 adc80659 cellule%b
 D cellule_exceptions.ads  20220110152408 8b9dd603 cellule_exceptions%s
-D codagehuffman.ads	20220110152434 c1d11ef4 codagehuffman%s
-D codagehuffman.adb	20220110172334 a2782eec codagehuffman%b
+D codagehuffman.ads	20220111142554 4550dfa8 codagehuffman%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -89,58 +88,48 @@ D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
-D test_huffman.adb	20220110161516 ea6db96e test_huffman%b
+D test_huffman.adb	20220111142848 812c9f71 test_huffman%b
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [test_huffman standard 7 11 none]
 G r i none [test_huffman standard 7 11 none] [cellule standard 5 9 none]
-G r i none [test_huffman standard 7 11 none] [parcours_infixe codagehuffman 30 14 none]
 G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 23 13 none]
 X 1 ada.ads
-16K9*Ada 20e8 49|1r6 1r33 2r6 2r33 3r6 3r33
+16K9*Ada 20e8 48|1r6 1r33 2r6 2r33 3r6 3r33
 X 7 a-inteio.ads
-18K13*Integer_Text_IO[18|46] 49|2w10 2r37
+18K13*Integer_Text_IO[18|46] 48|2w10 2r37
 X 11 a-string.ads
-16K13*Strings 35e16 49|3r10 3r37
+16K13*Strings 35e16 48|3r10 3r37
 X 14 a-strunb.ads
-83K21*Unbounded 765e26 49|3w18 3r45
-88R9*Unbounded_String<6|43R9> 744e15 49|14r38
+83K21*Unbounded 765e26 48|3w18 3r45
+88R9*Unbounded_String<6|43R9> 744e15 48|14r38
 X 17 a-textio.ads
-58K13*Text_IO 725e16 49|1w10 1r37
-262U14*New_Line 49|22s7 48s23 51s23
-390U14*Put 49|21s7
-463U14*Put 49|20s7
-506U14*Put_Line 49|34s7 46s4 48s4 49s4 51s4
-X 18 a-tiinio.ads
-80U14*Put 49|19s7[7|18]
+58K13*Text_IO 725e16 48|1w10 1r37
+262U14*New_Line 48|34s23 37s23
+506U14*Put_Line 48|20s7 32s4 34s4 35s4 37s4
 X 21 cellule.ads
-2+9 T_Cle 49|10r18
-3+9 T_Donnee 49|10r38
-5k9*Cellule 61e12 49|5w6 10r10
+2+9 T_Cle 48|10r18
+3+9 T_Donnee 48|10r38
+5k9*Cellule 65e12 48|5w6 10r10
 X 24 codagehuffman.ads
-8K9*codageHuffman 40e18 49|4w6 4r25 28r10
-23V13*Compresser_ficher{string} 49|34s16 35s21
-26V13*Decompresser_fichier{string} 49|41s21
-30u14*Parcours_infixe 49|28r24
-X 28 system.ads
+8K9*codageHuffman 37e18 48|4w6 4r25
+23V13*Compresser_ficher{string} 48|20s16 21s21
+26V13*Decompresser_fichier{string} 48|27s21
+X 27 system.ads
 67M9*Address
-X 34 s-memory.ads
-53V13*Alloc{28|67M9} 103i<c,__gnat_malloc>22
+X 33 s-memory.ads
+53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{28|67M9} 105i<c,__gnat_realloc>22
-X 42 s-stalib.adb
+76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
+X 41 s-stalib.adb
 89U14 Break_Start 90i<c,__gnat_break_start>22
-X 49 test_huffman.adb
-7U11*Test_Huffman 7b11 52l5 52t17
+X 48 test_huffman.adb
+7U11*Test_Huffman 7b11 38l5 38t17
 9K12 Cellule_codageHuffman[21|5] 11r8
 13A9 T_TabDonnee(integer)<integer>
 14A9 T_TabCle(14|88R9)<integer>
-17U14 Afficher 17b14 17>24 17>48 23l8 23t16 28r40
-17i24 Frequence{integer} 19r12
-17e48 Caractere{character} 21r12
-27U14 Afficher[24|30] 25|128b14
-31U14 Test_Compresser_ficher 31b14 36l8 36t30 47s4
-32a7 texte{string}
-38U14 Test_Decompresser_fichier 38b14 42l8 42t33 50s4
-39a7 texte{string} 41r42
+17U14 Test_Compresser_ficher 17b14 22l8 22t30 33s4
+18a7 texte{string}
+24U14 Test_Decompresser_fichier 24b14 28l8 28t33 36s4
+25a7 texte{string} 27r42
 

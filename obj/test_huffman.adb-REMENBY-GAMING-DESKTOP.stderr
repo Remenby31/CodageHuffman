@@ -1,0 +1,9 @@
+test_huffman.adb:30:26: error: range attribute cannot be used in expression
+test_huffman.adb:31:12: error: missing operand
+test_huffman.adb:32:09: error: statement expected
+test_huffman.adb:32:10: error: "end if;" expected for "if" at line 31
+test_huffman.adb:34:04: error: declarations must come before "begin"
+test_huffman.adb:55:01: error: "end;" expected for "begin" at line 48
+test_huffman.adb:55:01: error: "end loop;" expected for "loop" at line 30
+test_huffman.adb:55:01: error: "end AfficherTableau;" expected
+test_huffman.adb:55:01: error: missing "begin" for procedure "Test_Huffman" at line 7

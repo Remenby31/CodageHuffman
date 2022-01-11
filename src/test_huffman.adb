@@ -14,23 +14,6 @@ procedure Test_Huffman is
    type T_TabCle is array (1..10) of Unbounded_String;
 
 
-   procedure Afficher (Frequence : in Integer; Caractere : in Character) is
-   begin
-      Put (Frequence,1);
-      Put (" : ");
-      Put (Caractere);
-      New_Line;
-   end Afficher;
-
-   procedure Afficher is
-     new codageHuffman.Parcours_Infixe(Afficher);
-
-   procedure AfficherTableau(Tableau : in T_Tableau) is
-   begin
-      for i in 1..Tableau'Range loop
-         if
-         end loop;
-
    procedure Test_Compresser_ficher is
       texte : String := "exemple de texte";
    begin

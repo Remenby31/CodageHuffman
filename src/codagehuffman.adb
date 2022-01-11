@@ -15,16 +15,10 @@ package body codagehuffman is
       return Tableau;
    end Calcul_Frequence;
 
-   procedure Afficher_Arbre(Cellule : in T_Cellule) is
-   begin
-      Null;
-   end Afficher_Arbre;
-
    function Compresser_ficher return String is
 
       file_txt : Ada.Text_IO.file_type;			-- pour l'acc√®s par caract√®re
       file_byte, file_hff : Byte_file.file_type;	-- pour l'acc√®s par byte
-      taille_fichier : integer;
       un_char : Character;
       texte : constant String := "fichier.txt";
 
@@ -70,8 +64,8 @@ package body codagehuffman is
             i := 1;
             while i+1 <= dernierIndice(Tableau) loop
                Initialiser(Cellule);
-               Cellule.all.Fils_gauche := Tableau(i);
-               Cellule.all.Fils_droit := Tableau(i+1);
+               Enregistrer_FilsGauche(Cellule,Tableau(i));
+               Enregistrer_FilsDroit(Cellule,Tableau(i+1));
                Cellule.all.Donnee := Tableau(i).all.donnee + Tableau(i+1).all.donnee;
                Initialiser(Tableau(i));
                Initialiser(Tableau(i+1));
@@ -93,11 +87,11 @@ package body codagehuffman is
       end InitialiserTableau;
 
       Tableau : T_Tableau;
+      Arbre : T_Cellule;
 
    begin
       Put_Line("EntrÈe dans le programme");
       open(file_txt, In_File, texte); 	-- Ouverture du fichier en lecture
-      taille_fichier := 0; 					-- Nb de caracteres dans le fichier
 
       Put_Line("Fichier rÈcupÈrÈ");
       Put("Message enregistrÈ : ");
@@ -117,6 +111,10 @@ package body codagehuffman is
       Tri_selection(Tableau);
       Put_Line(" Ok");
 
+      Put("DÈbut de la construction de l'arbre...");
+      Arbre := Construire_Arbre(Tableau);
+      Put_Line(" Ok");
+
       return texte;
    end Compresser_ficher;
 
@@ -125,13 +123,5 @@ package body codagehuffman is
       return "Null";
    end Decompresser_fichier;
 
-   procedure Parcours_infixe(Tableau : in T_Tableau) is
-   begin
-      Null;
-   end Parcours_infixe;
-
-begin
-
-   Null;
 
 end codagehuffman;

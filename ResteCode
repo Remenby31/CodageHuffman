@@ -34,3 +34,27 @@ procedure Test_Construire_Arbre is
 begin
    Construire_Arbre(Tableau);
 end Test_Construire_Arbre;
+
+=== parcoursinfice tab ===
+   generic
+      with procedure Traiter(Frequence : in Integer; Caractere : in Character);
+   procedure Parcours_infixe(Tableau : in T_Tableau);
+   
+=== Affichage Tab ===
+
+   procedure AfficherTableau(Tableau : in T_Tableau) is
+
+      procedure Affichage (Cle : in out Character; Donnee: in out Integer) is
+      begin
+         Put (Donnee,1);
+         Put (" : ");
+         Put (Cle);
+         New_Line;
+      end Affichage;
+      
+      procedure Affichage is
+        new Parcours_Infixe(Traiter => Affichage);
+
+   begin
+      Parcours_Infixe(Tableau(1));
+   end AfficherTableau;

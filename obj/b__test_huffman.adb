@@ -236,7 +236,6 @@ package body ada_main is
       Cellule_Exceptions'Elab_Spec;
       E156 := E156 + 1;
       E155 := E155 + 1;
-      codagehuffman'elab_body;
       E158 := E158 + 1;
    end adainit;
 
@@ -275,12 +274,12 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\cellule_exceptions.o
-   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\cellule.o
-   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\codagehuffman.o
-   --   C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\test_huffman.o
-   --   -LC:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\
-   --   -LC:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\obj\
+   --   C:\Users\cruve\OneDrive\Documents\GitHub\CodageHuffman\obj\cellule_exceptions.o
+   --   C:\Users\cruve\OneDrive\Documents\GitHub\CodageHuffman\obj\cellule.o
+   --   C:\Users\cruve\OneDrive\Documents\GitHub\CodageHuffman\obj\codagehuffman.o
+   --   C:\Users\cruve\OneDrive\Documents\GitHub\CodageHuffman\obj\test_huffman.o
+   --   -LC:\Users\cruve\OneDrive\Documents\GitHub\CodageHuffman\obj\
+   --   -LC:\Users\cruve\OneDrive\Documents\GitHub\CodageHuffman\obj\
    --   -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
    --   -static
    --   -lgnat

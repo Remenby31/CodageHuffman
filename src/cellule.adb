@@ -77,52 +77,68 @@ package body Cellule is
 
    begin
       if Cellule = null then
-          Cellule := new T_Element'(Cle,Donnee, null, null);
-          elsif Cellule.All.Cle = Cle then
-              Cellule.All.Donnee := Donnee;
-          else
-              Enregistrer(Cellule.All.Fils_droit, Cle, Donnee);
-          end if;
+         Cellule := new T_Element'(Cle,Donnee, null, null);
+      elsif Cellule.All.Cle = Cle then
+         Cellule.All.Donnee := Donnee;
+      else
+         Enregistrer(Cellule.All.Fils_droit, Cle, Donnee);
+      end if;
    end Enregistrer;
 
-   Procedure Supprimer(Cellule : in out T_Cellule ; Cle : in T_Cle) is
-       A_Supprimer : T_Cellule;
+   procedure Enregistrer_FilsDroit(Cellule_parent : in out T_Cellule; Cellule_fils : in T_Cellule) is
    begin
-       if Est_Vide(Cellule) then
-           raise Cle_Absente_Exception;
-       elsif Cellule.All.Cle = Cle then
-           if not(Est_Vide(Cellule.All.Fils_droit)) and not(Est_Vide(Cellule.All.Fils_gauche)) then
-               raise Suppression_impossible_Exception;
-           else
-               A_Supprimer := Cellule;
-               if Est_Vide(Cellule.All.Fils_droit) then
-                   Cellule := Cellule.All.Fils_gauche;
-               else
-                   Cellule := Cellule.All.Fils_droit;
-               end if;
-           end if;
-           Free(A_Supprimer);
-       elsif Cle_Presente(Cellule.All.Fils_gauche,Cle) then
-           Supprimer(Cellule.all.Fils_gauche,Cle);
-       elsif Cle_Presente(Cellule.All.Fils_droit,Cle) then
-           Supprimer(Cellule.all.Fils_droit,Cle);
-       else
-           raise Cle_Absente_Exception;
-       end if;
+      if Est_Vide(Cellule_parent) then
+         raise
+         Cellule_parent.All.Fils_droit := Cellule_fils;
+      end if;
+   end Enregistrer_FilsDroit;
+
+   procedure Enregistrer_FilsGauche(Cellule_parent : in out T_Cellule; Cellule_fils : in T_Cellule) is
+   begin
+      if not(Est_Vide(Cellule_parent)) then
+         Cellule_parent.All.Fils_gauche := Cellule_fils;
+      end if;
+   end Enregistrer_FilsGauche;
+
+
+   Procedure Supprimer(Cellule : in out T_Cellule ; Cle : in T_Cle) is
+      A_Supprimer : T_Cellule;
+   begin
+      if Est_Vide(Cellule) then
+         raise Cle_Absente_Exception;
+      elsif Cellule.All.Cle = Cle then
+         if not(Est_Vide(Cellule.All.Fils_droit)) and not(Est_Vide(Cellule.All.Fils_gauche)) then
+            raise Suppression_impossible_Exception;
+         else
+            A_Supprimer := Cellule;
+            if Est_Vide(Cellule.All.Fils_droit) then
+               Cellule := Cellule.All.Fils_gauche;
+            else
+               Cellule := Cellule.All.Fils_droit;
+            end if;
+         end if;
+         Free(A_Supprimer);
+      elsif Cle_Presente(Cellule.All.Fils_gauche,Cle) then
+         Supprimer(Cellule.all.Fils_gauche,Cle);
+      elsif Cle_Presente(Cellule.All.Fils_droit,Cle) then
+         Supprimer(Cellule.all.Fils_droit,Cle);
+      else
+         raise Cle_Absente_Exception;
+      end if;
 
    end Supprimer;
 
    procedure Parcours_Infixe(Cellule : in out T_Cellule) is
    begin
       if not(Est_Vide(Cellule)) then
-          if not(Est_Vide(Cellule.all.Fils_gauche)) then
-              Parcours_Infixe(Cellule.all.Fils_gauche);
-          end if;
-          Traiter(Cellule.all.Cle, Cellule.all.Donnee);
-          if not(Est_Vide(Cellule.all.Fils_droit)) then
-              Parcours_Infixe(Cellule.all.Fils_droit);
-          end if;
-  end if;
+         if not(Est_Vide(Cellule.all.Fils_gauche)) then
+            Parcours_Infixe(Cellule.all.Fils_gauche);
+         end if;
+         Traiter(Cellule.all.Cle, Cellule.all.Donnee);
+         if not(Est_Vide(Cellule.all.Fils_droit)) then
+            Parcours_Infixe(Cellule.all.Fils_droit);
+         end if;
+      end if;
    end Parcours_Infixe;
 
 end Cellule;

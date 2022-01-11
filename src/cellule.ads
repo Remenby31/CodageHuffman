@@ -45,6 +45,10 @@ package Cellule is
    -- Enregistrer une cellule d'une fiche avec ses fils droit et gauche, sa frequence et le caractere
    procedure Enregistrer(Cellule : in out T_Cellule ; Cle : in T_Cle ; Donnee : in T_Donnee);
 
+   procedure Enregistrer_FilsDroit(Cellule_parent : in out T_Cellule; Cellule_fils : in T_Cellule);
+
+   procedure Enregistrer_FilsGauche(Cellule_parent : in out T_Cellule; Cellule_fils : in T_Cellule);
+
    -- Supprimer la Donn�e associ�e � une Cl� dans une Cellule.
    -- Exception : Cle_Absente_Exception si Cl� n'est pas utilis�e dans la Cellule
    procedure Supprimer(Cellule : in out T_Cellule ; Cle : in T_Cle) with

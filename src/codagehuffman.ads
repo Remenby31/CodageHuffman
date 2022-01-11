@@ -7,8 +7,8 @@ with cellule;
 
 package codageHuffman is
    type T_Tableau is private;
-
    type T_byte is mod 2**8;
+
    package Byte_file is new Ada.Sequential_IO(T_byte) ;
    use Byte_file ;
 
@@ -25,9 +25,6 @@ package codageHuffman is
    -- D�compresser le fichier
    function Decompresser_fichier(texte : in String) return String;
 
-   generic
-      with procedure Traiter(Frequence : in Integer; Caractere : in Character);
-   procedure Parcours_infixe(Tableau : in T_Tableau);
 
 private
 
