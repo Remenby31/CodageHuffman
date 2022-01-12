@@ -15,10 +15,6 @@ package codageHuffman is
    -- Calculer les fr�quences des caract�res du texte
    function Calcul_Frequence(texte : in String) return T_Tableau;
 
-   --Trier par ordre croissant le tableau de fr�quence
-
-   -- Construire l'arbre de Huffman gr�ce aux fr�quences des caract�res
-
    -- Compresser le fichier
    function Compresser_ficher return String;
 

@@ -32,7 +32,7 @@ package body ada_main is
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "ada__strings__unbounded_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
-   E161 : Short_Integer; pragma Import (Ada, E161, "system__sequential_io_E");
+   E165 : Short_Integer; pragma Import (Ada, E165, "system__sequential_io_E");
    E156 : Short_Integer; pragma Import (Ada, E156, "cellule_exceptions_E");
    E155 : Short_Integer; pragma Import (Ada, E155, "cellule_E");
    E158 : Short_Integer; pragma Import (Ada, E158, "codagehuffman_E");
@@ -46,7 +46,7 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E161 := E161 - 1;
+      E165 := E165 - 1;
       declare
          procedure F1;
          pragma Import (Ada, F1, "system__sequential_io__finalize_spec");
@@ -232,7 +232,7 @@ package body ada_main is
       E094 := E094 + 1;
       System.Sequential_Io'Elab_Spec;
       System.Sequential_Io'Elab_Body;
-      E161 := E161 + 1;
+      E165 := E165 + 1;
       Cellule_Exceptions'Elab_Spec;
       E156 := E156 + 1;
       E155 := E155 + 1;

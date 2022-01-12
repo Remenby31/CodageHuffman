@@ -43,9 +43,9 @@ package body Cellule is
    function Est_Feuille(Cellule : in T_Cellule) return Boolean is
    begin
       if Est_Vide(Cellule.all.Fils_droit) and Est_Vide(Cellule.all.Fils_gauche) then
-         return False;
+         return True;
       end if;
-      return True;
+      return False;
    end Est_Feuille;
 
    function Cle_Presente(Cellule : in T_Cellule ; Cle : in T_Cle) return Boolean is
@@ -120,6 +120,7 @@ package body Cellule is
          Cellule_parent.All.Fils_gauche := Cellule_fils;
       end if;
    end Enregistrer_FilsGauche;
+
 
 
    Procedure Supprimer(Cellule : in out T_Cellule ; Cle : in T_Cle) is

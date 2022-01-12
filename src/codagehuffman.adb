@@ -49,64 +49,6 @@ package body codagehuffman is
       package Byte_file is new Ada.Sequential_IO(T_byte);
       use Byte_file ;
 
-      procedure Tri_selection(Tableau : in out T_Tableau) is
-         minimum : Integer;
-         Tampon : T_Cellule;
-      begin
-         for I in 1..254 loop
-            minimum := I;
-            for J in 2..255 loop
-               if Tableau(I).all.Donnee > Tableau(J).all.Donnee then
-                  minimum := J;
-               end if;
-            end loop;
-            if minimum /= i then
-               Tampon := Tableau(I);
-               Tableau(I) := Tableau(minimum);
-               Tableau(minimum) := Tampon;
-            end if;
-         end loop;
-      end Tri_selection;
-
-      function Construire_Arbre(Tableau: in out T_Tableau) return T_Cellule is
-
-         function dernierIndice(Tableau : in T_Tableau) return Integer is
-            indice_dernier : Integer :=1;
-         begin
-
-            while indice_dernier < Tableau'Length or La_Donnee_Direct(Tableau(indice_dernier)) = 0 loop
-               indice_dernier := indice_dernier + 1;
-            end loop;
-            return indice_dernier;
-         end dernierIndice;
-
-         Cellule : T_Cellule;
-         indice_fin : Integer;
-         indice_newcellule : Integer;
-         i : Integer;
-      begin
-         indice_fin := dernierIndice(Tableau);
-         while indice_fin > 1 loop
-            indice_newcellule := 1;
-            i := 1;
-            while i+1 <= dernierIndice(Tableau) loop
-               Initialiser(Cellule);
-               Enregistrer(Cellule, Character'Val(0),Tableau(i).all.donnee + Tableau(i+1).all.donnee);
-               Enregistrer_FilsGauche(Cellule,Tableau(i));
-               Enregistrer_FilsDroit(Cellule,Tableau(i+1));
-
-               Initialiser(Tableau(i));
-               Initialiser(Tableau(i+1));
-               Tableau(indice_newcellule) := Cellule;
-               indice_newcellule := indice_newcellule + 1;
-               i := i + 2;
-               indice_fin := indice_fin - 1;
-            end loop;
-            Tri_selection(Tableau);
-
-         end loop;
-         return Cellule;
-      end Construire_Arbre;
 
       procedure InitialiserTableau(Tableau : out T_Tableau) is
          compteur : Integer := 0;
@@ -117,8 +59,117 @@ package body codagehuffman is
          end loop;
       end InitialiserTableau;
 
+
+      procedure Tri_selection(Tableau : in out T_Tableau) is
+         Tampon : T_Cellule;
+      begin
+         for i in Tableau'first + 1 .. Tableau'last loop
+            for j in reverse Tableau'first + 1..i loop
+               exit when La_Donnee_Direct(Tableau(j-1)) <= La_Donnee_Direct(Tableau(j)) ;
+               Tampon := Tableau(j-1);
+               Tableau(j-1) := Tableau(j);
+               Tableau(j) := Tampon;
+            end loop ;
+         end loop ;
+      end Tri_selection;
+
+      function Construire_Arbre(Tableau: in out T_Tableau) return T_Cellule is
+
+         function DebutTableau(Tableau : in T_Tableau) return Integer is
+            indice : Integer :=1;
+         begin
+            while indice < Tableau'Length and La_Donnee_Direct(Tableau(indice)) = 0 loop
+               indice := indice + 1;
+            end loop;
+            return indice;
+         end DebutTableau;
+
+         Cellule : T_Cellule;
+         indice_debut : Integer;--Indice du premier indice non vide du tableau
+         indice_newcellule : Integer;--L'indice de la case de la prochaine nouvelle cellule
+         i : Integer;
+      begin
+         indice_debut := DebutTableau(Tableau);
+         while indice_debut < 256 loop
+            indice_newcellule := indice_debut;
+            i := indice_debut;
+            while i + 1 <= Tableau'last loop
+               --Creation de la nouvelle cellule
+               Initialiser(Cellule);
+               Enregistrer(Cellule, Character'Val(0),Tableau(i).all.donnee + Tableau(i+1).all.donnee);
+
+               --Ajout des deux cellules suivantes du Tableau dans la nouvelle cellule
+               Enregistrer_FilsGauche(Cellule,Tableau(i));
+               Enregistrer_FilsDroit(Cellule,Tableau(i+1));
+
+               --Réinitialiser les deux cellules
+               Initialiser(Tableau(i));
+               Enregistrer(Tableau(i), Character'Val(0),0);
+               Initialiser(Tableau(i+1));
+               Enregistrer(Tableau(i+1), Character'Val(0),0);
+
+               -- Ajout de la nouvelle cellule dans le tableau
+               Tableau(indice_newcellule) := Cellule;
+               indice_newcellule := indice_newcellule + 1;
+               i := i + 2;
+               indice_debut := indice_debut + 1;
+            end loop;
+            Tri_selection(Tableau);
+         end loop;
+         return Tableau(256);
+      end Construire_Arbre;
+
+      procedure Afficher_Arbre(Arbre : in T_Cellule; avant : in Unbounded_String) is
+
+         function Avec_Guillemets (S: Unbounded_String) return String is
+         begin
+            return '"' & To_String (S) & '"';
+         end;
+
+         function "&" (Left: String; Right: Unbounded_String) return String is
+         begin
+            return Left & Avec_Guillemets (Right);
+         end;
+
+         function "+" (Item : in String) return Unbounded_String
+                       renames To_Unbounded_String;
+
+         procedure Afficher_Donnee_Cle(Arbre : in T_Cellule) is
+         begin
+            Put("(");Put(La_Donnee_Direct(Arbre),1);Put(")");
+            if Est_Feuille(Arbre) then
+               Put(" '");Put(La_Cle_Direct(Arbre));Put("'");
+            end if;
+         end Afficher_Donnee_Cle;
+
+         avant_old : Unbounded_String := To_Unbounded_String("");
+      begin
+         if not(Est_Vide(Arbre)) then
+
+            Afficher_Donnee_Cle(Arbre);
+            New_Line;
+            if not(Est_Feuille(Arbre)) then
+               Put(To_String(avant));
+            end if;
+            if not(Est_Vide(Arbre.all.Fils_droit)) then
+               Put("\--0--");
+               Afficher_Arbre(Arbre.all.Fils_droit, avant & "|      ");
+               Put(To_String(avant));
+            end if;
+
+            if not(Est_Vide(Arbre.all.Fils_gauche)) then
+               Put("\--1--");
+               Afficher_Arbre(Arbre.all.Fils_gauche, avant & "       ");
+            end if;
+
+         end if;
+
+      end Afficher_Arbre;
+
+
       Tableau : T_Tableau;
       Arbre : T_Cellule;
+      char : Unbounded_String := To_Unbounded_String("");
 
    begin
       Put_Line("Entrée dans le programme");
@@ -140,13 +191,24 @@ package body codagehuffman is
 
       Put("Début du Tri...");
       Tri_selection(Tableau);
-      Put_Line(" Ok");
-      --Afficher_Tableau(Tableau);
+      Put_Line(" Ok"); New_Line;
+
 
 
       Put("Début de la construction de l'arbre...");
       Arbre := Construire_Arbre(Tableau);
-      Put_Line(" Ok");
+      Put_Line(" Ok");New_Line;
+
+      if Est_Feuille(Arbre) then
+         Put("feuile!");
+      end if;
+
+      Afficher_Cellule(Arbre);New_Line;
+
+
+      Put("Début de l'affichage de l'arbre...");New_Line;
+      Afficher_Arbre(Arbre,char);
+      Put_Line(" Ok");New_Line;
 
       return texte;
    end Compresser_ficher;

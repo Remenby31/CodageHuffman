@@ -27,7 +27,6 @@ procedure Test_Huffman is
       pragma Assert(Decompresser_fichier(texte)="exemple de texte :");
    end Test_Decompresser_fichier;
 
-
 begin
    Put_Line("Début du test de Compression...");
    Test_Compresser_ficher;

@@ -58,3 +58,52 @@ end Test_Construire_Arbre;
    begin
       Parcours_Infixe(Tableau(1));
    end AfficherTableau;
+
+
+procedure Tri_selection(Tableau : in out T_Tableau) is
+         minimum : Integer;
+         Tampon : T_Cellule;
+      begin
+         for I in 1..256 loop
+            minimum := I;
+            for J in (I+1)..256 loop
+               if Tableau(I).all.Donnee > Tableau(J).all.Donnee then
+                  minimum := J;
+               end if;
+            end loop;
+            if minimum /= i then
+               Tampon := Tableau(I);
+               Tableau(I) := Tableau(minimum);
+               Tableau(minimum) := Tampon;
+            end if;
+         end loop;
+      end Tri_selection;
+	  
+	  =========================
+	  
+                 Put("(");Put(La_Donnee_Direct(Arbre),1);Put(")");
+                  if Est_Feuille(Arbre) then
+                     Put(" '");Put(La_Cle_Direct(Arbre));Put("'");
+                  end if;
+            
+                  if not(Est_Vide(Arbre.all.Fils_gauche)) then
+                     Put("\--0--");
+               
+               
+               
+                     --Put("appel de droite par "); Put(La_Donnee_Direct(Arbre),1);Put(" avec avant = [");Put(To_String(avant));
+                     Afficher_Arbre(Arbre.all.Fils_gauche, avant & "|      ");
+               
+                  end if;
+
+
+                  if not(Est_Vide(Arbre.all.Fils_droit)) then
+                     Put("\--1--"); -- & "       "
+               
+                     --Put("appel de gauche par "); Put(La_Donnee_Direct(Arbre),1);Put(" avec avant = ");Put(To_String(avant));
+                     Afficher_Arbre(Arbre.all.Fils_droit, avant);
+                  end if;
+               end if;
+=============
+
+(31) => retour a la ligne => char => --0--

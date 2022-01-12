@@ -61,10 +61,10 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
-D cellule.ads		20220111213836 4f01e5ee cellule%s
-D cellule.adb		20220111214012 bbf59efa cellule%b
+D cellule.ads		20220112173402 4f01e5ee cellule%s
+D cellule.adb		20220112173402 5388d198 cellule%b
 D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
-D codagehuffman.ads	20220111142554 4550dfa8 codagehuffman%s
+D codagehuffman.ads	20220112152142 4550dfa8 codagehuffman%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -88,12 +88,12 @@ D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
-D test_huffman.adb	20220111142848 812c9f71 test_huffman%b
+D test_huffman.adb	20220112145810 812c9f71 test_huffman%b
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [test_huffman standard 7 11 none]
 G r i none [test_huffman standard 7 11 none] [cellule standard 5 9 none]
-G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 23 13 none]
+G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 19 13 none]
 X 1 ada.ads
 16K9*Ada 20e8 48|1r6 1r33 2r6 2r33 3r6 3r33
 X 7 a-inteio.ads
@@ -105,16 +105,16 @@ X 14 a-strunb.ads
 88R9*Unbounded_String<6|43R9> 744e15 48|14r38
 X 17 a-textio.ads
 58K13*Text_IO 725e16 48|1w10 1r37
-262U14*New_Line 48|34s23 37s23
-506U14*Put_Line 48|20s7 32s4 34s4 35s4 37s4
+262U14*New_Line 48|33s23 36s23
+506U14*Put_Line 48|20s7 31s4 33s4 34s4 36s4
 X 21 cellule.ads
 2+9 T_Cle 48|10r18
 3+9 T_Donnee 48|10r38
-5k9*Cellule 67e12 48|5w6 10r10
+5k9*Cellule 68e12 48|5w6 10r10
 X 24 codagehuffman.ads
-8K9*codageHuffman 37e18 48|4w6 4r25
-23V13*Compresser_ficher{string} 48|20s16 21s21
-26V13*Decompresser_fichier{string} 48|27s21
+8K9*codageHuffman 33e18 48|4w6 4r25
+19V13*Compresser_ficher{string} 48|20s16 21s21
+22V13*Decompresser_fichier{string} 48|27s21
 X 27 system.ads
 67M9*Address
 X 33 s-memory.ads
@@ -124,12 +124,12 @@ X 33 s-memory.ads
 X 41 s-stalib.adb
 89U14 Break_Start 90i<c,__gnat_break_start>22
 X 48 test_huffman.adb
-7U11*Test_Huffman 7b11 38l5 38t17
+7U11*Test_Huffman 7b11 37l5 37t17
 9K12 Cellule_codageHuffman[21|5] 11r8
 13A9 T_TabDonnee(integer)<integer>
 14A9 T_TabCle(14|88R9)<integer>
-17U14 Test_Compresser_ficher 17b14 22l8 22t30 33s4
+17U14 Test_Compresser_ficher 17b14 22l8 22t30 32s4
 18a7 texte{string}
-24U14 Test_Decompresser_fichier 24b14 28l8 28t33 36s4
+24U14 Test_Decompresser_fichier 24b14 28l8 28t33 35s4
 25a7 texte{string} 27r42
 

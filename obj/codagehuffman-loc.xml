@@ -1,163 +1,148 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project >
+  <Project>
+    <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_file>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.ads</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project />
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule_exceptions.ads</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 9" line=" 26" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 18" line=" 38" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 15" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 18" line=" 38" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 18" line=" 38" >
+    <file_marker column=" 20" line=" 73" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 59" line=" 68" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 40" line=" 66" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 61" line=" 63" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 45" line=" 96" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 66" line=" 16" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.ads</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 14" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 60" line=" 96" >
+    <file_marker column=" 33" line=" 144" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 12" line=" 145" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 43" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 20" line=" 98" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 93" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 126" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 93" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 42" line=" 99" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 60" line=" 96" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 18" line=" 111" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 24" line=" 53" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 114" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\fichier.txt</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 44" line=" 138" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 44" line=" 138" >
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 59" line=" 139" >
+    <file_marker column=" 18" line=" 211" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 44" line=" 138" >
+    <file_marker column=" 1" line=" 210" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 9" >
+    <file_marker column=" 33" line=" 172" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 16" line=" 14" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 19" line=" 5" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 13" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 64" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 6" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 14" line=" 2" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 16" line=" 14" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 53" line=" 147" >
+    <file_marker column=" 1" line=" 210" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
@@ -165,223 +150,175 @@
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 53" line=" 147" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 28" line=" 115" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 33" line=" 134" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 95" line=" 139" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 25" line=" 120" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 16" line=" 135" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 140" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 27" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 210" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 207" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 122" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 200" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 223" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 204" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule_exceptions.ads</vfs_file>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 53" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
     </file_marker>
+    <file_marker column=" 19" line=" 55" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 64" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 53" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 33" line=" 2" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 124" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
+    </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 29" line=" 281" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 32" line=" 280" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 359" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 5" line=" 15" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 55" line=" 22" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 39" line=" 272" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 39" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\test_huffman.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 96" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 37" line=" 94" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 97" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 19" line=" 117" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 38" line=" 78" >
+    <file_marker column=" 4" line=" 124" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 82" >
+    <file_marker column=" 25" line=" 199" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 124" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 17" line=" 80" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 19" line=" 117" >
+    <file_marker column=" 42" line=" 145" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 38" line=" 7" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule_exceptions.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 53" line=" 78" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 91" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 13" line=" 84" >
-      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
-      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\cellule.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 53" line=" 78" >
+    <file_marker column=" 81" line=" 122" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 85" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 47" line=" 88" >
+    <file_marker column=" 1" line=" 129" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 24" line=" 88" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 47" line=" 88" >
+    <file_marker column=" 28" line=" 210" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 24" line=" 88" >
+    <file_marker column=" 30" line=" 172" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 88" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 17" line=" 26" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 16" line=" 28" >
+    <file_marker column=" 12" line=" 146" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 31" line=" 26" >
+    <file_marker column=" 38" line=" 147" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 25" line=" 29" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 26" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 88" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 42" line=" 24" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 6" line=" 28" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 25" line=" 58" >
+    <file_marker column=" 38" line=" 147" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 19" line=" 56" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 24" line=" 40" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 14" line=" 39" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 161" >
+    <file_marker column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 33" line=" 63" >
+    <file_marker column=" 1" line=" 223" >
+      <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
+      <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 167" >
       <vfs_project>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\codagehuffman.gpr</vfs_project>
       <vfs_file>C:\Users\Remenby\OneDrive\Documents\GitHub\CodageHuffman\src\codagehuffman.adb</vfs_file>
     </file_marker>
