@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#d0f0abd9#;
+   u00001 : constant Version_32 := 16#046acbda#;
    pragma Export (C, u00001, "test_huffmanB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -352,32 +352,44 @@ package ada_main is
    pragma Export (C, u00155, "celluleS");
    u00156 : constant Version_32 := 16#67ee4aae#;
    pragma Export (C, u00156, "cellule_exceptionsS");
-   u00157 : constant Version_32 := 16#fc3202bd#;
+   u00157 : constant Version_32 := 16#cc050bf0#;
    pragma Export (C, u00157, "codagehuffmanB");
-   u00158 : constant Version_32 := 16#2e09890e#;
+   u00158 : constant Version_32 := 16#e26be6de#;
    pragma Export (C, u00158, "codagehuffmanS");
    u00159 : constant Version_32 := 16#df420fa3#;
    pragma Export (C, u00159, "system__byte_swappingS");
-   u00160 : constant Version_32 := 16#fd83e873#;
-   pragma Export (C, u00160, "system__concat_2B");
-   u00161 : constant Version_32 := 16#2d5a86c4#;
-   pragma Export (C, u00161, "system__concat_2S");
-   u00162 : constant Version_32 := 16#2b70b149#;
-   pragma Export (C, u00162, "system__concat_3B");
-   u00163 : constant Version_32 := 16#248a0db1#;
-   pragma Export (C, u00163, "system__concat_3S");
-   u00164 : constant Version_32 := 16#4b99adb9#;
-   pragma Export (C, u00164, "system__sequential_ioB");
-   u00165 : constant Version_32 := 16#c596fbe4#;
-   pragma Export (C, u00165, "system__sequential_ioS");
-   u00166 : constant Version_32 := 16#26060166#;
-   pragma Export (C, u00166, "ada__command_lineB");
-   u00167 : constant Version_32 := 16#3cdef8c9#;
-   pragma Export (C, u00167, "ada__command_lineS");
-   u00168 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00168, "system__memoryB");
-   u00169 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00169, "system__memoryS");
+   u00160 : constant Version_32 := 16#4b99adb9#;
+   pragma Export (C, u00160, "system__sequential_ioB");
+   u00161 : constant Version_32 := 16#c596fbe4#;
+   pragma Export (C, u00161, "system__sequential_ioS");
+   u00162 : constant Version_32 := 16#26060166#;
+   pragma Export (C, u00162, "ada__command_lineB");
+   u00163 : constant Version_32 := 16#3cdef8c9#;
+   pragma Export (C, u00163, "ada__command_lineS");
+   u00164 : constant Version_32 := 16#ca8c282d#;
+   pragma Export (C, u00164, "system__finalization_mastersB");
+   u00165 : constant Version_32 := 16#4e386d0b#;
+   pragma Export (C, u00165, "system__finalization_mastersS");
+   u00166 : constant Version_32 := 16#35d6ef80#;
+   pragma Export (C, u00166, "system__storage_poolsB");
+   u00167 : constant Version_32 := 16#548cb6a3#;
+   pragma Export (C, u00167, "system__storage_poolsS");
+   u00168 : constant Version_32 := 16#021224f8#;
+   pragma Export (C, u00168, "system__pool_globalB");
+   u00169 : constant Version_32 := 16#29da5924#;
+   pragma Export (C, u00169, "system__pool_globalS");
+   u00170 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00170, "system__memoryB");
+   u00171 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00171, "system__memoryS");
+   u00172 : constant Version_32 := 16#8e7c94d7#;
+   pragma Export (C, u00172, "system__storage_pools__subpoolsB");
+   u00173 : constant Version_32 := 16#8393ab70#;
+   pragma Export (C, u00173, "system__storage_pools__subpoolsS");
+   u00174 : constant Version_32 := 16#cafa918a#;
+   pragma Export (C, u00174, "system__storage_pools__subpools__finalizationB");
+   u00175 : constant Version_32 := 16#8bd8fdc9#;
+   pragma Export (C, u00175, "system__storage_pools__subpools__finalizationS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -428,10 +440,6 @@ package ada_main is
    --  system.wch_cnv%b
    --  system.compare_array_unsigned_8%s
    --  system.compare_array_unsigned_8%b
-   --  system.concat_2%s
-   --  system.concat_2%b
-   --  system.concat_3%s
-   --  system.concat_3%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.characters.handling%s
@@ -525,6 +533,14 @@ package ada_main is
    --  ada.finalization%s
    --  system.file_io%s
    --  system.file_io%b
+   --  system.storage_pools%s
+   --  system.storage_pools%b
+   --  system.finalization_masters%s
+   --  system.finalization_masters%b
+   --  system.storage_pools.subpools%s
+   --  system.storage_pools.subpools.finalization%s
+   --  system.storage_pools.subpools.finalization%b
+   --  system.storage_pools.subpools%b
    --  system.stream_attributes%s
    --  system.stream_attributes.xdr%s
    --  system.stream_attributes.xdr%b
@@ -541,6 +557,8 @@ package ada_main is
    --  ada.text_io.generic_aux%b
    --  ada.integer_text_io%s
    --  ada.integer_text_io%b
+   --  system.pool_global%s
+   --  system.pool_global%b
    --  system.sequential_io%s
    --  system.sequential_io%b
    --  cellule_exceptions%s

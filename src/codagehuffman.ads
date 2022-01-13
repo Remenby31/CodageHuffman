@@ -3,6 +3,7 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Command_line; use Ada.Command_line;
 with Ada.Sequential_IO ;	-- pour l'accès typé aux fichiers (integer, naturel,							-- float, etc.)
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Cellule_Exceptions;         use Cellule_Exceptions;
 with cellule;
 
 package codageHuffman is
@@ -25,9 +26,9 @@ package codageHuffman is
 private
 
    package Cellule_codageHuffman is
-     new Cellule(T_Cle => Character, T_Donnee => Integer);
+     new Cellule(T_Cle => Unbounded_String, T_Donnee => Integer);
    use Cellule_codageHuffman;
 
-   type T_Tableau is array(1..256) of T_Cellule;
+   type T_Tableau is array(1..257) of T_Cellule;
 
 end codagehuffman;

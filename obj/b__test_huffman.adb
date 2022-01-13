@@ -30,9 +30,13 @@ package body ada_main is
    E121 : Short_Integer; pragma Import (Ada, E121, "system__finalization_root_E");
    E119 : Short_Integer; pragma Import (Ada, E119, "ada__finalization_E");
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
+   E167 : Short_Integer; pragma Import (Ada, E167, "system__storage_pools_E");
+   E165 : Short_Integer; pragma Import (Ada, E165, "system__finalization_masters_E");
+   E173 : Short_Integer; pragma Import (Ada, E173, "system__storage_pools__subpools_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "ada__strings__unbounded_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
-   E165 : Short_Integer; pragma Import (Ada, E165, "system__sequential_io_E");
+   E169 : Short_Integer; pragma Import (Ada, E169, "system__pool_global_E");
+   E161 : Short_Integer; pragma Import (Ada, E161, "system__sequential_io_E");
    E156 : Short_Integer; pragma Import (Ada, E156, "cellule_exceptions_E");
    E155 : Short_Integer; pragma Import (Ada, E155, "cellule_E");
    E158 : Short_Integer; pragma Import (Ada, E158, "codagehuffman_E");
@@ -46,33 +50,61 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E165 := E165 - 1;
+      E158 := E158 - 1;
       declare
          procedure F1;
-         pragma Import (Ada, F1, "system__sequential_io__finalize_spec");
+         pragma Import (Ada, F1, "codagehuffman__finalize_spec");
       begin
          F1;
       end;
-      E094 := E094 - 1;
+      E161 := E161 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F2, "system__sequential_io__finalize_spec");
       begin
          F2;
       end;
-      E138 := E138 - 1;
+      E169 := E169 - 1;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "ada__strings__unbounded__finalize_spec");
+         pragma Import (Ada, F3, "system__pool_global__finalize_spec");
       begin
          F3;
       end;
+      E094 := E094 - 1;
       declare
          procedure F4;
-         pragma Import (Ada, F4, "system__file_io__finalize_body");
+         pragma Import (Ada, F4, "ada__text_io__finalize_spec");
+      begin
+         F4;
+      end;
+      E138 := E138 - 1;
+      declare
+         procedure F5;
+         pragma Import (Ada, F5, "ada__strings__unbounded__finalize_spec");
+      begin
+         F5;
+      end;
+      E173 := E173 - 1;
+      declare
+         procedure F6;
+         pragma Import (Ada, F6, "system__storage_pools__subpools__finalize_spec");
+      begin
+         F6;
+      end;
+      E165 := E165 - 1;
+      declare
+         procedure F7;
+         pragma Import (Ada, F7, "system__finalization_masters__finalize_spec");
+      begin
+         F7;
+      end;
+      declare
+         procedure F8;
+         pragma Import (Ada, F8, "system__file_io__finalize_body");
       begin
          E118 := E118 - 1;
-         F4;
+         F8;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -224,18 +256,30 @@ package body ada_main is
       E119 := E119 + 1;
       System.File_Io'Elab_Body;
       E118 := E118 + 1;
+      System.Storage_Pools'Elab_Spec;
+      E167 := E167 + 1;
+      System.Finalization_Masters'Elab_Spec;
+      System.Finalization_Masters'Elab_Body;
+      E165 := E165 + 1;
+      System.Storage_Pools.Subpools'Elab_Spec;
+      System.Storage_Pools.Subpools'Elab_Body;
+      E173 := E173 + 1;
       Ada.Strings.Unbounded'Elab_Spec;
       Ada.Strings.Unbounded'Elab_Body;
       E138 := E138 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E094 := E094 + 1;
+      System.Pool_Global'Elab_Spec;
+      System.Pool_Global'Elab_Body;
+      E169 := E169 + 1;
       System.Sequential_Io'Elab_Spec;
       System.Sequential_Io'Elab_Body;
-      E165 := E165 + 1;
+      E161 := E161 + 1;
       Cellule_Exceptions'Elab_Spec;
       E156 := E156 + 1;
       E155 := E155 + 1;
+      Codagehuffman'Elab_Spec;
       E158 := E158 + 1;
    end adainit;
 

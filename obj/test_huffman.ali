@@ -14,6 +14,7 @@ RV NO_EXCEPTIONS
 RV NO_IO
 RV NO_IMPLICIT_CONDITIONALS
 RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
 RV NO_RECURSION
 RV NO_SECONDARY_STACK
 RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
@@ -24,22 +25,28 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 
-U test_huffman%b	test_huffman.adb	d0f0abd9 NE OO SU
+U test_huffman%b	test_huffman.adb	046acbda NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.strings%s		a-string.ads		a-string.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z ada.unchecked_deallocation%s
 W cellule%s		cellule.adb		cellule.ali
 Z cellule_exceptions%s	cellule_exceptions.ads	cellule_exceptions.ali
 W codagehuffman%s	codagehuffman.adb	codagehuffman.ali
 Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
@@ -64,7 +71,7 @@ D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
 D cellule.ads		20220112173402 4f01e5ee cellule%s
 D cellule.adb		20220112173402 5388d198 cellule%b
 D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
-D codagehuffman.ads	20220112152142 4550dfa8 codagehuffman%s
+D codagehuffman.ads	20220113131630 eedcfad6 codagehuffman%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -72,9 +79,11 @@ D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
 D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-finmas.ads		20210520051132 1ab4dba8 system.finalization_masters%s
 D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
 D s-memory.ads		20210520051134 597d6634 system.memory%s
 D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-pooglo.ads		20210520051134 ede33ef8 system.pool_global%s
 D s-putima.ads		20210520051134 4e095881 system.put_images%s
 D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
 D s-sequio.ads		20210520051134 fc7560a7 system.sequential_io%s
@@ -84,46 +93,48 @@ D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
 D s-stalib.adb		20210520051134 977290bf system.standard_library%b
 D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
 D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20210520051134 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20210520051134 e251976f system.storage_pools.subpools%s
 D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
-D test_huffman.adb	20220112145810 812c9f71 test_huffman%b
+D test_huffman.adb	20220113103906 fe3ada0c test_huffman%b
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [test_huffman standard 7 11 none]
 G r i none [test_huffman standard 7 11 none] [cellule standard 5 9 none]
-G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 19 13 none]
+G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 20 13 none]
 X 1 ada.ads
-16K9*Ada 20e8 48|1r6 1r33 2r6 2r33 3r6 3r33
+16K9*Ada 20e8 52|1r6 1r33 2r6 2r33 3r6 3r33
 X 7 a-inteio.ads
-18K13*Integer_Text_IO[18|46] 48|2w10 2r37
+18K13*Integer_Text_IO[18|46] 52|2w10 2r37
 X 11 a-string.ads
-16K13*Strings 35e16 48|3r10 3r37
+16K13*Strings 35e16 52|3r10 3r37
 X 14 a-strunb.ads
-83K21*Unbounded 765e26 48|3w18 3r45
-88R9*Unbounded_String<6|43R9> 744e15 48|14r38
+83K21*Unbounded 765e26 52|3w18 3r45
+88R9*Unbounded_String<6|43R9> 744e15 52|10r27 14r38
 X 17 a-textio.ads
-58K13*Text_IO 725e16 48|1w10 1r37
-262U14*New_Line 48|33s23 36s23
-506U14*Put_Line 48|20s7 31s4 33s4 34s4 36s4
+58K13*Text_IO 725e16 52|1w10 1r37
+262U14*New_Line 52|33s23 36s23
+506U14*Put_Line 52|20s7 31s4 33s4 34s4 36s4
 X 21 cellule.ads
-2+9 T_Cle 48|10r18
-3+9 T_Donnee 48|10r38
-5k9*Cellule 68e12 48|5w6 10r10
+2+9 T_Cle 52|10r18
+3+9 T_Donnee 52|10r45
+5k9*Cellule 68e12 52|5w6 10r10
 X 24 codagehuffman.ads
-8K9*codageHuffman 33e18 48|4w6 4r25
-19V13*Compresser_ficher{string} 48|20s16 21s21
-22V13*Decompresser_fichier{string} 48|27s21
+9K9*codageHuffman 34e18 52|4w6 4r25
+20V13*Compresser_ficher{string} 52|20s16 21s21
+23V13*Decompresser_fichier{string} 52|27s21
 X 27 system.ads
 67M9*Address
-X 33 s-memory.ads
+X 34 s-memory.ads
 53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
 76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
-X 41 s-stalib.adb
+X 43 s-stalib.adb
 89U14 Break_Start 90i<c,__gnat_break_start>22
-X 48 test_huffman.adb
+X 52 test_huffman.adb
 7U11*Test_Huffman 7b11 37l5 37t17
 9K12 Cellule_codageHuffman[21|5] 11r8
 13A9 T_TabDonnee(integer)<integer>

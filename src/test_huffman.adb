@@ -7,7 +7,7 @@ with Cellule;
 procedure Test_Huffman is
 
    package Cellule_codageHuffman is
-     new Cellule(T_Cle => Character, T_Donnee => Integer);
+     new Cellule(T_Cle => Unbounded_String, T_Donnee => Integer);
    use Cellule_codageHuffman;
 
    type T_TabDonnee is array (1..10) of Integer;

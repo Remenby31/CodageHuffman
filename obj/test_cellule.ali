@@ -24,13 +24,14 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U test_cellule%b	test_cellule.adb	4d3d52e7 NE OO SU
+U test_cellule%b	test_cellule.adb	bb0cf1e6 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.strings%s		a-string.ads		a-string.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z ada.unchecked_deallocation%s
 W cellule%s		cellule.adb		cellule.ali
@@ -67,9 +68,9 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
-D cellule.ads		20220111144402 22f0c8bb cellule%s
-D cellule.adb		20220111210026 23255916 cellule%b
-D cellule_exceptions.ads  20220111205846 fc2ec4fa cellule_exceptions%s
+D cellule.ads		20220112173402 4f01e5ee cellule%s
+D cellule.adb		20220112173402 5388d198 cellule%b
+D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -130,7 +131,7 @@ X 16 a-tiinio.ads
 X 19 cellule.ads
 2+9 T_Cle 53|10r18
 3+9 T_Donnee 53|10r45
-5k9*Cellule 65e12 53|5w6 10r10
+5k9*Cellule 68e12 53|5w6 10r10
 8R9 T_Element
 10P9 T_Cellule(8R9[53|9]) 53|66r55[9] 98r18[9] 108r18[9] 138r18[9] 169r21[9]
 . 202r21[9] 235r18[9] 254r18[9] 273r18[9] 274r18[9] 275r22[9] 288r18[9] 315r18[9]
@@ -143,13 +144,13 @@ X 19 cellule.ads
 . 180s35[9] 182s31[9] 213s28[9]
 42V13 La_Donnee{integer} 53|86s28[9] 124s28[9] 157s28[9] 215s31[9] 217s31[9]
 . 261s21[9]
-46U14 Enregistrer 53|73s10[9] 208s10[9] 280s7[9]
-48U14 Enregistrer_FilsDroit 53|283s7[9]
-50U14 Enregistrer_FilsGauche 53|284s7[9]
-54U14 Supprimer 53|116s10[9] 147s10[9] 174s10[9] 241s10[9]
-61u14 Parcours_Infixe 53|47r10[9] 301r13[9] 333r13[9]
+48U14 Enregistrer 53|73s10[9] 208s10[9] 280s7[9]
+50U14 Enregistrer_FilsDroit 53|283s7[9]
+52U14 Enregistrer_FilsGauche 53|284s7[9]
+57U14 Supprimer 53|116s10[9] 147s10[9] 174s10[9] 241s10[9]
+64u14 Parcours_Infixe 53|47r10[9] 301r13[9] 333r13[9]
 X 21 cellule_exceptions.ads
-2K9*Cellule_Exceptions 7e23 53|3w6 3r45
+2K9*Cellule_Exceptions 8e23 53|3w6 3r45
 4X9*Cle_Absente_Exception 53|244r15 264r15
 X 24 system.ads
 67M9*Address
@@ -172,7 +173,7 @@ X 53 test_cellule.adb
 38U14 Afficher 38b14 38=24 38=53 44l8 44t16 47r26
 38r24 S{12|88R9} 40r29
 38i53 N{integer} 42r12
-46U14 Afficher[19|61] 77s13 120s10 149s10 176s10 210s10
+46U14 Afficher[19|64] 77s13 120s10 149s10 176s10 210s10
 49i4 Nb_Cles{integer} 50r30 55r33 72r19 89r24 114r27 127r22 144r19 155r24
 . 178r22 192r19 212r22 227r19
 50a4 Cles(12|88R9) 73r32 76r55 86r49 90r56 116r31 119r47 123r52 124r49 128r56
@@ -236,7 +237,7 @@ X 53 test_cellule.adb
 292U17 Sommer 292b17 292=24 292=54 298t10 301r29
 292r24 Cle{12|88R9}
 292i54 Donnee{integer} 295r15 297r27
-300U17 Sommer[19|61] 307s7
+300U17 Sommer[19|64] 307s7
 314U14 Tester_Parcours_Infixe_Somme_Si_Cle_Commence_Par_Q 314b14 343l8 343t58
 . 357s4
 315p7 Annuaire{19|10P9[9]} 337m32 337r32 339m15 339r15 341m13 341r13
@@ -244,5 +245,5 @@ X 53 test_cellule.adb
 319U17 Sommer_Cle_Commence_Par_Q 319b17 319=44 319=74 330t10 333r30
 319r44 Cle{12|88R9} 321r24
 319i74 Donnee{integer} 323r18 326r30
-332U17 Sommer[19|61] 339s7
+332U17 Sommer[19|64] 339s7
 

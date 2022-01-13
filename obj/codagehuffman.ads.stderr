@@ -1,2 +1,1 @@
-codagehuffman.ads:19:39: error: "T_Cellule" is not visible
-codagehuffman.ads:19:39: error: non-visible declaration at cellule.ads:10
+cannot generate code for file codagehuffman.ads (package spec)
