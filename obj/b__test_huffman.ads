@@ -352,7 +352,7 @@ package ada_main is
    pragma Export (C, u00155, "celluleS");
    u00156 : constant Version_32 := 16#67ee4aae#;
    pragma Export (C, u00156, "cellule_exceptionsS");
-   u00157 : constant Version_32 := 16#cc050bf0#;
+   u00157 : constant Version_32 := 16#48ada3da#;
    pragma Export (C, u00157, "codagehuffmanB");
    u00158 : constant Version_32 := 16#e26be6de#;
    pragma Export (C, u00158, "codagehuffmanS");

@@ -162,108 +162,161 @@ package body codagehuffman is
       end Afficher_Arbre;
 
 
-      procedure Construire_Table_Huffman(Arbre : in T_Tableau)  is
+      procedure Construire_Table_Huffman(Arbre : in T_Cellule)  is
 
          function int_to_String(entier : Integer) return String is
-            str : String := "0";
+            S : String := Integer'Image (entier);
          begin
-            return str;
+            return S;
          end int_to_String;
-               str : String := "";
-               unstr : Unbounded_String;
-               begin
-                  Null;
-               end Construire_Table_Huffman;
 
-               function Recherche_Code(Arbre : in T_Cellule; str : in Unbounded_String) return Unbounded_String is
-                  Code_Gauche : Unbounded_String;
-                  Fin_Code_Gauche : Character;
-               begin
-                  if Est_Vide(Arbre) then
-                     return To_Unbounded_String("f");
+         function String_to_int(str : String) return Integer is
+            entier : Integer := Integer'Value (str);
+         begin
+            return entier;
+         end String_to_int;
 
-                  elsif Est_Feuille(Arbre) then
-                     if La_Cle_Direct(Arbre) = str then
-                        return To_Unbounded_String("v");
-                     else
-                        return To_Unbounded_String("f");
-                     end if;
+         procedure Donne_Liste_Element(Arbre : in T_Cellule; str : in out Unbounded_String; position_compteur : in out Integer; position_fin : in out Integer) is
+         begin
+            if not(Est_Vide(Arbre)) then
+               if not(Est_Vide(Arbre.all.Fils_gauche)) then
+                  Donne_Liste_Element(Arbre.all.Fils_gauche, str, position_compteur, position_fin);
+               end if;
+
+               if Est_Feuille(Arbre) then
+                  position_compteur := position_compteur + 1;
+                  if La_Cle_Direct(Arbre) = To_Unbounded_String("\$") then
+                     position_fin := position_compteur;
                   else
-
-                     Code_Gauche := Recherche_Code(Arbre.All.Fils_gauche, str);
-                     Fin_Code_Gauche := To_String(Code_Gauche)(To_String(Code_Gauche)'Last);
-
-                     if Fin_Code_Gauche = 'v' then
-                        return "1" & Code_Gauche;
-                     end if;
-                     return "0" & Recherche_Code(Arbre.All.Fils_droit, str);
+                     str := str & La_Cle_Direct(Arbre);
                   end if;
-               end Recherche_Code;
+               end if;
+
+               if not(Est_Vide(Arbre.all.Fils_droit)) then
+                  Donne_Liste_Element(Arbre.all.Fils_droit, str, position_compteur, position_fin);
+               end if;
+            end if;
+         end Donne_Liste_Element;
+
+         str : String := "";
+         unstr : Unbounded_String;
+         position_compteur : Integer :=0;
+         position_fin : Integer :=0;
+
+      begin
+         --Récupération des symboles et de la position du symbole de fin depuis le Tableau
+         Donne_Liste_Element(Arbre, unstr, position_compteur, position_fin);
+         Put("Donneés :");
+         Put(To_String(unstr));Put(position_fin,1);New_Line;
+
+         --Ecriture du Tableau des symboles dans le fichier
+
+         --Ecrire(conversion_Binaire(position_fin))
+         for i in 1..To_String(unstr)'Last loop
+            --Ecrire(conversion_Binaire(String_to_int(unstr(i))))
+            Null;
+         end loop;
+         --Ecrire(conversion_Binaire(String_to_int(unstr(To_String(unstr)'Last))))
 
 
-               Tableau : T_Tableau;
-               Arbre : T_Cellule;
-               char : Unbounded_String := To_Unbounded_String("");
-               str : String := "a";
+         Null;
+      end Construire_Table_Huffman;
 
-               begin
-                  Put_Line("Entrée dans le programme");
-                  open(file_txt, In_File, texte); 	-- Ouverture du fichier en lecture
+      function Recherche_Code(Arbre : in T_Cellule; str : in Unbounded_String) return Unbounded_String is
+         Code_Gauche : Unbounded_String;
+         Fin_Code_Gauche : Character;
+      begin
+         if Est_Vide(Arbre) then
+            return To_Unbounded_String("f");
 
-                  Put_Line("Fichier récupéré");
-                  Put("Message lu : ");
+         elsif Est_Feuille(Arbre) then
+            if La_Cle_Direct(Arbre) = str then
+               return To_Unbounded_String("v");
+            else
+               return To_Unbounded_String("f");
+            end if;
+         else
 
-                  InitialiserTableau(Tableau);
-                  while not end_of_file(file_txt) loop
-                     Get_immediate (file_txt, str(1));
-                     if La_Donnee_Direct(Tableau(Character'Pos(str(1)) + 1)) = - 1 then
-                        Enregistrer(Tableau(Character'Pos(str(1)) + 1), To_Unbounded_String(str), 1);
-                     else
-                        Enregistrer(Tableau(Character'Pos(str(1)) + 1), To_Unbounded_String(str), (La_Donnee_Direct(Tableau(Character'Pos(str(1)) + 1)) + 1));
-                     end if;
-                     Put(str(1)); Put("|");
-                  end loop;
-                  close (file_txt);
+            Code_Gauche := Recherche_Code(Arbre.All.Fils_gauche, str);
+            Fin_Code_Gauche := To_String(Code_Gauche)(To_String(Code_Gauche)'Last);
 
-                  New_Line;
-                  Put_Line("Contenu du fichier récupéré");
-                  Put("La donnée de o : ");Put(La_Donnee_Direct(Tableau(Character'Pos('o') + 1)),1);New_Line;
-
-                  Put("Début du Tri...");
-                  Tri_selection(Tableau);
-                  Afficher_Tableau(Tableau);
-                  Put_Line(" Ok"); New_Line;
+            if Fin_Code_Gauche = 'v' then
+               return "1" & Code_Gauche;
+            end if;
+            return "0" & Recherche_Code(Arbre.All.Fils_droit, str);
+         end if;
+      end Recherche_Code;
 
 
-                  Put("Début de la construction de l'arbre...");
-                  Arbre := Construire_Arbre(Tableau);
-                  Put_Line(" Ok");New_Line;
+      Tableau : T_Tableau;
+      Arbre : T_Cellule;
+      char : Unbounded_String := To_Unbounded_String("");
+      str : String := "a";
 
-                  if Est_Feuille(Arbre) then
-                     Put("feuile!");
-                  end if;
+   begin
+      Put_Line("Entrée dans le programme");
+      open(file_txt, In_File, texte); 	-- Ouverture du fichier en lecture
 
-                  Afficher_Cellule(Arbre);New_Line;
+      Put_Line("Fichier récupéré");
+      Put("Message lu : ");
+
+      InitialiserTableau(Tableau);
+      while not end_of_file(file_txt) loop
+         Get_immediate (file_txt, str(1));
+         if La_Donnee_Direct(Tableau(Character'Pos(str(1)) + 1)) = - 1 then
+            Enregistrer(Tableau(Character'Pos(str(1)) + 1), To_Unbounded_String(str), 1);
+         else
+            Enregistrer(Tableau(Character'Pos(str(1)) + 1), To_Unbounded_String(str), (La_Donnee_Direct(Tableau(Character'Pos(str(1)) + 1)) + 1));
+         end if;
+         Put(str(1)); Put("|");
+      end loop;
+      close (file_txt);
+
+      New_Line;
+      Put_Line("Contenu du fichier récupéré");
+      Put("La donnée de o : ");Put(La_Donnee_Direct(Tableau(Character'Pos('o') + 1)),1);New_Line;
+
+      Put("Début du Tri...");
+      Tri_selection(Tableau);
+      Afficher_Tableau(Tableau);
+      Put_Line(" Ok"); New_Line;
 
 
-                  Put("Début de l'affichage de l'arbre...");New_Line;
-                  Afficher_Arbre(Arbre,char);
-                  Put_Line(" Ok");New_Line;
+      Put("Début de la construction de l'arbre...");
+      Arbre := Construire_Arbre(Tableau);
+      Put_Line(" Ok");New_Line;
+
+      if Est_Feuille(Arbre) then
+         Put("feuile!");
+      end if;
+
+      Afficher_Cellule(Arbre);New_Line;
+
+
+      Put("Début de l'affichage de l'arbre...");New_Line;
+      Afficher_Arbre(Arbre,char);
+      Put_Line(" Ok");New_Line;
 
 
 
+      Put("Début du chemin...");New_Line;
+      char := Recherche_Code(Arbre,To_Unbounded_String("t"));
+      Put(To_String(char));New_Line;
+      Put_Line(" Ok");New_Line;
 
-                  Put("Début du chemin...");New_Line;
-                  char := Recherche_Code(Arbre,To_Unbounded_String("t"));
-                  Put(To_String(char));
-                  Put_Line(" Ok");New_Line;
-                  return texte;
-               end Compresser_ficher;
-
-               function Decompresser_fichier(texte : in String) return String is
-               begin
-                  return "Null";
-               end Decompresser_fichier;
+      Put("Début de la Table Huffman...");New_Line;
+      Construire_Table_Huffman(Arbre);New_Line;
+      Put_Line(" Ok");New_Line;
 
 
-            end codagehuffman;
+
+      return texte;
+   end Compresser_ficher;
+
+   function Decompresser_fichier(texte : in String) return String is
+   begin
+      return "Null";
+   end Decompresser_fichier;
+
+
+end codagehuffman;
