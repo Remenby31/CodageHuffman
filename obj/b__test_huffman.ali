@@ -18,12 +18,12 @@ RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV NO_OBSOLESCENT_FEATURES
 
-U ada_main%b		b__test_huffman.adb	b7dab861 OO PK IL
+U ada_main%b		b__test_huffman.adb	cba05b21 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 Z system%s		system.ads		system.ali
 
-U ada_main%s		b__test_huffman.ads	5fb58afb EE NE OO PK IL
+U ada_main%s		b__test_huffman.ads	23cf69bb EE NE OO PK IL
 W system%s		system.ads		system.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
@@ -31,8 +31,8 @@ W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 D ada.ads		20210520051132 76789da1 ada%s
 D a-except.ads		20210520051128 946f3014 ada.exceptions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D b__test_huffman.ads	20220113161110 ac27a66f ada_main%s
-D b__test_huffman.adb	20220113161110 8f922e1a ada_main%b
+D b__test_huffman.ads	20220114173034 d05d452f ada_main%s
+D b__test_huffman.adb	20220114173034 8f922e1a ada_main%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-parame.ads		20210520051134 4752c4cb system.parameters%s
 D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
@@ -51,7 +51,7 @@ X 1 ada.ads
 X 2 a-except.ads
 44K13*Exceptions 289e19 5|6w10
 X 4 b__test_huffman.ads
-6K9*ada_main 572l5 572e13 5|8b14 333l5 333t13
+6K9*ada_main 575l5 575e13 5|8b14 333l5 333t13
 8i4*gnat_argc{integer} 12m22 12r22 5|306r10 307m10
 9m4*gnat_argv{6|67M9} 13m22 13r22 5|308m10
 10m4*gnat_envp{6|67M9} 14m22 14r22 5|310m7
@@ -80,7 +80,7 @@ X 4 b__test_huffman.ads
 . 309r22 311r22 313r22 315r22 317r22 319r22 321r22 323r22 325r22 327r22 329r22
 . 331r22 333r22 335r22 337r22 339r22 341r22 343r22 345r22 347r22 349r22 351r22
 . 353r22 355r22 357r22 359r22 361r22 363r22 365r22 367r22 369r22 371r22 373r22
-. 375r22 377r22 379r22 381r22 383r22 385r22 387r22 389r22 391r22
+. 375r22 377r22 379r22 381r22 383r22 385r22 387r22 389r22 391r22 393r22
 43m4*u00001{42M9} 44r22
 45m4*u00002{42M9} 46r22
 47m4*u00003{42M9} 48r22
@@ -256,6 +256,7 @@ X 4 b__test_huffman.ads
 387m4*u00173{42M9} 388r22
 389m4*u00174{42M9} 390r22
 391m4*u00175{42M9} 392r22
+393m4*u00176{42M9} 394r22
 X 5 b__test_huffman.adb
 10i4 E067{short_integer} 10m46 10r46 233m7 233r15
 11i4 E006{short_integer} 11m46 11r46 239m7 239r15

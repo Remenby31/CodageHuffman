@@ -1,0 +1,2 @@
+codagehuffman.adb:244:34: warning: value not in range of subtype of "Standard.Integer" defined at line 229 [enabled by default]
+codagehuffman.adb:244:34: warning: "Constraint_Error" will be raised at run time [enabled by default]

@@ -1,5 +1,9 @@
 package body codagehuffman is
 
+   file_txt : Ada.Text_IO.file_type;			-- pour l'accès par caractère
+   file_byte, file_hff : Byte_file.file_type;	-- pour l'accès par byte
+   nom_fichier : constant String := "fichier.txt";
+   texte_a_envoyer : Unbounded_String;
 
    procedure InitialiserTableau(Tableau : out T_Tableau) is
       compteur : Integer := 0;
@@ -56,11 +60,36 @@ package body codagehuffman is
       end if;
    end Afficher_Cellule;
 
-   function Compresser_ficher return String is
+   procedure Ecrire_Fichier(un_byte : in T_byte) is
+   begin
+      Open(file_hff, Append_File, nom_fichier & ".hff"); -- Création / écriture
+      write(file_hff, un_byte);
+      close(file_hff);
+   end Ecrire_Fichier;
 
-      file_txt : Ada.Text_IO.file_type;			-- pour l'accÃ¨s par caractÃ¨re
-      file_byte, file_hff : Byte_file.file_type;	-- pour l'accÃ¨s par byte
-      texte : constant String := "fichier.txt";
+   procedure Ecrire_Fichier(Ch : in Character) is
+      un_byte : T_byte := Character'Pos(Ch);
+   begin
+      Put(Ch);
+      Ecrire_Fichier(un_byte);
+   end Ecrire_Fichier;
+
+   procedure Ecrire_Fichier(entier : in Integer) is
+   begin
+      Ecrire_Fichier(Character'Val(entier));
+   end Ecrire_Fichier;
+
+   procedure Ecrire_Fichier(str : in String) is
+   begin
+      for i in 1..str'Last loop
+         Ecrire_Fichier(str(i));
+      end loop;
+   end Ecrire_Fichier;
+
+
+   procedure Compresser_ficher is
+
+
 
       package Byte_file is new Ada.Sequential_IO(T_byte);
       use Byte_file ;
@@ -161,8 +190,7 @@ package body codagehuffman is
          end if;
       end Afficher_Arbre;
 
-
-      procedure Construire_Table_Huffman(Arbre : in T_Cellule)  is
+      procedure Ecrire_Table_Huffman(Arbre : in T_Cellule) is
 
          function int_to_String(entier : Integer) return String is
             S : String := Integer'Image (entier);
@@ -211,16 +239,16 @@ package body codagehuffman is
 
          --Ecriture du Tableau des symboles dans le fichier
 
-         --Ecrire(conversion_Binaire(position_fin))
-         for i in 1..To_String(unstr)'Last loop
-            --Ecrire(conversion_Binaire(String_to_int(unstr(i))))
-            Null;
-         end loop;
-         --Ecrire(conversion_Binaire(String_to_int(unstr(To_String(unstr)'Last))))
+         --unstr := To_Unbounded_String(int_to_String(position_fin)) & unstr & unstr(Length(unstr));
+         str :=  To_String(unstr);
+         unstr := unstr & str(str'Last);
 
+         Ecrire_Fichier(position_fin);
+         Ecrire_Fichier(To_String(unstr));
+         Ecrire_Fichier(To)
 
          Null;
-      end Construire_Table_Huffman;
+      end Ecrire_Table_Huffman;
 
       function Recherche_Code(Arbre : in T_Cellule; str : in Unbounded_String) return Unbounded_String is
          Code_Gauche : Unbounded_String;
@@ -247,15 +275,45 @@ package body codagehuffman is
          end if;
       end Recherche_Code;
 
+      procedure Ecrire_Arbre(Arbre : in T_Cellule) is
+
+         procedure Donne_Arbre_Rec(Arbre : in T_Cellule; str : in out Unbounded_String) is
+         begin
+            if not(Est_Vide(Arbre)) then
+               if not(Est_Vide(Arbre.all.Fils_gauche)) then
+                  str := str & To_Unbounded_String("0");
+                  Donne_Arbre_Rec(Arbre.all.Fils_gauche,str);
+               end if;
+               if Est_Feuille(Arbre) then
+                  str := str & To_Unbounded_String("1");
+               end if;
+               if not(Est_Vide(Arbre.all.Fils_droit)) then
+
+                  Donne_Arbre_Rec(Arbre.all.Fils_droit,str);
+               end if;
+            end if;
+         end Donne_Arbre_Rec;
+
+         str : Unbounded_String;
+      begin
+         Donne_Arbre_Rec(Arbre, str);
+         --Ecrire(str)
+      end Ecrire_Arbre;
+
+
 
       Tableau : T_Tableau;
       Arbre : T_Cellule;
       char : Unbounded_String := To_Unbounded_String("");
       str : String := "a";
+      un_byte :  T_byte := 115;
+
 
    begin
       Put_Line("Entrée dans le programme");
-      open(file_txt, In_File, texte); 	-- Ouverture du fichier en lecture
+      open(file_txt, In_File, nom_fichier); 	-- Ouverture du fichier en lecture
+      create(file_hff, Out_File, nom_fichier & ".hff");close(file_hff);
+
 
       Put_Line("Fichier récupéré");
       Put("Message lu : ");
@@ -297,20 +355,19 @@ package body codagehuffman is
       Afficher_Arbre(Arbre,char);
       Put_Line(" Ok");New_Line;
 
-
-
       Put("Début du chemin...");New_Line;
       char := Recherche_Code(Arbre,To_Unbounded_String("t"));
       Put(To_String(char));New_Line;
       Put_Line(" Ok");New_Line;
 
       Put("Début de la Table Huffman...");New_Line;
-      Construire_Table_Huffman(Arbre);New_Line;
+      Ecrire_Table_Huffman(Arbre);New_Line;
       Put_Line(" Ok");New_Line;
 
+      Put("Début de l'écriture d'un caractere...");
+      Ecrire_Fichier("Salut ca va ?");
+      Put_Line(" Ok");New_Line;
 
-
-      return texte;
    end Compresser_ficher;
 
    function Decompresser_fichier(texte : in String) return String is

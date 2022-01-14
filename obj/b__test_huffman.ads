@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#046acbda#;
+   u00001 : constant Version_32 := 16#3b955111#;
    pragma Export (C, u00001, "test_huffmanB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -352,9 +352,9 @@ package ada_main is
    pragma Export (C, u00155, "celluleS");
    u00156 : constant Version_32 := 16#67ee4aae#;
    pragma Export (C, u00156, "cellule_exceptionsS");
-   u00157 : constant Version_32 := 16#48ada3da#;
+   u00157 : constant Version_32 := 16#dbf5a85a#;
    pragma Export (C, u00157, "codagehuffmanB");
-   u00158 : constant Version_32 := 16#e26be6de#;
+   u00158 : constant Version_32 := 16#a358cc98#;
    pragma Export (C, u00158, "codagehuffmanS");
    u00159 : constant Version_32 := 16#df420fa3#;
    pragma Export (C, u00159, "system__byte_swappingS");
@@ -390,6 +390,8 @@ package ada_main is
    pragma Export (C, u00174, "system__storage_pools__subpools__finalizationB");
    u00175 : constant Version_32 := 16#8bd8fdc9#;
    pragma Export (C, u00175, "system__storage_pools__subpools__finalizationS");
+   u00176 : constant Version_32 := 16#8f461df5#;
+   pragma Export (C, u00176, "text_ioS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -561,6 +563,7 @@ package ada_main is
    --  system.pool_global%b
    --  system.sequential_io%s
    --  system.sequential_io%b
+   --  text_io%s
    --  cellule_exceptions%s
    --  cellule%s
    --  cellule%b

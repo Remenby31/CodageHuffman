@@ -2,6 +2,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Command_line; use Ada.Command_line;
 with Ada.Sequential_IO ;	-- pour l'accès typé aux fichiers (integer, naturel,							-- float, etc.)
+with Text_Io;   use Text_Io;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Cellule_Exceptions;         use Cellule_Exceptions;
 with cellule;
@@ -17,7 +18,7 @@ package codageHuffman is
    function Calcul_Frequence(texte : in String) return T_Tableau;
 
    -- Compresser le fichier
-   function Compresser_ficher return String;
+   procedure Compresser_ficher;
 
    -- D�compresser le fichier
    function Decompresser_fichier(texte : in String) return String;

@@ -17,8 +17,7 @@ procedure Test_Huffman is
    procedure Test_Compresser_ficher is
       texte : String := "exemple de texte";
    begin
-      Put_Line(Compresser_ficher);
-      pragma Assert(Compresser_ficher = "11.001.11.000.1011.0101.11.011.10101.11.011.100.11.001.100.11.011.10100.0100.11.001.11.000.1011.100.11.011.100.11.000.1011.11.100.11.011.0101.11.001.11.000.11.0100") ;
+      Compresser_ficher;
    end Test_Compresser_ficher;
 
    procedure Test_Decompresser_fichier is
