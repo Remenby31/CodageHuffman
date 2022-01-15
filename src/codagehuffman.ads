@@ -14,15 +14,13 @@ package codageHuffman is
    package Byte_file is new Ada.Sequential_IO(T_byte) ;
    use Byte_file ;
 
-   -- Calculer les fr�quences des caract�res du texte
-   function Calcul_Frequence(texte : in String) return T_Tableau;
+
 
    -- Compresser le fichier
    procedure Compresser_ficher;
 
    -- D�compresser le fichier
-   function Decompresser_fichier(texte : in String) return String;
-
+   procedure Decompresser_fichier;
 
 private
 

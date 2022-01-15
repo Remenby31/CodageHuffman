@@ -9,6 +9,7 @@ RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTIONS
 RV NO_IO
+RV NO_LOCAL_ALLOCATORS
 RV NO_NESTED_FINALIZATION
 RV NO_RECURSION
 RV NO_SECONDARY_STACK
@@ -21,11 +22,12 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 
-U codagehuffman%b	codagehuffman.adb	4dd9cf8c OO PK IL
+U codagehuffman%b	codagehuffman.adb	c83ba398 OO PK IL
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
 Z ada.unchecked_conversion%s
 Z cellule%s		cellule.adb		cellule.ali  ED
 W interfaces%s		interfac.ads		interfac.ali
@@ -43,7 +45,7 @@ Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
 Z system.val_int%s	s-valint.ads		s-valint.ali
 
-U codagehuffman%s	codagehuffman.ads	a358cc98 EE OO PF PK
+U codagehuffman%s	codagehuffman.ads	b07ac910 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.command_line%s	a-comlin.adb		a-comlin.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
@@ -101,8 +103,8 @@ D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
 D cellule.ads		20220112173402 4f01e5ee cellule%s
 D cellule.adb		20220112173402 5388d198 cellule%b
 D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
-D codagehuffman.ads	20220114165210 8e5d1808 codagehuffman%s
-D codagehuffman.adb	20220114180202 c384d784 codagehuffman%b
+D codagehuffman.ads	20220115014804 9d7f1d80 codagehuffman%s
+D codagehuffman.adb	20220115025332 5544be18 codagehuffman%b
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -159,223 +161,281 @@ G c Z s s [end_of_file codagehuffman__byte_file 102 13 14_4]
 G c Z s s [to_fcb codagehuffman__byte_file 60 13 14_4]
 G c Z s s [to_sio codagehuffman__byte_file 61 13 14_4]
 G c Z s s [byte_swap codagehuffman__byte_file 66 14 14_4]
-G c Z s b [calcul_frequence codagehuffman 18 13 none]
-G c Z s b [compresser_ficher codagehuffman 21 14 none]
-G c Z s b [decompresser_fichier codagehuffman 24 13 none]
-G c Z s s [initialiser codagehuffman__cellule_codagehuffman 23 14 29_4]
-G c Z s s [vider codagehuffman__cellule_codagehuffman 25 14 29_4]
-G c Z s s [est_vide codagehuffman__cellule_codagehuffman 29 13 29_4]
-G c Z s s [taille codagehuffman__cellule_codagehuffman 32 13 29_4]
-G c Z s s [est_feuille codagehuffman__cellule_codagehuffman 37 13 29_4]
-G c Z s s [cle_presente codagehuffman__cellule_codagehuffman 40 13 29_4]
-G c Z s s [la_donnee codagehuffman__cellule_codagehuffman 42 13 29_4]
-G c Z s s [la_donnee_direct codagehuffman__cellule_codagehuffman 44 13 29_4]
-G c Z s s [la_cle_direct codagehuffman__cellule_codagehuffman 45 13 29_4]
-G c Z s s [enregistrer codagehuffman__cellule_codagehuffman 48 14 29_4]
-G c Z s s [enregistrer_filsdroit codagehuffman__cellule_codagehuffman 50 14 29_4]
-G c Z s s [enregistrer_filsgauche codagehuffman__cellule_codagehuffman 52 14 29_4]
-G c Z s s [supprimer codagehuffman__cellule_codagehuffman 57 14 29_4]
-G c Z s s [t_elementDI codagehuffman__cellule_codagehuffman 12 9 29_4]
-G c Z s s [t_elementDA codagehuffman__cellule_codagehuffman 12 9 29_4]
-G c Z s s [t_elementDF codagehuffman__cellule_codagehuffman 12 9 29_4]
-G c Z s s [t_elementIP codagehuffman__cellule_codagehuffman 12 9 29_4]
-G c Z s s [free codagehuffman__cellule_codagehuffman 6 14 29_4]
-G c Z s s [Tt_tableauBIP codagehuffman 33 4 none]
+G c Z s b [compresser_ficher codagehuffman 20 14 none]
+G c Z s b [decompresser_fichier codagehuffman 23 14 none]
+G c Z s s [initialiser codagehuffman__cellule_codagehuffman 23 14 27_4]
+G c Z s s [vider codagehuffman__cellule_codagehuffman 25 14 27_4]
+G c Z s s [est_vide codagehuffman__cellule_codagehuffman 29 13 27_4]
+G c Z s s [taille codagehuffman__cellule_codagehuffman 32 13 27_4]
+G c Z s s [est_feuille codagehuffman__cellule_codagehuffman 37 13 27_4]
+G c Z s s [cle_presente codagehuffman__cellule_codagehuffman 40 13 27_4]
+G c Z s s [la_donnee codagehuffman__cellule_codagehuffman 42 13 27_4]
+G c Z s s [la_donnee_direct codagehuffman__cellule_codagehuffman 44 13 27_4]
+G c Z s s [la_cle_direct codagehuffman__cellule_codagehuffman 45 13 27_4]
+G c Z s s [enregistrer codagehuffman__cellule_codagehuffman 48 14 27_4]
+G c Z s s [enregistrer_filsdroit codagehuffman__cellule_codagehuffman 50 14 27_4]
+G c Z s s [enregistrer_filsgauche codagehuffman__cellule_codagehuffman 52 14 27_4]
+G c Z s s [supprimer codagehuffman__cellule_codagehuffman 57 14 27_4]
+G c Z s s [t_elementDI codagehuffman__cellule_codagehuffman 12 9 27_4]
+G c Z s s [t_elementDA codagehuffman__cellule_codagehuffman 12 9 27_4]
+G c Z s s [t_elementDF codagehuffman__cellule_codagehuffman 12 9 27_4]
+G c Z s s [t_elementIP codagehuffman__cellule_codagehuffman 12 9 27_4]
+G c Z s s [free codagehuffman__cellule_codagehuffman 6 14 27_4]
+G c Z s s [Tt_tableauBIP codagehuffman 31 4 none]
 G c Z b b [initialisertableau codagehuffman 8 14 none]
-G c Z b b [afficher_tableau codagehuffman 39 14 none]
-G c Z b b [afficher_cellule codagehuffman 52 14 none]
-G c Z b b [ecrire_fichier codagehuffman 63 14 none]
-G c Z b b [ecrire_fichier codagehuffman 70 14 none]
-G c Z b b [ecrire_fichier codagehuffman 77 14 none]
-G c Z b b [ecrire_fichier codagehuffman 82 14 none]
+G c Z b b [afficher_tableau codagehuffman 22 14 none]
+G c Z b b [afficher_cellule codagehuffman 35 14 none]
+G c Z b b [ecrire_fichier codagehuffman 46 14 none]
+G c Z b b [ecrire_fichier codagehuffman 53 14 none]
+G c Z b b [ecrire_fichier codagehuffman 60 14 none]
+G c Z b b [ecrire_fichier codagehuffman 68 14 none]
 G r i none [s codagehuffman 10 1 none] [cellule standard 5 9 none]
 X 1 ada.ads
-16K9*Ada 20e8 25|1r6 1r23 2r6 2r31 3r6 3r28 4r6 6r6 6r33 14r29 26|3r15 94r32
+16K9*Ada 20e8 25|1r6 1r23 2r6 2r31 3r6 3r28 4r6 6r6 6r33 14r29 26|3r15 79r32
 X 4 a-comlin.ads
 36K13*Command_Line 144e21 25|3w10 3r32
 X 7 a-inteio.ads
 18K13*Integer_Text_IO[19|46] 25|2w10 2r35
 X 9 a-sequio.ads
-43k13*Sequential_IO 160e22 25|4w10 14r33 26|94r36
+43k13*Sequential_IO 160e22 25|4w10 14r33 26|79r36
 53P9*File_Type<45|63P9> 26|4r36[25|14]
 55E9*File_Mode
-55n32*Out_File{55E9[25|14]} 26|313r24[25|14]
-55n42*Append_File{55E9[25|14]} 26|65r22[25|14]
-70U14*Create 26|313s7[25|14]
-76U14*Open 26|65s7[25|14]
-82U14*Close 26|67s7[25|14] 313s56[25|14]
-100U14*Write 26|66s7[25|14]
+55n23*In_File{55E9[25|14]} 26|458r26[25|14]
+55n32*Out_File{55E9[25|14]} 26|108r27[25|14]
+55n42*Append_File{55E9[25|14]} 26|48r22[25|14]
+70U14*Create 26|108s10[25|14]
+76U14*Open 26|48s7[25|14] 458s10[25|14]
+82U14*Close 26|50s7[25|14] 109s10[25|14] 463s10[25|14]
+99U14*Read 26|460s13[25|14]
+100U14*Write 26|49s7[25|14]
+102V13*End_Of_File{boolean} 26|459s20[25|14]
 X 12 a-string.ads
 16K13*Strings 35e16 25|6r10 6r37
 X 15 a-strunb.ads
 83K21*Unbounded 765e26 25|6w18 6r45
-88R9*Unbounded_String<6|43R9> 744e15 25|30r27 26|6r22 159r65 207r75 230r18
-. 251r62 251r87 252r24 278r71 295r16 305r14
-104V13*To_Unbounded_String{88R9} 26|16s34 19s33 136s37 144s40 146s42 216s45
-. 256s20 260s23 262s23 282s32 286s32 305s34 323s61 325s61 357s36
-117V13*To_String{string} 26|47s17 59s14 165s30 176s20 182s20 238s14 243s18
-. 245s25 267s32 267s55 358s11
-152V14*"&"{88R9} 26|219s33 282s30 286s30
-160V14*"&"{88R9} 26|181s59 187s60
-168V14*"&"{88R9} 26|270s27 272s24
-176V14*"&"{88R9} 26|244s25
-239V14*"="{boolean} 26|216s43 259s37
+88R9*Unbounded_String<6|43R9> 744e15 25|28r27 26|6r22 173r65 207r62 207r87
+. 208r18 209r69 209r94 211r27 255r75 278r18 297r71 314r16 322r24 323r25 342r47
+. 360r21 388r14 437r64 441r22 453r18 454r22
+93V13*Length{natural} 26|376s19
+104V13*To_Unbounded_String{88R9} 26|16s34 19s33 96s64 98s64 150s37 158s40
+. 160s42 216s23 220s26 222s26 264s45 301s32 305s32 334s62 388s34 419s36 494s37
+. 497s37
+117V13*To_String{string} 26|30s17 42s14 179s30 190s20 196s20 227s35 227s58
+. 237s30 237s52 286s14 289s42 291s25 332s25 339s20 347s24 348s19 350s22 420s11
+. 467s22 472s17
+152V14*"&"{88R9} 26|267s33 301s30 305s30 334s39
+160V14*"&"{88R9} 26|195s59 201s60 447s33 461s28
+168V14*"&"{88R9} 26|230s30 232s27
+176V14*"&"{88R9} 26|289s26 329s37 365s34 373s31 377s31
+192V13*Element{character} 26|289s28 333s26
+239V14*"="{boolean} 26|219s40 264s43
+582V13*Delete{88R9} 26|237s17
 X 18 a-textio.ads
 58K13*Text_IO 725e16 25|1w10 1r27 26|3r19
 65P9*File_Type 26|3r27
-67n23*In_File{67E9} 26|312r22
-112U14*Open 26|312s7
-127U14*Close 26|329s7
-262U14*New_Line 26|41s7 42s51 47s107 54s7 55s51 59s103 173s13 238s52 331s7
-. 333s89 338s24 343s23 349s31 352s49 354s23 356s33 358s28 359s23 361s43 362s35
-. 363s23 367s23
-310V13*End_Of_File{boolean} 26|320s17
-390U14*Put 26|73s7 327s10
-413U14*Get_Immediate 26|321s10
-463U14*Put 26|42s7 42s18 42s37 47s13 47s55 55s7 55s18 55s37 59s10 59s49 163s13
-. 163s53 165s16 165s26 165s63 176s16 180s16 182s16 186s16 237s10 238s10 317s7
-. 327s23 333s7 335s7 341s7 346s10 352s7 356s7 358s7 361s7 365s7
-506U14*Put_Line 26|45s13 57s10 311s7 316s7 332s7 338s7 343s7 354s7 359s7
-. 363s7 367s7
+67n23*In_File{67E9} 26|87r25 326r28
+112U14*Open 26|87s10 326s13
+127U14*Close 26|102s10 337s13
+262U14*New_Line 26|24s7 25s51 30s107 37s7 38s51 42s103 187s13 285s10 286s52
+. 404s24 409s23 411s31 414s49 416s23 418s33 420s28 421s23 423s43 424s35 425s23
+. 427s43 428s27 429s23
+310V13*End_Of_File{boolean} 26|93s20 327s23
+390U14*Put 26|56s7 100s13
+413U14*Get_Immediate 26|94s13 328s16
+463U14*Put 26|25s7 25s18 25s37 30s13 30s55 38s7 38s18 38s37 42s10 42s49 90s10
+. 100s26 177s13 177s53 179s16 179s26 179s63 190s16 194s16 196s16 200s16 285s20
+. 286s10 401s7 407s7 414s7 418s7 420s7 423s7 427s7 512s7
+506U14*Put_Line 26|28s13 40s10 89s10 394s7 399s7 404s7 409s7 416s7 421s7
+. 425s7 429s7
 X 19 a-tiinio.ads
-80U14*Put 26|47s71[7|18] 59s70[7|18] 163s22[7|18] 238s32[7|18] 333s32[7|18]
+80U14*Put 26|30s71[7|18] 42s70[7|18] 177s22[7|18] 286s32[7|18]
 X 22 cellule.ads
-2+9 T_Cle 25|30r18
-3+9 T_Donnee 25|30r45
-5k9*Cellule 68e12 25|8w6 30r10
+2+9 T_Cle 25|28r18
+3+9 T_Donnee 25|28r45
+5k9*Cellule 68e12 25|8w6 28r10
 8R9*T_Element
-10P9*T_Cellule(8R9[25|29]) 25|33r39[29] 26|52r44[25|29] 99r19[25|29] 111r67[25|29]
-. 122r20[25|29] 159r43[25|29] 161r51[25|29] 193r49[25|29] 207r51[25|29] 251r42[25|29]
-. 276r41[25|29] 278r47[25|29] 304r15[25|29]
-16p10*Fils_gauche{10P9[25|29]} 26|185r39[25|29] 187r41[25|29] 210r42[25|29]
-. 211r49[25|29] 266r53[25|29] 281r42[25|29] 283r45[25|29]
-17p10*Fils_droit{10P9[25|29]} 26|179r39[25|29] 181r41[25|29] 223r42[25|29]
-. 224r49[25|29] 272r51[25|29] 288r42[25|29] 290r45[25|29]
-23U14*Initialiser 26|14s10[25|29] 18s7[25|29] 135s16[25|29] 143s16[25|29]
-. 145s16[25|29]
-29V13*Est_Vide{boolean} 26|44s13[25|29] 56s10[25|29] 170s17[25|29] 179s20[25|29]
-. 185s20[25|29] 209s20[25|29] 210s23[25|29] 223s23[25|29] 255s13[25|29] 280s20[25|29]
-. 281s23[25|29] 288s23[25|29]
-37V13*Est_Feuille{boolean} 26|164s16[25|29] 175s20[25|29] 214s19[25|29] 258s16[25|29]
-. 285s19[25|29] 345s10[25|29]
-44V13*La_Donnee_Direct{integer} 26|29s13[25|29] 32s74[25|29] 47s75[25|29]
-. 59s74[25|29] 103s26[25|29] 103s60[25|29] 116s45[25|29] 136s63[25|29] 136s94[25|29]
-. 163s26[25|29] 322s13[25|29] 325s88[25|29] 333s36[25|29]
-45V13*La_Cle_Direct{15|88R9} 26|30s42[25|29] 32s42[25|29] 47s27[25|29] 59s24[25|29]
-. 165s40[25|29] 216s22[25|29] 219s35[25|29] 259s16[25|29]
-48U14*Enregistrer 26|16s10[25|29] 19s7[25|29] 30s13[25|29] 32s13[25|29] 136s16[25|29]
-. 144s16[25|29] 146s16[25|29] 323s13[25|29] 325s13[25|29]
-50U14*Enregistrer_FilsDroit 26|140s16[25|29]
-52U14*Enregistrer_FilsGauche 26|139s16[25|29]
+10P9*T_Cellule(8R9[25|27]) 25|31r39[27] 26|35r44[25|27] 113r19[25|27] 125r67[25|27]
+. 136r20[25|27] 173r43[25|27] 175r51[25|27] 207r42[25|27] 209r49[25|27] 241r49[25|27]
+. 255r51[25|27] 295r41[25|27] 297r47[25|27] 319r41[25|27] 387r15[25|27] 485r18[25|27]
+. 487r56[25|27] 488r25[25|27]
+16p10*Fils_gauche{10P9[25|27]} 26|199r39[25|27] 201r41[25|27] 226r60[25|27]
+. 258r42[25|27] 259r49[25|27] 300r42[25|27] 302r45[25|27]
+17p10*Fils_droit{10P9[25|27]} 26|193r39[25|27] 195r41[25|27] 232r58[25|27]
+. 271r42[25|27] 272r49[25|27] 307r42[25|27] 309r45[25|27]
+23U14*Initialiser 26|14s10[25|27] 18s7[25|27] 149s16[25|27] 157s16[25|27]
+. 159s16[25|27] 491s13[25|27] 505s10[25|27]
+29V13*Est_Vide{boolean} 26|27s13[25|27] 39s10[25|27] 184s17[25|27] 193s20[25|27]
+. 199s20[25|27] 215s16[25|27] 257s20[25|27] 258s23[25|27] 271s23[25|27] 299s20[25|27]
+. 300s23[25|27] 307s23[25|27]
+37V13*Est_Feuille{boolean} 26|178s16[25|27] 189s20[25|27] 218s19[25|27] 262s19[25|27]
+. 304s19[25|27]
+44V13*La_Donnee_Direct{integer} 26|30s75[25|27] 42s74[25|27] 95s16[25|27]
+. 98s91[25|27] 117s26[25|27] 117s60[25|27] 130s45[25|27] 150s63[25|27] 150s94[25|27]
+. 177s26[25|27]
+45V13*La_Cle_Direct{15|88R9} 26|30s27[25|27] 42s24[25|27] 179s40[25|27] 219s19[25|27]
+. 264s22[25|27] 267s35[25|27]
+48U14*Enregistrer 26|16s10[25|27] 19s7[25|27] 96s16[25|27] 98s16[25|27] 150s16[25|27]
+. 158s16[25|27] 160s16[25|27] 494s19[25|27] 497s19[25|27]
+50U14*Enregistrer_FilsDroit 26|154s16[25|27]
+52U14*Enregistrer_FilsGauche 26|153s16[25|27] 501s13[25|27]
 X 24 cellule_exceptions.ads
 2K9*Cellule_Exceptions 8e23 25|7w6 7r38
 X 25 codagehuffman.ads
-10K9*codageHuffman 29E12 35l5 35e18 26|1b14 377l5 377t18
-11A9*T_Tableau(22|10P9[29]) 18r56 33c9 26|8r47 22r56 23r17 39r44 98r48 111r49
-. 113r45 303r17
-12M9*T_byte 14r47 26|63r42 71r17 94r50 307r18
+10K9*codageHuffman 27E12 33l5 33e18 26|1b14 516l5 516t18
+11A9*T_Tableau(22|10P9[27]) 31c9 26|8r47 22r44 83r37 84r20 112r48 125r49
+. 127r45 386r17
+12M9*T_byte 14r47 26|46r42 54r17 79r50 343r21 390r18 455r20
 14K12*Byte_file[9|43] 15r8 26|4r26
-18V13*Calcul_Frequence{11A9} 18>30 26|22b13 37l8 37t24
-18a30 texte{string} 26|22b30 27r16 28r34
-21U14*Compresser_ficher 26|90b14 369l8 369t25
-24V13*Decompresser_fichier{string} 24>34 26|371b13 374l8 374t28
-24a34 texte{string} 26|371b34
-29K12 Cellule_codageHuffman[22|5] 31r8
+20U14*Compresser_ficher 26|76b14 431l8 431t25
+23U14*Decompresser_fichier 26|433b14 513l8 513t28
+27K12 Cellule_codageHuffman[22|5] 29r8
 X 26 codagehuffman.adb
-3p4 file_txt{18|65P9} 312m12 312r12 320r29 321r25 329m14 329r14
-4p4 file_byte{9|53P9[25|14]}
-4p15 file_hff{9|53P9[25|14]} 65m12 65r12 66r13 67m13 67r13 313m14 313r14
-. 313m62 313r62
-5a4 nom_fichier{string} 65r35 312r31 313r34
+3p4 file_txt{18|65P9} 87m15 87r15 93r32 94r28 102m17 102r17 326m18 326r18
+. 327r35 328r31 337m20 337r20
+4p4 file_byte{9|53P9[25|14]} 458m15 458r15 459r32 460r18 463m16 463r16
+4p15 file_hff{9|53P9[25|14]} 48m12 48r12 49r13 50m13 50r13 108m17 108r17
+. 109m16 109r16
+5a4 nom_fichier{string} 48r35 87r34 108r37 326r37 458r35
 6r4 texte_a_envoyer{15|88R9}
-8U14 InitialiserTableau 8b14 8<33 20l8 20t26 26s7 319s7
+8U14 InitialiserTableau 8b14 8<33 20l8 20t26 92s10
 8a33 Tableau{25|11A9} 14m22 14r22 16m22 16r22 18m19 18r19 19m19 19r19
 9i7 compteur{integer}
 10a7 str{string} 15m10 16r54
 11a7 str2{string} 19r53
 13i11 i{integer} 14r30 15r34 16r30
-23a7 Tableau{25|11A9} 26m26 29r30 30m25 30r25 30r56 32m25 32r25 32r56 32r91
-. 36r14
-24i7 indice{integer} 28m10 29r38 30r33 30r64 32r33 32r64 32r99
-27i11 i{integer} 28r40
-39U14 Afficher_Tableau 39b14 39>31 50l8 50t24 337s7
-39a31 Tableau{25|11A9} 44r22 47r41 47r92
-43i11 i{integer} 44r30 47r49 47r100
-52U14 Afficher_Cellule 52b14 52>31 61l8 61t24 349s7
-52p31 Cellule{22|10P9[25|29]} 56r19 59r38 59r91
-63U14 Ecrire_Fichier 63b14 63>29 68l8 68t22 74s7
-63m29 un_byte{25|12M9} 66r23
-70U14 Ecrire_Fichier 70b14 70>29 75l8 75t22 79s7 85s10
-70e29 Ch{character} 71r41 73r11
-71m7 un_byte{25|12M9} 74r22
-77U14 Ecrire_Fichier 77b14 77>29 80l8 80t22
-77i29 entier{integer} 79r36
-82U14 Ecrire_Fichier 82b14 82>29 87l8 87t22 245s10 366s7
-82a29 str{string} 84r19 85r25
-84i11 i{integer} 85r29
-94K15 Byte_file[9|43] 95r11
-98U17 Tri_selection 98b17 98=31 109l11 109t24 154s13 336s7
-98a31 Tableau{25|11A9} 101r19 101r40 102r30 103r43 103r77 104r26 105m16 105r32
-. 106m16
-99p10 Tampon{22|10P9[25|29]} 104m16 106r30
-101i14 i{integer} 102r49
-102i17 j{integer} 103r51 103r85 104r34 105r24 105r40 106r24
-111V16 Construire_Arbre{22|10P9[25|29]} 111b16 111=33 157l11 157t27 342s16
-111a33 Tableau{25|11A9} 128r39 130r31 133r28 136r80 136r111 139r47 140r46
-. 143m28 143r28 144m28 144r28 145m28 145r28 146m28 146r28 149m16 154m27 156r17
-113V19 DebutTableau{integer} 113b19 113>32 120l14 120t26 128s26
-113a32 Tableau{25|11A9} 116r28 116r62
-114i13 indice{integer} 116r19 116r70 117m16 117r26 119r20
-122p10 Cellule{22|10P9[25|29]} 135m28 135r28 136m28 136r28 139m39 139r39
-. 140m38 140r38 149r46
-123a10 str1{string} 136r57 144r60 146r62
-124i10 indice_debut{integer} 128m10 130r16 131r34 132r18 152m16 152r32
-125i10 indice_newcellule{integer} 131m13 149r24 150m16 150r37
-126i10 i{integer} 132m13 133r19 136r88 136r119 139r55 140r54 143r36 144r36
-. 145r36 146r36 151m16 151r21
-159U17 Afficher_Arbre 159b17 159>32 159>54 181s16 187s16 191l11 191t25 353s7
-159p32 Arbre{22|10P9[25|29]} 170r26 172r33 175r32 179r29 181r31 185r29 187r31
-159r54 avant{15|88R9} 176r30 181r53 182r30 187r54
-161U20 Afficher_Donnee_Cle 161b20 161>40 167l14 167t33 172s13
-161p40 Arbre{22|10P9[25|29]} 163r43 164r28 165r54
-193U17 Ecrire_Table_Huffman 193b17 193>38 249l11 249t31 362s7
-193p38 Arbre{22|10P9[25|29]} 236r30
-195V19 int_to_String{string} 195b19 195>33 199l14 199t27
-195i33 entier{integer} 196r42
-196a13 S{string} 198r20
-201V19 String_to_int{integer} 201b19 201>33 205l14 205t27
-201a33 str{string} 202r48
-202i13 entier{integer} 204r20
-207U20 Donne_Liste_Element 207b20 207>40 207=62 207=93 207=129 211s19 224s19
-. 227l14 227t33 236s10
-207p40 Arbre{22|10P9[25|29]} 209r29 210r32 211r39 214r31 216r36 219r49 223r32
-. 224r39
-207r62 str{15|88R9} 211m62 219m22 219r29 224m61
-207i93 position_compteur{integer} 211m67 215m19 215r40 217r38 224m66
-207i129 position_fin{integer} 211m86 217m22 224m85
-229a10 str{string} 243m10 244r27 244r31
-230r10 unstr{15|88R9} 236m37 236r37 238r24 243r28 244m10 244r19 245r35
-231i10 position_compteur{integer} 236m44 236r44
-232i10 position_fin{integer} 236m63 236r63 238r36
-251V16 Recherche_Code{15|88R9} 251b16 251>31 251>53 266s28 272s26 274l11
-. 274t25 357s15
-251p31 Arbre{22|10P9[25|29]} 255r22 258r28 259r30 266r43 272r41
-251r53 str{15|88R9} 259r39 266r66 272r63
-252r10 Code_Gauche{15|88R9} 266m13 267r42 267r65 270r29
-253e10 Fin_Code_Gauche{character} 267m13 269r16
-276U17 Ecrire_Arbre 276b17 276>30 299l11 299t23
-276p30 Arbre{22|10P9[25|29]} 297r26
-278U20 Donne_Arbre_Rec 278b20 278>36 278=58 283s19 290s19 293l14 293t29 297s10
-278p36 Arbre{22|10P9[25|29]} 280r29 281r32 283r35 285r31 288r32 290r35
-278r58 str{15|88R9} 282m19 282r26 283m57 286m19 286r26 290m56
-295r10 str{15|88R9} 297m33 297r33
-303a7 Tableau{25|11A9} 319m26 322r30 323m25 323r25 325m25 325r25 325r105
-. 333r53 336m21 336r21 337r24 342m33 342r33
-304p7 Arbre{22|10P9[25|29]} 342m7 345r22 349r24 353r22 357r30 362r28
-305r7 char{15|88R9} 353r28 357m7 358r21
-306a7 str{string} 321m35 321r35 322r52 323r47 323r81 325r47 325r81 325r127
-. 327r14
-307m7 un_byte{25|12M9}
+22U14 Afficher_Tableau 22b14 22>31 33l8 33t24 403s7
+22a31 Tableau{25|11A9} 27r22 30r41 30r92
+26i11 i{integer} 27r30 30r49 30r100
+35U14 Afficher_Cellule 35b14 35>31 44l8 44t24 411s7
+35p31 Cellule{22|10P9[25|27]} 39r19 42r38 42r91
+46U14 Ecrire_Fichier 46b14 46>29 51l8 51t22 57s7
+46m29 un_byte{25|12M9} 49r23
+53U14 Ecrire_Fichier 53b14 53>29 58l8 58t22 64s10 71s10 290s10
+53e29 Ch{character} 54r41 56r11
+54m7 un_byte{25|12M9} 57r22
+60U14 Ecrire_Fichier 60b14 60>29 66l8 66t22 367s16
+60i29 entier{integer} 61r36
+61a7 S{string} 63r19 64r25
+63i11 i{integer} 64r27
+68U14 Ecrire_Fichier 68b14 68>29 73l8 73t22 291s10
+68a29 str{string} 70r19 71r25
+70i11 i{integer} 71r29
+79K15 Byte_file[9|43] 80r11
+83V16 Donne_Tableau{25|11A9} 83b16 104l11 104t24 396s18
+84a10 Tableau{25|11A9} 92m29 95r33 96m28 96r28 98m28 98r28 98r108 103r17
+85a10 str{string} 94m38 94r38 95r55 96r50 96r84 98r50 98r84 98r130 100r17
+106U17 Creer_Fichier 106b17 110l11 110t24 397s7
+112U17 Tri_selection 112b17 112=31 123l11 123t24 168s13 402s7
+112a31 Tableau{25|11A9} 115r19 115r40 116r30 117r43 117r77 118r26 119m16
+. 119r32 120m16
+113p10 Tampon{22|10P9[25|27]} 118m16 120r30
+115i14 i{integer} 116r49
+116i17 j{integer} 117r51 117r85 118r34 119r24 119r40 120r24
+125V16 Construire_Arbre{22|10P9[25|27]} 125b16 125=33 171l11 171t27 408s16
+125a33 Tableau{25|11A9} 142r39 144r31 147r28 150r80 150r111 153r47 154r46
+. 157m28 157r28 158m28 158r28 159m28 159r28 160m28 160r28 163m16 168m27 170r17
+127V19 DebutTableau{integer} 127b19 127>32 134l14 134t26 142s26
+127a32 Tableau{25|11A9} 130r28 130r62
+128i13 indice{integer} 130r19 130r70 131m16 131r26 133r20
+136p10 Cellule{22|10P9[25|27]} 149m28 149r28 150m28 150r28 153m39 153r39
+. 154m38 154r38 163r46
+137a10 str1{string} 150r57 158r60 160r62
+138i10 indice_debut{integer} 142m10 144r16 145r34 146r18 166m16 166r32
+139i10 indice_newcellule{integer} 145m13 163r24 164m16 164r37
+140i10 i{integer} 146m13 147r19 150r88 150r119 153r55 154r54 157r36 158r36
+. 159r36 160r36 165m16 165r21
+173U17 Afficher_Arbre 173b17 173>32 173>54 195s16 201s16 205l11 205t25 415s7
+173p32 Arbre{22|10P9[25|27]} 184r26 186r33 189r32 193r29 195r31 199r29 201r31
+173r54 avant{15|88R9} 190r30 195r53 196r30 201r54
+175U20 Afficher_Donnee_Cle 175b20 175>40 181l14 181t33 186s13
+175p40 Arbre{22|10P9[25|27]} 177r43 178r28 179r54
+207V16 Recherche_Code{15|88R9} 207b16 207>31 207>53 239l11 239t25 334s41
+. 419s15
+207p31 Arbre{22|10P9[25|27]} 236r38
+207r53 str{15|88R9} 236r44
+208r10 unstr{15|88R9} 236m10 237r24 237r40 237r62
+209V19 Recherche_Code_rec{15|88R9} 209b19 209>38 209>60 226s31 232s29 234l14
+. 234t32 236s19
+209p38 Arbre{22|10P9[25|27]} 215r25 218r31 219r33 226r50 232r48
+209r60 str{15|88R9} 219r42 226r73 232r70
+211r13 Code_Gauche{15|88R9} 226m16 227r45 227r68 230r32
+212e13 Fin_Code_Gauche{character} 227m16 229r19
+241U17 Ecrire_Table_Huffman 241b17 241>38 293l11 293t31 424s7
+241p38 Arbre{22|10P9[25|27]} 284r30
+243V19 int_to_String{string} 243b19 243>33 247l14 247t27
+243i33 entier{integer} 244r42
+244a13 S{string} 246r20
+249V19 String_to_int{integer} 249b19 249>33 253l14 253t27
+249a33 str{string} 250r48
+250i13 entier{integer} 252r20
+255U20 Donne_Liste_Element 255b20 255>40 255=62 255=93 255=129 259s19 272s19
+. 275l14 275t33 284s10
+255p40 Arbre{22|10P9[25|27]} 257r29 258r32 259r39 262r31 264r36 267r49 271r32
+. 272r39
+255r62 str{15|88R9} 259m62 267m22 267r29 272m61
+255i93 position_compteur{integer} 259m67 263m19 263r40 265r38 272m66
+255i129 position_fin{integer} 259m86 265m22 272m85
+277a10 str{string}
+278r10 unstr{15|88R9} 284m37 284r37 286r24 289m10 289r20 289r36 289r52 291r35
+279i10 position_compteur{integer} 284m44 284r44
+280i10 position_fin{integer} 284m63 284r63 286r36 290r39
+295U17 Ecrire_Arbre 295b17 295>30 317l11 317t23
+295p30 Arbre{22|10P9[25|27]} 316r26
+297U20 Donne_Arbre_Rec 297b20 297>36 297=58 302s19 309s19 312l14 312t29 316s10
+297p36 Arbre{22|10P9[25|27]} 299r29 300r32 302r35 304r31 307r32 309r35
+297r58 str{15|88R9} 301m19 301r26 302m57 305m19 305r26 309m56
+314r10 str{15|88R9} 316m33 316r33
+319U17 Ecrire_Texte 319b17 319>30 383l11 383t23 428s7
+319p30 Arbre{22|10P9[25|27]} 334r56
+321V19 Encoder_Texte{string} 321b19 340l14 340t27 382s27
+322r13 unstr_ch{15|88R9} 329m16 329r28 332r35 333r34
+323r13 unstr_bin{15|88R9} 334m16 334r29 339r30
+324a13 str{string} 328m41 328r41 329r39 333m16 334r82
+332i17 i{integer} 333r43
+342V19 Octet_to_Entier{integer} 342b19 342>35 356l14 356t29 367s31
+342r35 Chaine{15|88R9} 347r34 348r29 350r32
+343m13 Octet{25|12M9} 349m19 349r29 351m19 351r29 355r28
+344i13 i{integer} 347r19 348r37 350r40 353m16 353r21
+345a13 Chaine_bis{string}
+358U20 Ecrire_ChaineBin 358b20 358>37 379l14 379t30 382s10
+358a37 str{string} 363r27 365r36 372r25 373r33
+359i13 i{integer} 363r19 365r40 368m16 368r21 371m13 371r18 372r22
+360r13 unstr{15|88R9} 365m19 365r28 367r47 373m16 373r25 376r26 377m16 377r25
+364i20 k{integer} 365r42
+372i17 j{integer} 373r37
+386a7 Tableau{25|11A9} 396m7 402m21 402r21 403r24 408m33 408r33
+387p7 Arbre{22|10P9[25|27]} 408m7 411r24 415r22 419r30 424r28 428r20
+388r7 char{15|88R9} 415r28 419m7 420r21
+389a7 str{string}
+390m7 un_byte{25|12M9}
+435V16 Lire_Texte{string} 435b16 473l11 473t21 512s11
+437V19 convertir_nombre{15|88R9} 437b19 437>36 451l14 451t30
+437i36 nombre{integer} 443r23
+438i13 Quotient{integer} 445m16 448r25
+439i13 Entier{integer} 443m13 444r19 445r28 446r25 448m16
+440i13 reste{integer} 446m16 447r50
+441r13 codage{15|88R9} 447m16 447r26 450r20
+453r10 unstr{15|88R9} 461m13 461r22 467r32 472r27
+454r10 unstr_bin{15|88R9}
+455m10 un_byte{25|12M9} 460m29 461r53
+456a10 str{string}
+467i14 i{integer}
+477U17 Separer_Code 477b17 477>30 477>47 477>72 477>93 480l11 480t23
+477a30 code{string}
+477i47 indice_fin{integer}
+477a72 element{string}
+477a93 code_arbre{string}
+482U17 Construire_Arbre 482b17 482>34 482>59 482>80 507l11 507t27
+482i34 indice_fin{integer}
+482a59 element{string} 496r29
+482a80 code_arbre{string} 492r16
+483i10 indice_ch_fin{integer} 493r28
+484i10 indice{integer} 492r27 493r19 496r37 499m16 499r26
+485p10 Arbre{22|10P9[25|27]} 505m22 505r22 506m31 506r31
+487U20 Construire_Arbre_rec 487b20 487=41 502l14 502t34 506s10
+487p41 Arbre{22|10P9[25|27]} 494m31 497m31 501m36
+488p13 New_Arbre{22|10P9[25|27]} 491m25 491r25 501r42
+489a13 str{string} 496m19 497r57
 X 29 system.ads
 67M9*Address
 X 40 s-memory.ads

@@ -25,7 +25,7 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 
-U test_huffman%b	test_huffman.adb	3b955111 NE OO SU
+U test_huffman%b	test_huffman.adb	8738f28d NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -71,7 +71,7 @@ D a-uncdea.ads		20210520051130 c3a8ac65 ada.unchecked_deallocation%s
 D cellule.ads		20220112173402 4f01e5ee cellule%s
 D cellule.adb		20220112173402 5388d198 cellule%b
 D cellule_exceptions.ads  20220111213720 67ee4aae cellule_exceptions%s
-D codagehuffman.ads	20220114165210 8e5d1808 codagehuffman%s
+D codagehuffman.ads	20220115014804 9d7f1d80 codagehuffman%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -99,13 +99,14 @@ D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
-D test_huffman.adb	20220114165248 a144a219 test_huffman%b
+D test_huffman.adb	20220115014748 0ecb040d test_huffman%b
 D text_io.ads		20210520051136 21b2c898 text_io%s
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [test_huffman standard 7 11 none]
 G r i none [test_huffman standard 7 11 none] [cellule standard 5 9 none]
-G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 21 14 none]
+G r c none [test_huffman standard 7 11 none] [compresser_ficher codagehuffman 20 14 none]
+G r c none [test_huffman standard 7 11 none] [decompresser_fichier codagehuffman 23 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 52|1r6 1r33 2r6 2r33 3r6 3r33
 X 7 a-inteio.ads
@@ -124,9 +125,9 @@ X 21 cellule.ads
 3+9 T_Donnee 52|10r45
 5k9*Cellule 68e12 52|5w6 10r10
 X 24 codagehuffman.ads
-10K9*codageHuffman 35e18 52|4w6 4r25
-21U14*Compresser_ficher 52|20s7
-24V13*Decompresser_fichier{string} 52|26s21
+10K9*codageHuffman 33e18 52|4w6 4r25
+20U14*Compresser_ficher 52|20s7
+23U14*Decompresser_fichier 52|26s7
 X 27 system.ads
 67M9*Address
 X 34 s-memory.ads
@@ -143,5 +144,5 @@ X 52 test_huffman.adb
 17U14 Test_Compresser_ficher 17b14 21l8 21t30 31s4
 18a7 texte{string}
 23U14 Test_Decompresser_fichier 23b14 27l8 27t33 34s4
-24a7 texte{string} 26r42
+24a7 texte{string}
 

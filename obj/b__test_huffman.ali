@@ -18,12 +18,12 @@ RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV NO_OBSOLESCENT_FEATURES
 
-U ada_main%b		b__test_huffman.adb	cba05b21 OO PK IL
+U ada_main%b		b__test_huffman.adb	7031fc37 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 Z system%s		system.ads		system.ali
 
-U ada_main%s		b__test_huffman.ads	23cf69bb EE NE OO PK IL
+U ada_main%s		b__test_huffman.ads	b7c5b2b5 EE NE OO PK IL
 W system%s		system.ads		system.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
@@ -31,8 +31,8 @@ W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 D ada.ads		20210520051132 76789da1 ada%s
 D a-except.ads		20210520051128 946f3014 ada.exceptions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D b__test_huffman.ads	20220114173034 d05d452f ada_main%s
-D b__test_huffman.adb	20220114173034 8f922e1a ada_main%b
+D b__test_huffman.ads	20220115025336 44579e21 ada_main%s
+D b__test_huffman.adb	20220115025336 a0095202 ada_main%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-parame.ads		20210520051134 4752c4cb system.parameters%s
 D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
@@ -45,26 +45,26 @@ G c Z s b [adafinal ada_main 32 14 none]
 G c Z s b [main ada_main 35 13 none]
 G c Z b b [Tsec_default_sized_stacksBIP ada_main 44 4 none]
 G c Z b b [finalize_library ada_main 51 14 none]
-G c Z b b [ada_main_program ada_main 286 14 none]
+G c Z b b [ada_main_program ada_main 287 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 5|6r6
 X 2 a-except.ads
 44K13*Exceptions 289e19 5|6w10
 X 4 b__test_huffman.ads
-6K9*ada_main 575l5 575e13 5|8b14 333l5 333t13
-8i4*gnat_argc{integer} 12m22 12r22 5|306r10 307m10
-9m4*gnat_argv{6|67M9} 13m22 13r22 5|308m10
-10m4*gnat_envp{6|67M9} 14m22 14r22 5|310m7
-16i4*gnat_exit_status{integer} 17m22 17r22 5|317r15
+6K9*ada_main 575l5 575e13 5|8b14 334l5 334t13
+8i4*gnat_argc{integer} 12m22 12r22 5|307r10 308m10
+9m4*gnat_argv{6|67M9} 13m22 13r22 5|309m10
+10m4*gnat_envp{6|67M9} 14m22 14r22 5|311m7
+16i4*gnat_exit_status{integer} 17m22 17r22 5|318r15
 19a4*GNAT_Version{string} 21r22 23r54
 23m4*GNAT_Version_Address{6|67M9} 24r22
-26a4*Ada_Main_Program_Name{string} 27r22 5|302r52
-29U14*adainit 30i<c,adainit>22 5|136b14 284l8 284t15 313s7
-32U14*adafinal 33i<c,adafinal>22 5|117b14 131l8 131t16 315s7
-35V13*main{integer} 36>7 37>7 38>7 40i<c,main>22 5|289b13 318t7
-36i7 argc{integer} 5|290b7 307r23
-37m7 argv{6|67M9} 5|291b7 308r23
-38m7 envp{6|67M9} 5|292b7 310r20
+26a4*Ada_Main_Program_Name{string} 27r22 5|303r52
+29U14*adainit 30i<c,adainit>22 5|136b14 285l8 285t15 314s7
+32U14*adafinal 33i<c,adafinal>22 5|117b14 131l8 131t16 316s7
+35V13*main{integer} 36>7 37>7 38>7 40i<c,main>22 5|290b13 319t7
+36i7 argc{integer} 5|291b7 308r23
+37m7 argv{6|67M9} 5|292b7 309r23
+38m7 envp{6|67M9} 5|293b7 311r20
 42M9*Version_32 43r22 45r22 47r22 49r22 51r22 53r22 55r22 57r22 59r22 61r22
 . 63r22 65r22 67r22 69r22 71r22 73r22 75r22 77r22 79r22 81r22 83r22 85r22
 . 87r22 89r22 91r22 93r22 95r22 97r22 99r22 101r22 103r22 105r22 107r22 109r22
@@ -290,7 +290,7 @@ X 5 b__test_huffman.adb
 39i4 E161{short_integer} 39m46 39r46 60m7 60r15 278m7 278r15
 40i4 E156{short_integer} 40m46 40r46 280m7 280r15
 41i4 E155{short_integer} 41m46 41r46 281m7 281r15
-42i4 E158{short_integer} 42m46 42r46 53m7 53r15 283m7 283r15
+42i4 E158{short_integer} 42m46 42r46 53m7 53r15 284m7 284r15
 44a4 Sec_Default_Sized_Stacks(8|45R9) 204m32 204r32
 46a4 Local_Priority_Specific_Dispatching{string} 192r9
 47a4 Local_Interrupt_States{string} 195r27
@@ -330,17 +330,17 @@ X 5 b__test_huffman.adb
 173p7*Finalize_Library_Objects{133P9} 174m25 174r25 208m7
 175i7*Binder_Sec_Stacks_Count{natural} 176m27 176r27 203m7
 177m7*Default_Sized_SS_Pool{6|67M9} 178m27 178r27 204m7
-286U14 Ada_Main_Program 287b<ada,_ada_test_huffman>24 314s7
-295U17*Initialize 295>29 296b<c,__gnat_initialize>25 312s7
-295m29 Addr{6|67M9}
-298U17*Finalize 299b<c,__gnat_finalize>25 316s7
-300a7 SEH(integer) 312m19 312r19
-302m7 Ensure_Reference{6|67M9} 303r24
+287U14 Ada_Main_Program 288b<ada,_ada_test_huffman>24 315s7
+296U17*Initialize 296>29 297b<c,__gnat_initialize>25 313s7
+296m29 Addr{6|67M9}
+299U17*Finalize 300b<c,__gnat_finalize>25 317s7
+301a7 SEH(integer) 313m19 313r19
+303m7 Ensure_Reference{6|67M9} 304r24
 X 6 system.ads
 37K9*System 4|3w6 4r6 5r6 9r16 10r16 23r36 37r14 38r14 5|44r57 44r90 149r39
-. 155r26 165r38 167r23 177r31 202r39 291r14 292r14 295r36 302r34 6|193e11
+. 155r26 165r38 167r23 177r31 202r39 292r14 293r14 296r36 303r34 6|193e11
 67M9*Address 4|9r23 10r23 23r43 37r21 38r21 5|149r46 155r33 167r30 177r38
-. 291r21 292r21 295r43 302r41
+. 292r21 293r21 296r43 303r41
 X 7 s-parame.ads
 51K16*Parameters 4|4w13 5|44r97 165r45 202r46 7|185e22
 58I9*Size_Type<long_long_integer> 5|165r56

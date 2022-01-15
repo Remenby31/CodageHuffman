@@ -280,6 +280,7 @@ package body ada_main is
       E156 := E156 + 1;
       E155 := E155 + 1;
       Codagehuffman'Elab_Spec;
+      codagehuffman'elab_body;
       E158 := E158 + 1;
    end adainit;
 
