@@ -15,7 +15,6 @@ package codageHuffman is
    use Byte_file ;
 
 
-
    -- Compresser le fichier
    procedure Compresser_ficher;
 
