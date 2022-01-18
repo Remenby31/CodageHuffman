@@ -15,15 +15,16 @@ procedure Test_Huffman is
 
 
    procedure Test_Compresser_ficher is
-      texte : String := "exemple de texte";
+      nom_fichier : String := "fichier.txt";
+      Bool_afficher_Arbre : Boolean := True;
    begin
-      Compresser_ficher;
+      Compresser_ficher(nom_fichier,Bool_afficher_Arbre);
    end Test_Compresser_ficher;
 
    procedure Test_Decompresser_fichier is
-      texte : String :=  "11.001.11.000.1011.0101.11.011.10101.11.011.100.11.001.100.11.011.10100.0100.11.001.11.000.1011.100.11.011.100.11.000.1011.11.100.11.011.0101.11.001.11.000.11.0100";
+      nom_fichier : String := "fichier.txt.hff";
    begin
-      Decompresser_fichier;
+      Decompresser_fichier(nom_fichier);
    end Test_Decompresser_fichier;
 
 begin

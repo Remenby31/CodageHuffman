@@ -2,23 +2,9 @@ package body codagehuffman is
 
    file_txt : Ada.Text_IO.file_type;			-- pour l'accès par caractère
    file_byte, file_hff : Byte_file.file_type;	-- pour l'accès par byte
-   nom_fichier : constant String := "fichier.txt";
    texte_a_envoyer : Unbounded_String;
 
-   procedure InitialiserTableau(Tableau : out T_Tableau) is
-      compteur : Integer := 0;
-      str : String := "0";
-      str2 : String := "\$";
-   begin
-      for i in 1..256 loop
-         Initialiser(Tableau(i));
-         str(1) := Character'Val(i - 1);
-         Enregistrer(Tableau(i), To_Unbounded_String(str), -1);
-      end loop;
-      Initialiser(Tableau(257));
-      Enregistrer(Tableau(257), To_Unbounded_String(str2), 0);
-   end InitialiserTableau;
-
+   --Afficher l'arbre
    procedure Afficher_Arbre(Arbre : in T_Cellule) is
 
       procedure Afficher_Arbre_rec(Arbre : in T_Cellule; avant : in Unbounded_String) is
@@ -61,72 +47,64 @@ package body codagehuffman is
       Afficher_Arbre_rec(Arbre,unstr);
    end Afficher_Arbre;
 
-   procedure Afficher_Tableau(Tableau : in T_Tableau) is
-   begin
-      New_Line;
-      Put("Cle");Put("     |     ");Put("Donnee");New_Line;
-      for i in 1..256 loop
-         if Est_Vide(Tableau(i)) then
-            Put_Line("----- Vide -----");
-         else
-            Put(To_String(La_Cle_Direct(Tableau(i))));Put("  |     ");Put(La_Donnee_Direct(Tableau(i)),1);New_Line;
-         end if;
-      end loop;
-   end Afficher_Tableau;
-
-   procedure Afficher_Cellule(Cellule : in T_Cellule) is
-   begin
-      New_Line;
-      Put("Cle");Put("     |     ");Put("Donnee");New_Line;
-      if Est_Vide(Cellule) then
-         Put_Line("----- Vide -----");
-      else
-         Put(To_String(La_Cle_Direct(Cellule)));Put("       |     ");Put(La_Donnee_Direct(Cellule),1);New_Line;
-      end if;
-   end Afficher_Cellule;
-
-   procedure Ecrire_Fichier(un_byte : in T_byte) is
+   --Ecrire un byte
+   procedure Ecrire_Fichier(nom_fichier : in String; un_byte : in T_byte) is
    begin
       Open(file_hff, Append_File, nom_fichier & ".hff"); -- Création / écriture
       write(file_hff, un_byte);
       close(file_hff);
    end Ecrire_Fichier;
 
-   procedure Ecrire_Fichier(Ch : in Character) is
+   --Ecrire un caractere
+   procedure Ecrire_Fichier(nom_fichier : in String; Ch : in Character) is
       un_byte : T_byte := Character'Pos(Ch);
    begin
-      Ecrire_Fichier(un_byte);
+      Ecrire_Fichier(nom_fichier,un_byte);
    end Ecrire_Fichier;
 
-   procedure Ecrire_Fichier(entier : in Integer) is
+   --Ecrire un entier
+   procedure Ecrire_Fichier(nom_fichier : in String; entier : in Integer) is
       ch : Character := Character'Val (entier);
    begin
-      Ecrire_Fichier(ch);
+      Ecrire_Fichier(nom_fichier,ch);
    end Ecrire_Fichier;
 
-   procedure Ecrire_Fichier(str : in String) is
+   --Ecrire un string
+   procedure Ecrire_Fichier(nom_fichier : in String; str : in String) is
    begin
       for i in 1..str'Last loop
-         Ecrire_Fichier(str(i));
+         Ecrire_Fichier(nom_fichier,str(i));
       end loop;
    end Ecrire_Fichier;
 
-
-   procedure Compresser_ficher is
-
+   --Compression du fichier
+   procedure Compresser_ficher(nom_fichier : in String; Bool_afficher_Arbre : in Boolean) is
 
       package Byte_file is new Ada.Sequential_IO(T_byte);
       use Byte_file ;
 
-
+      --Renvoie un T_Tableau de T_Cellule avec les frequences des caracteres (-1 si fréquence nulle)
       function Donne_Tableau return T_Tableau is
+
+         -- Initialise le T_Tableau
+         procedure InitialiserTableau(Tableau : out T_Tableau) is
+            compteur : Integer := 0;
+            str : String := "0";
+            str2 : String := "\$";
+         begin
+            for i in 1..256 loop
+               Initialiser(Tableau(i));
+               str(1) := Character'Val(i - 1);
+               Enregistrer(Tableau(i), To_Unbounded_String(str), -1);
+            end loop;
+            Initialiser(Tableau(257));
+            Enregistrer(Tableau(257), To_Unbounded_String(str2), 0);
+         end InitialiserTableau;
+
          Tableau : T_Tableau;
          str : String := " ";
       begin
          open(file_txt, In_File, nom_fichier); 	-- Ouverture du fichier en lecture
-
-         Put_Line("Fichier récupéré");
-         Put("Message lu : ");
 
          InitialiserTableau(Tableau);
          while not end_of_file(file_txt) loop
@@ -136,18 +114,19 @@ package body codagehuffman is
             else
                Enregistrer(Tableau(Character'Pos(str(1)) + 1), To_Unbounded_String(str), (La_Donnee_Direct(Tableau(Character'Pos(str(1)) + 1)) + 1));
             end if;
-            Put(str(1)); Put("|");
          end loop;
          close (file_txt);
          return Tableau;
       end Donne_Tableau;
 
+      --Creer le fichier en .hff
       procedure Creer_Fichier is
       begin
          create(file_hff, Out_File, nom_fichier & ".hff");
          close(file_hff);
       end Creer_Fichier;
 
+      --Tri le T_Tableau (tri par selection)
       procedure Tri_selection(Tableau : in out T_Tableau) is
          Tampon : T_Cellule;
       begin
@@ -160,9 +139,10 @@ package body codagehuffman is
             end loop ;
          end loop ;
       end Tri_selection;
-
+      --Construit l'arbre à partir du T_tableau des fréquences
       function Construire_Arbre(Tableau: in out T_Tableau) return T_Cellule is
 
+         --Renvoie le premier élément non vide (de fréquence /= -1)
          function DebutTableau(Tableau : in T_Tableau) return Integer is
             indice : Integer :=1;
          begin
@@ -204,13 +184,14 @@ package body codagehuffman is
                i := i + 2;
                indice_debut := indice_debut + 1;
             end loop;
+
             Tri_selection(Tableau);
+
          end loop;
          return Tableau(257);
       end Construire_Arbre;
 
-
-
+      -- Renvoie le code de huffman du caractere str
       function Recherche_Code(Arbre : in T_Cellule; str : in Unbounded_String) return Unbounded_String is
          unstr : Unbounded_String;
          function Recherche_Code_rec(Arbre : in T_Cellule; str : in Unbounded_String) return Unbounded_String is
@@ -241,17 +222,16 @@ package body codagehuffman is
          end Recherche_Code_rec;
       begin
          unstr := Recherche_Code_rec(Arbre,str);
-         return Delete(unstr,To_String(unstr)'Last,To_String(unstr)'Last);
+         return Delete(unstr,To_String(unstr)'Last,To_String(unstr)'Last); --On suprime le caractere de fin
 
       end Recherche_Code;
 
+      --Ecriture du fichier encodé de Huffman
       procedure Ecrire(Arbre : in T_Cellule) is
          unstr_a_ecrire : Unbounded_String;
 
-
+         --Ecriture du tableau des caracteres
          procedure Ecrire_Table_Huffman(Arbre : in T_Cellule) is
-
-
 
             procedure Donne_Liste_Element(Arbre : in T_Cellule; str : in out Unbounded_String; position_compteur : in out Integer; position_fin : in out Integer) is
             begin
@@ -283,16 +263,15 @@ package body codagehuffman is
          begin
             --Récupération des symboles et de la position du symbole de fin depuis le Tableau
             Donne_Liste_Element(Arbre, unstr, position_compteur, position_fin);
-            New_Line; Put("Donneés :");
-            Put(position_fin,1);Put(To_String(unstr));New_Line;
 
             --Ecriture du Tableau des symboles dans le fichier
             unstr :=  unstr & Element(unstr,To_String(unstr)'Last);
-            Ecrire_Fichier(position_fin);
-            Ecrire_Fichier(To_String(unstr));
+            Ecrire_Fichier(nom_fichier,position_fin);
+            Ecrire_Fichier(nom_fichier,To_String(unstr));
 
          end Ecrire_Table_Huffman;
 
+         --Ecriture de l'arbre
          procedure Ecrire_Arbre(Arbre : in T_Cellule; unstr_a_ecrire : in out Unbounded_String) is
          begin
             if not(Est_Vide(Arbre)) then
@@ -310,6 +289,7 @@ package body codagehuffman is
             end if;
          end Ecrire_Arbre;
 
+         --Ecriture du fichier encodé
          procedure Ecrire_Texte(Arbre : in T_Cellule; unstr_a_ecrire : in out Unbounded_String) is
 
             function Encoder_Texte return String is
@@ -327,8 +307,8 @@ package body codagehuffman is
                   str(1) := Element(unstr_ch,i);
                   unstr_bin := unstr_bin & Recherche_Code(Arbre,To_Unbounded_String(str));
                end loop;
-
                close (file_txt);
+               unstr_bin := unstr_bin & Recherche_Code(Arbre,To_Unbounded_String("\$"));
 
                return To_String(unstr_bin);
             end Encoder_Texte;
@@ -337,8 +317,10 @@ package body codagehuffman is
             unstr_a_ecrire := unstr_a_ecrire & Encoder_Texte;
          end Ecrire_Texte;
 
+         --Ecrit les bits sous forme d'octet dans le fichier
          procedure Ecrire_ChaineBin(str : in String) is
 
+            --Revoie un String avec des bits
             function Octet_to_Entier(Chaine : in Unbounded_String) return Integer is
                Octet : T_byte := 0;
                i : Integer := 1;
@@ -359,31 +341,31 @@ package body codagehuffman is
             unstr : Unbounded_String;
          begin
             -- Les octets complets
-            while i + 7 < str'Last loop
+            while i + 7 <= str'Last loop
                for k in 0..7 loop
                   unstr := unstr & str(i+k);
                end loop;
-               Ecrire_Fichier(Octet_to_Entier(unstr));New_Line;
+               Ecrire_Fichier(nom_fichier,Octet_to_Entier(unstr));
                i := i + 8;
             end loop;
-            -- Les octets de fin
-            i := i - 8;
+
+            -- Les bits de fin
             for j in i..str'Last loop
                unstr := unstr & str(j);
             end loop;
+
             --On rajoutes des 0 pour le dernier octet
-            while Length(unstr) < 8 loop
+            while Length(unstr) mod 8 /= 0 loop
                unstr := unstr & '0';
             end loop;
+            Ecrire_Fichier(nom_fichier,Octet_to_Entier(unstr));
          end Ecrire_ChaineBin;
 
       begin
 
          Ecrire_Table_Huffman(Arbre);
          Ecrire_Arbre (Arbre,unstr_a_ecrire);
-         New_Line;Put("Code Arbre :         ");Put(To_String(unstr_a_ecrire));New_Line;
          Ecrire_Texte(Arbre,unstr_a_ecrire);
-         Put("Code Arbre + texte : ");Put(To_String(unstr_a_ecrire));New_Line;
          Ecrire_ChaineBin(To_String(unstr_a_ecrire));
 
       end Ecrire;
@@ -396,66 +378,49 @@ package body codagehuffman is
 
 
    begin
-      Put_Line("Entrée dans le programme");
 
       Tableau := Donne_Tableau;
+
       Creer_Fichier;
 
-      Put_Line("Contenu du fichier récupéré");
-
-      Put("Début du Tri...");
       Tri_selection(Tableau);
-      Afficher_Tableau(Tableau);
-      Put_Line(" Ok"); New_Line;
 
-
-      Put("Début de la construction de l'arbre...");
       Arbre := Construire_Arbre(Tableau);
-      Put_Line(" Ok");New_Line;
-
-      Afficher_Cellule(Arbre);New_Line;
-
-
-      Put("Début de l'affichage de l'arbre...");New_Line;
-      Afficher_Arbre(Arbre);
-      Put_Line(" Ok");New_Line;
-
-      Put("Début du chemin...");New_Line;
-      char := Recherche_Code(Arbre,To_Unbounded_String("t"));
-      Put(To_String(char));New_Line;
-      Put_Line(" Ok");New_Line;
-
-      Put("Début de l'Ecriture...");New_Line;
-      Ecrire(Arbre);New_Line;
-      Put_Line(" Ok");New_Line;
-
+      if Bool_afficher_Arbre then
+         Afficher_Arbre(Arbre);
+      end if;
+      Ecrire(Arbre);
 
    end Compresser_ficher;
 
-   procedure Decompresser_fichier is
+   --Decompression du fichier
+   procedure Decompresser_fichier(nom_fichier : in String; Bool_afficher_Arbre : in Boolean) is
 
+      --Renvoie le contenu du fichier
       function Lire_Texte return Unbounded_String is
 
          unstr : Unbounded_String;
          un_char : Character;
       begin
-         open (file_txt, In_File, nom_fichier & ".hff"); 	-- Ouverture du fichier en lecture
+         open (file_txt, In_File, nom_fichier); 	-- Ouverture du fichier en lecture
          while not end_of_file(file_txt) loop
-            Get_immediate (file_txt, un_char);
+            Get_immediate(file_txt, un_char);
             unstr := unstr & un_char;
          end loop;
-
          return unstr;
       end Lire_Texte;
 
+      -- Separer le contenu du fichier
       procedure Separer_Code(code: in Unbounded_String; indice_fin : out Integer; elements : out Unbounded_String; code_arbre : out Unbounded_String) is
 
+         --Renvoie la position du caractere de fin
          function Donne_indice_fin(code : in Unbounded_String) return Integer is
             str : String := To_String(code);
          begin
             return Character'Pos(str(str'First));
          end Donne_indice_fin;
 
+         --Renvoie la liste des elements
          function Donne_elements(code : in Unbounded_String) return Unbounded_String is
             i : Integer := 2;
          begin
@@ -465,6 +430,7 @@ package body codagehuffman is
             return Unbounded_Slice(code,2,i);
          end Donne_elements;
 
+         --Renvoie le code de l'arbre + texte
          function Donne_Code_Arbre(code : in Unbounded_String) return Unbounded_String is
             i : Integer := 2;
          begin
@@ -481,10 +447,13 @@ package body codagehuffman is
          code_arbre := Donne_Code_Arbre(code);
       end Separer_Code;
 
-      function Construire_Arbre(indice_fin : in Integer; elements : in String; code_arbre_ch : in String) return T_Cellule is
+      --Construire l'arbre
+      procedure Construire_Arbre(indice_fin : in Integer; elements : in String; code_arbre_ch : in String; Arbre : out T_Cellule; code_texte : out Unbounded_String) is
 
+         --convertit les caracteres en binaire
          function Conversion_binaire(unstr_ch : in Unbounded_String) return Unbounded_String is
 
+            --Convertit un octet en binaire (les 8 derniers de ch)
             function ch_to_bin(ch : in Character) return unbounded_string is
                Quotient : Integer;
                Entier : Integer;
@@ -514,9 +483,8 @@ package body codagehuffman is
 
          indice_fin2 : Integer := indice_fin;
          code_arbre_bin : Unbounded_String;
-         indice_arbre : Integer := 1;
          indice_element : Integer := 1;
-         Arbre : T_Cellule;
+         indice_arbre : Integer := 1;
 
          procedure Construire_Arbre_rec(Arbre : in out T_Cellule; code_arbre : in String; indice_arbre : in out Integer; indice_element : in out Integer) is
 
@@ -526,87 +494,88 @@ package body codagehuffman is
          begin
 
             if indice_element < elements'Last + 1 then
-
                if code_arbre(indice_arbre) = '1' then
-
                   if indice_element = indice_fin2 then
-
                      Enregistrer(Arbre,To_Unbounded_String("\$"),0);
                      indice_fin2 := 0;
-
                   else
-
                      str(1) := elements(indice_element);
                      Enregistrer(Arbre,To_Unbounded_String(str),0);
-                     Put("Indice element"); Put(str);New_Line;
                      indice_element := indice_element + 1;
                   end if;
-
                   indice_arbre := indice_arbre + 1;
-
                else
                   Initialiser(New_Arbre);
                   Enregistrer(Arbre,To_Unbounded_String("0"),0);
-
                   indice_arbre := indice_arbre + 1;
-
                   Enregistrer_FilsGauche(Arbre,New_Arbre);
                   Construire_Arbre_rec(Arbre.All.Fils_gauche,code_arbre, indice_arbre,indice_element);
-
                   Enregistrer_FilsDroit(Arbre,New_Arbre);
                   Construire_Arbre_rec(Arbre.All.Fils_droit,code_arbre, indice_arbre,indice_element);
-
                end if;
             end if;
          end Construire_Arbre_rec;
 
 
       begin
-
          Initialiser(Arbre);
          Enregistrer(Arbre,To_Unbounded_String("0"),0);
          code_arbre_bin := Conversion_binaire(To_Unbounded_String(code_arbre_ch));
-         New_Line;Put("code_arbre :");Put(To_String(code_arbre_bin)); New_Line;
          Construire_Arbre_rec(Arbre,To_String(code_arbre_bin),indice_arbre,indice_element);
-         return Arbre;
+         code_texte := Unbounded_Slice(code_arbre_bin,indice_arbre,Length(code_arbre_bin));
       end Construire_Arbre;
 
+      --Decoder le message grace a l'arbre
+      function Decoder_Message(Arbre : in T_Cellule; code : in Unbounded_String) return Unbounded_String is
 
+         procedure Decoder_Caractere(Arbre : in T_Cellule; code : in out Unbounded_String; Ch : out Unbounded_String; fin : out Boolean) is
+         begin
+            Put(Element(code,1));
+            fin := False;
+            if Est_Feuille(Arbre) then
+               if La_Cle_Direct(Arbre) = To_Unbounded_String("\$") then
+                  code := To_Unbounded_String("");
+                  fin := True;
+               else
+                  Ch := La_Cle_Direct(Arbre);
+               end if;
+            elsif Element(code,1) = '0' then
+               Delete(code,1,1);
+               Decoder_Caractere(Arbre.All.Fils_droit, code, ch, fin);
+            else
+               Delete(code,1,1);
+               Decoder_Caractere(Arbre.All.Fils_gauche, code, ch, fin);
+            end if;
+         end Decoder_Caractere;
+
+         code_copie : Unbounded_String := code;
+         ch,texte : Unbounded_String;
+         fin : Boolean;--boolean de fin de fichier
+
+      begin
+         while Length(code_copie) /= 0 loop
+            Decoder_Caractere(Arbre,code_copie,ch,fin);
+            if not(fin) then
+               texte := texte & ch;
+            end if;
+         end loop;
+         return texte;
+      end Decoder_Message;
 
       indice_fin : Integer;
-      elements : Unbounded_String;
-      code_arbre : Unbounded_String;
-      code : Unbounded_String;
+      elements, code, code_arbre, code_texte : Unbounded_String;
       Arbre : T_Cellule;
+
    begin
       code := Lire_Texte;
       Separer_Code(code, indice_fin, elements, code_arbre);
-      New_Line;Put("Code :");Put(To_String(Code));
-      New_Line;Put("indice_fin :");Put(indice_fin,1);
-      New_Line;Put("elements :");Put(To_String(elements));
-      New_Line;Put("code_arbre :");Put(To_String(code_arbre));
-      Arbre := Construire_Arbre(indice_fin,To_String(elements),To_String(code_arbre));
+      Construire_Arbre(indice_fin,To_String(elements),To_String(code_arbre),Arbre,code_texte);
+      if Bool_afficher_Arbre then
+         Afficher_Arbre(Arbre);
+      end if;
+      Ecrire_Fichier(nom_fichier,To_String(code_texte));
 
-
-
-      Afficher_Arbre(Arbre);
    end Decompresser_fichier;
 
-
 end codagehuffman;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

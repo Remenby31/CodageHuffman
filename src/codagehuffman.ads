@@ -16,10 +16,10 @@ package codageHuffman is
 
 
    -- Compresser le fichier
-   procedure Compresser_ficher;
+   procedure Compresser_ficher(nom_fichier : in String; Bool_afficher_Arbre : in Boolean);
 
    -- D�compresser le fichier
-   procedure Decompresser_fichier;
+   procedure Decompresser_fichier(nom_fichier : in String; Bool_afficher_Arbre : in Boolean);
 
 private
 
