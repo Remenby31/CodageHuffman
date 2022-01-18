@@ -9,9 +9,9 @@ procedure decompresser is
 
 begin
     if Argument(2) = "-b" or Argument(2) ="--bavard" then
-        Decompresser_ficher(Argument(1),True);
+        Decompresser_fichier(Argument(1),True);
     else
-        Decompresser_ficher(Argument(1),False);
+        Decompresser_fichier(Argument(1),False);
     end if;
 
 end decompresser;

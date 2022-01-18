@@ -23,13 +23,14 @@ procedure Test_Huffman is
 
    procedure Test_Decompresser_fichier is
       nom_fichier : String := "fichier.txt.hff";
+      Bool_afficher_Arbre : Boolean := True;
    begin
-      Decompresser_fichier(nom_fichier);
+      Decompresser_fichier(nom_fichier,Bool_afficher_Arbre);
    end Test_Decompresser_fichier;
 
 begin
    Put_Line("Début du test de Compression...");
-   Test_Compresser_ficher;
+   --Test_Compresser_ficher;
    Put_Line(" - Ok"); New_Line;
    Put_Line("Début du test de Décompression...");
    Test_Decompresser_fichier;

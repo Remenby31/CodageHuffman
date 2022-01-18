@@ -50,7 +50,7 @@ package body codagehuffman is
    --Ecrire un byte
    procedure Ecrire_Fichier(nom_fichier : in String; un_byte : in T_byte) is
    begin
-      Open(file_hff, Append_File, nom_fichier & ".hff"); -- Création / écriture
+      Open(file_hff, Append_File, nom_fichier); -- Création / écriture
       write(file_hff, un_byte);
       close(file_hff);
    end Ecrire_Fichier;
@@ -266,8 +266,8 @@ package body codagehuffman is
 
             --Ecriture du Tableau des symboles dans le fichier
             unstr :=  unstr & Element(unstr,To_String(unstr)'Last);
-            Ecrire_Fichier(nom_fichier,position_fin);
-            Ecrire_Fichier(nom_fichier,To_String(unstr));
+            Ecrire_Fichier(nom_fichier & ".hff",position_fin);
+            Ecrire_Fichier(nom_fichier & ".hff",To_String(unstr));
 
          end Ecrire_Table_Huffman;
 
@@ -301,6 +301,7 @@ package body codagehuffman is
                while not end_of_file(file_txt) loop
                   Get_immediate (file_txt, str(1));
                   unstr_ch := unstr_ch & str(1);
+
                end loop;
 
                for i in 1..To_String(unstr_ch)'Last loop
@@ -345,7 +346,7 @@ package body codagehuffman is
                for k in 0..7 loop
                   unstr := unstr & str(i+k);
                end loop;
-               Ecrire_Fichier(nom_fichier,Octet_to_Entier(unstr));
+               Ecrire_Fichier(nom_fichier & ".hff",Octet_to_Entier(unstr));
                i := i + 8;
             end loop;
 
@@ -358,7 +359,7 @@ package body codagehuffman is
             while Length(unstr) mod 8 /= 0 loop
                unstr := unstr & '0';
             end loop;
-            Ecrire_Fichier(nom_fichier,Octet_to_Entier(unstr));
+            Ecrire_Fichier(nom_fichier & ".hff",Octet_to_Entier(unstr));
          end Ecrire_ChaineBin;
 
       begin
@@ -409,6 +410,13 @@ package body codagehuffman is
          end loop;
          return unstr;
       end Lire_Texte;
+
+      --Creer le fichier
+      procedure Creer_Fichier is
+      begin
+         create(file_hff, Out_File, Slice(To_Unbounded_String(nom_fichier),1,nom_fichier'Last - 4));
+         close(file_hff);
+      end Creer_Fichier;
 
       -- Separer le contenu du fichier
       procedure Separer_Code(code: in Unbounded_String; indice_fin : out Integer; elements : out Unbounded_String; code_arbre : out Unbounded_String) is
@@ -530,7 +538,6 @@ package body codagehuffman is
 
          procedure Decoder_Caractere(Arbre : in T_Cellule; code : in out Unbounded_String; Ch : out Unbounded_String; fin : out Boolean) is
          begin
-            Put(Element(code,1));
             fin := False;
             if Est_Feuille(Arbre) then
                if La_Cle_Direct(Arbre) = To_Unbounded_String("\$") then
@@ -568,13 +575,14 @@ package body codagehuffman is
 
    begin
       code := Lire_Texte;
+      Creer_Fichier;
       Separer_Code(code, indice_fin, elements, code_arbre);
       Construire_Arbre(indice_fin,To_String(elements),To_String(code_arbre),Arbre,code_texte);
       if Bool_afficher_Arbre then
          Afficher_Arbre(Arbre);
       end if;
-      Ecrire_Fichier(nom_fichier,To_String(code_texte));
-
+      Put(To_String(Decoder_Message(Arbre,code_texte)));
+      Ecrire_Fichier(Slice(To_Unbounded_String(nom_fichier),1,nom_fichier'Last - 4),To_String(Decoder_Message(Arbre,code_texte)));
    end Decompresser_fichier;
 
 end codagehuffman;
