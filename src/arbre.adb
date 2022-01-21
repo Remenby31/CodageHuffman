@@ -1,128 +1,166 @@
-with Cellule_Exceptions;         use Cellule_Exceptions;
+with Arbre_Exceptions;         use Arbre_Exceptions;
 with Ada.Unchecked_Deallocation;
 
-package body arbre is
+package body Arbre is
 
    procedure Free is
-     new Ada.Unchecked_Deallocation (Object => T_Element, Name => T_arbre);
+     new Ada.Unchecked_Deallocation (Object => T_Element, Name => T_Arbre);
 
-   procedure Initialiser(arbre: out T_arbre) is
+   procedure Initialiser(Arbre: out T_Arbre) is
    begin
-      arbre := NULL;
+      Arbre := NULL;
    end Initialiser;
 
-   function Est_Vide (arbre : in T_arbre) return Boolean is
+   function Est_Vide (Arbre : in T_Arbre) return Boolean is
    begin
-      if arbre = NULL then
+      if Arbre = NULL then
          return True;
       end if;
       return False;
    end;
 
    -- Obtenir le nombre d'�l�ments d'une Cellule.
-   function Taille (arbre : in T_arbre) return Integer is
+   function Taille (Arbre : in T_Arbre) return Integer is
    begin
-      if Est_Vide(arbre) then
+      if Est_Vide(Arbre) then
          return 0;
       else
-         return 1 + Taille(arbre.all.Fils_droit) + Taille(arbre.all.Fils_gauche);
+         return 1 + Taille(Arbre.all.Fils_droit) + Taille(Arbre.all.Fils_gauche);
       end if;
    end Taille;
 
-   procedure Vider(arbre : in out T_arbre) is
+   procedure Vider(Arbre : in out T_Arbre) is
    begin
-      if Est_Vide(arbre) then
+      if Est_Vide(Arbre) then
          Null;
       else
-         Vider(arbre.all.Fils_droit);
-         Vider(arbre.all.Fils_gauche);
-         Free(arbre);
+         Vider(Arbre.all.Fils_droit);
+         Vider(Arbre.all.Fils_gauche);
+         Free(Arbre);
       end if;
    end Vider;
 
-   function Est_Feuille(arbre : in T_arbre) return Boolean is
+   function Est_Feuille(Arbre : in T_Arbre) return Boolean is
    begin
-      if Est_Vide(arbre.all.Fils_droit) and Est_Vide(arbre.all.Fils_gauche) then
-         return False;
+      if Est_Vide(Arbre.all.Fils_droit) and Est_Vide(Arbre.all.Fils_gauche) then
+         return True;
       end if;
-      return True;
+      return False;
    end Est_Feuille;
 
-   function Cle_Presente(arbre : in T_arbre ; Cle : in T_Cle) return Boolean is
+   function Cle_Presente(Arbre : in T_Arbre ; Cle : in T_Cle) return Boolean is
    begin
-      if Est_Vide(arbre) then
+      if Est_Vide(Arbre) then
          return False;
-      elsif arbre.all.Cle = Cle then
+      elsif Arbre.all.Cle = Cle then
          return True;
       else
-         return Cle_Presente(arbre.all.Fils_droit,Cle) or Cle_Presente(arbre.all.Fils_gauche,Cle);
+         return Cle_Presente(Arbre.all.Fils_droit,Cle) or Cle_Presente(Arbre.all.Fils_gauche,Cle);
       end if;
    end Cle_Presente;
 
-   function La_Donnee (arbre : in T_arbre ; Cle : in T_Cle) return T_Donnee is
+   function La_Donnee(Arbre : in T_Arbre ; Cle : in T_Cle) return T_Donnee is
    begin
-      if Est_Vide(arbre) then
+      if Est_Vide(Arbre) then
          raise Cle_Absente_Exception;
-      elsif arbre.All.Cle = Cle then
-         return arbre.all.Donnee;
-      elsif Cle_Presente(arbre.all.Fils_gauche, Cle) then
-         return La_Donnee(arbre.All.Fils_gauche, Cle);
+      elsif Arbre.All.Cle = Cle then
+         return Arbre.all.Donnee;
+      elsif Cle_Presente(Arbre.all.Fils_gauche, Cle) then
+         return La_Donnee(Arbre.All.Fils_gauche, Cle);
       else
-         return La_Donnee(arbre.All.Fils_droit, Cle);
+         return La_Donnee(Arbre.All.Fils_droit, Cle);
       end if;
    end La_Donnee;
 
+   function La_Donnee_Direct(Arbre : in T_Arbre) return T_Donnee is
+   begin
+      if Est_Vide(Arbre) then
+         raise Arbre_Vide_Exception;
+      else
+         return Arbre.All.Donnee;
+      end if;
+   end La_Donnee_Direct;
 
-   procedure Enregistrer(arbre : in out T_arbre ; Cle : in T_Cle ; Donnee : in T_Donnee) is
+   function La_Cle_Direct(Arbre : in T_Arbre) return T_Cle is
+   begin
+      if Est_Vide(Arbre) then
+         raise Arbre_Vide_Exception;
+      else
+         return Arbre.All.Cle;
+      end if;
+   end La_Cle_Direct;
+
+
+   procedure Enregistrer(Arbre : in out T_Arbre ; Cle : in T_Cle ; Donnee : in T_Donnee) is
 
    begin
-      if arbre = null then
-          arbre:= new T_Element'(Cle,Donnee, null, null);
-          elsif arbre.All.Cle = Cle then
-              arbre.All.Donnee := Donnee;
-          else
-              Enregistrer(arbre.All.Fils_droit, Cle, Donnee);
-          end if;
+      if Arbre = null then
+         Arbre := new T_Element'(Cle,Donnee, null, null);
+      elsif Arbre.All.Cle = Cle then
+         Arbre.All.Donnee := Donnee;
+      else
+         Enregistrer(Arbre.All.Fils_droit, Cle, Donnee);
+      end if;
    end Enregistrer;
 
-   Procedure Supprimer(arbre : in out T_arbre ; Cle : in T_Cle) is
-       A_Supprimer : T_arbre;
+   procedure Enregistrer_FilsDroit(Arbre_parent : in out T_Arbre; Arbre_fils : in T_Arbre) is
    begin
-       if Est_Vide(arbre) then
-           raise Cle_Absente_Exception;
-       elsif arbre.All.Cle = Cle then
-           if not(Est_Vide(arbre.All.Fils_droit)) and not(Est_Vide(arbre.All.Fils_gauche)) then
-               raise Suppression_impossible_Exception;
-           else
-               A_Supprimer := arbre;
-               if Est_Vide(arbre.All.Fils_droit) then
-                   arbre := arbre.All.Fils_gauche;
-               else
-                   arbre := arbre.All.Fils_droit;
-               end if;
-           end if;
-           Free(A_Supprimer);
-       elsif Cle_Presente(arbre.All.Fils_gauche,Cle) then
-           Supprimer(arbre.all.Fils_gauche,Cle);
-       elsif Cle_Presente(arbre.All.Fils_droit,Cle) then
-           Supprimer(arbre.all.Fils_droit,Cle);
-       else
-           raise Cle_Absente_Exception;
-       end if;
+      if Est_Vide(Arbre_parent) then
+         raise Cle_Necessaire_Pour_Fils_Exception;
+      else
+         Arbre_parent.All.Fils_droit := Arbre_fils;
+      end if;
+   end Enregistrer_FilsDroit;
+
+   procedure Enregistrer_FilsGauche(Arbre_parent : in out T_Arbre; Arbre_fils : in T_Arbre) is
+   begin
+      if Est_Vide(Arbre_parent) then
+         raise Cle_Necessaire_Pour_Fils_Exception;
+      else
+         Arbre_parent.All.Fils_gauche := Arbre_fils;
+      end if;
+   end Enregistrer_FilsGauche;
+
+
+
+   Procedure Supprimer(Arbre : in out T_Arbre ; Cle : in T_Cle) is
+      A_Supprimer : T_Arbre;
+   begin
+      if Est_Vide(Arbre) then
+         raise Cle_Absente_Exception;
+      elsif Arbre.All.Cle = Cle then
+         if not(Est_Vide(Arbre.All.Fils_droit)) and not(Est_Vide(Arbre.All.Fils_gauche)) then
+            raise Suppression_impossible_Exception;
+         else
+            A_Supprimer := Arbre;
+            if Est_Vide(Arbre.All.Fils_droit) then
+               Arbre := Arbre.All.Fils_gauche;
+            else
+               Arbre := Arbre.All.Fils_droit;
+            end if;
+         end if;
+         Free(A_Supprimer);
+      elsif Cle_Presente(Arbre.All.Fils_gauche,Cle) then
+         Supprimer(Arbre.all.Fils_gauche,Cle);
+      elsif Cle_Presente(Arbre.All.Fils_droit,Cle) then
+         Supprimer(Arbre.all.Fils_droit,Cle);
+      else
+         raise Cle_Absente_Exception;
+      end if;
 
    end Supprimer;
 
-   procedure Parcours_Infixe(arbre : in out T_arbre) is
+   procedure Parcours_Infixe(Arbre : in out T_Arbre) is
    begin
-      if not(Est_Vide(arbre)) then
-          if not(Est_Vide(arbre.all.Fils_gauche)) then
-              Parcours_Infixe(arbre.all.Fils_gauche);
-          end if;
-          Traiter(arbre.all.Cle, arbre.all.Donnee);
-          if not(Est_Vide(arbre.all.Fils_droit)) then
-              Parcours_Infixe(arbre.all.Fils_droit);
-          end if;
-  end if;
+      if not(Est_Vide(Arbre)) then
+         if not(Est_Vide(Arbre.all.Fils_gauche)) then
+            Parcours_Infixe(Arbre.all.Fils_gauche);
+         end if;
+         Traiter(Arbre.all.Cle, Arbre.all.Donnee);
+         if not(Est_Vide(Arbre.all.Fils_droit)) then
+            Parcours_Infixe(Arbre.all.Fils_droit);
+         end if;
+      end if;
    end Parcours_Infixe;
 
-end arbre;
+end Arbre;
